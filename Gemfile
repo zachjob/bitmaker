@@ -28,6 +28,7 @@ gem 'spring',        group: :development
 
 gem "cocoon"
 gem 'sorcery'
+gem 'cancancan', '~> 1.8'
 
 # Use unicorn as the app server
 # gem 'unicorn'

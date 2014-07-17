@@ -3,3 +3,7 @@
 <% @projects.each do |project| %>
   <h2><%= project.title %></h2>
 <% end %>
+
+<% if can? :create, Project %>
+  <%= link_to "New Project", new_project_path %>
+<% end %>
