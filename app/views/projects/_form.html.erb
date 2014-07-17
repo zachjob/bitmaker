@@ -9,10 +9,11 @@
     <%= f.text_field :description %>
   </div>
 
+  <p>Rewards</p>
   <div>
-  <%= f.fields_for :rewards do |r| %>
-    <%= render 'reward_fields', :f => r %>
-  <% end %>
+    <%= f.fields_for :rewards do |r| %>
+      <%= render 'reward_fields', :f => r %>
+    <% end %>
   </div>
 
   <div>
