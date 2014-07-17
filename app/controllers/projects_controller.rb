@@ -5,6 +5,10 @@ class ProjectsController < ApplicationController
   def index
   end
 
+  def show
+    @project = Project.find(params[:id])
+  end
+
   def new
     @project.rewards.build
   end
@@ -17,10 +21,10 @@ class ProjectsController < ApplicationController
     else
       render :new
     end
-  end
+   end
 
   private
   def project_params
-    params.require(:project).permit(:title, :description, rewards_attributes: [:amount, :description])
+    params.require(:project).permit(:title, :description, :image, rewards_attributes: [:amount, :description])
   end
 end

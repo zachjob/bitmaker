@@ -29,6 +29,9 @@ gem 'spring',        group: :development
 gem "cocoon"
 gem 'sorcery'
 gem 'cancancan', '~> 1.8'
+gem 'carrierwave'
+gem 'rmagick', :require => 'RMagick'
+gem 'acts-as-taggable-on'
 
 # Use unicorn as the app server
 # gem 'unicorn'
