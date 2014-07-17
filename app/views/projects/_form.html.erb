@@ -9,10 +9,14 @@
     <%= f.text_field :description %>
   </div>
 
-  <p>Rewards</p>
+  <div>
   <%= f.fields_for :rewards do |r| %>
     <%= render 'reward_fields', :f => r %>
   <% end %>
-  <%= link_to_add_association 'add reward', f, :rewards %>
+  </div>
+
+  <div>
+    <%= link_to_add_association 'add reward', f, :rewards %>
+  </div>
   <%= f.submit %>
 <% end %>
