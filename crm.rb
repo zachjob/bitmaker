@@ -36,12 +36,12 @@ class CRM
 
   def display_all_contacts
     # Implement this method
-    # HINT: Make use of the private display_contacts method
+    # HINT: Make use of the display_contacts method
   end
 
   def search_by_attribute
     # Implement this method
-    # HINT: Make use of the private display_contacts method
+    # HINT: Make use of the display_contacts method
   end
 
   def display_contacts(contacts)
