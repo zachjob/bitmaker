@@ -20,7 +20,7 @@ class Contact
     # Implement this method
   end
 
-  def self.search_by_attribute(name, value)
+  def self.find_by(name, value)
     # Implement this method
   end
 

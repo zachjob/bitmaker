@@ -39,14 +39,14 @@ class CRM
     # HINT: Make use of the display_contacts method
   end
 
-  def search_by_attribute
+  def find_by
     # Implement this method
     # HINT: Make use of the display_contacts method
   end
 
   def display_contacts(contacts)
     # Implement this method
-    # HINT: Make use of this method in the display_all_contacts and search_by_attribute methods
+    # HINT: Make use of this method in the display_all_contacts and find_by methods
   end
 
   # Add other methods here, if you need them.
