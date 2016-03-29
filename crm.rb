@@ -3,50 +3,52 @@
 class CRM
 
   def self.run(name)
-    # Implement this method
+    # Fill this in
   end
 
   def initialize(name)
-    # Implement this method
+    # Fill this in
   end
 
   def main_menu
-    # Implement this method
+    # Fill this in
   end
 
   def print_main_menu
-    # Implement this method
+    # Fill this in
   end
 
   def call_option(user_selected)
-    # Implement this method
+    # Fill this in
   end
 
   def add_new_contact
-    # Implement this method
+    # Fill this in
   end
 
   def modify_existing_contact
-    # Implement this method
+    # Fill this in
   end
 
   def delete_contact
-    # Implement this method
+    # Fill this in
   end
 
   def display_all_contacts
-    # Implement this method
+    # Fill this in
     # HINT: Make use of the display_contacts method
   end
 
-  def find_by
-    # Implement this method
+  def search_by_attribute
+    # Fill this in
     # HINT: Make use of the display_contacts method
   end
 
+  # This method should accept as its argument an array of contacts
+  # and display each contact in the contacts array
   def display_contacts(contacts)
-    # Implement this method
-    # HINT: Make use of this method in the display_all_contacts and find_by methods
+    # Fill this in
+    # HINT: Make use of this method in the display_all_contacts and search_by_attribute methods
   end
 
   # Add other methods here, if you need them.

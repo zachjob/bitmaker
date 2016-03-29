@@ -286,7 +286,7 @@ You will need to implement several methods for the menu to call.
   * `modify_existing_contact`
   * `delete_contact`
   * `display_all_contacts`
-  * `find_by`
+  * `search_by_attribute`
 
 The `add_new_contact` method might looks something like this:
 
@@ -315,7 +315,7 @@ Implementation of the following methods are you to you.
 * `modify_existing_contact`
 * `delete_contact`
 * `display_all_contacts`
-* `find_by`
+* `search_by_attribute`
 
 You may find it helpful to implement an extra `display_contacts` method as well, as it can be used in other methods.
 
