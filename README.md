@@ -137,9 +137,9 @@ We can easily add these kinds of methods in to our class by leveraging `attr_acc
 
 These are special Ruby methods that will automatically create getters and setters for you.
 
-* `attr_accessor` will give you both getters and setters, 
+* `attr_accessor` will give you both getters and setters,
 * `attr_reader` gives you just getters, and
-* `attr_writer` gives you just setters. 
+* `attr_writer` gives you just setters.
 
 ```ruby
 class Contact
@@ -152,7 +152,7 @@ end
 ```
 
 After you add `attr_reader` and `attr_accessor`, be sure to remove the `email` and `note=` methods if you actually implemented them in your class. As mentioned before, the getters and setters will be automatically created for you.
- 
+
 ### Storing all new Contacts in a list
 
 We need to store our newly created `Contact` objects somewhere. Since it will be a list of contacts, the best object type to use would be an `Array`, since it represents an ordered list of objects. We'll give the responsibility of keeping track of the list of contacts to **the `Contact` class itself** rather than to any individual contact. To do this, we'll use a **class variable**.
@@ -182,7 +182,7 @@ We have two similar but distinct pieces of functionality to provide. The first i
 
 ### Class methods
 
-So far, all of the methods we've created were **instance methods**. Instance methods can only be called on a specific instance of an object, not the class itself (hence the name!). 
+So far, all of the methods we've created were **instance methods**. Instance methods can only be called on a specific instance of an object, not the class itself (hence the name!).
 
 Class methods are called directly on the class name and are usually reserved for actions that operate on the whole set of objects of that type. Instantiating a new contact and storing it in the list of all contacts affects the collection of all contacts so it's a good use case for a class method. You define a class method by prefixing the name of the method with `self`.
 
@@ -213,7 +213,7 @@ end
 The implementation of the following methods are left up to you:
 
 * `self.all`
-* `self.get`
+* `self.find`
 * `self.search_by_attribute`
 * `self.delete_all`
 * `full_name`
@@ -227,7 +227,7 @@ To help you implement the `Contact` class, we have written a set of simple tests
 In the command line, execute the following:
 
 ```bash
-ruby test/contact_test.rb 
+ruby test/contact_test.rb
 ```
 
 This will run all the tests against your `Contact` class. At this point they will all fail spectacularly, but as you implement each of the missing methods, they should start to pass, one by one.
@@ -276,11 +276,11 @@ def call_option(user_selected)
 end
 ```
 
-*Question:* What should happen when option 6 is selected? Hint: Google 'How to exit a Ruby program'. 
+*Question:* What should happen when option 6 is selected? Hint: Google 'How to exit a Ruby program'.
 
 ### Menu Actions
 
-You will need to implement several methods for the menu to call. 
+You will need to implement several methods for the menu to call.
 
   * `add_new_contact`
   * `modify_existing_contact`
@@ -317,7 +317,7 @@ Implementation of the following methods are you to you.
 * `display_all_contacts`
 * `search_by_attribute`
 
-You may find it helpful to implement an extra `display_contacts` method as well, as it can be used in other methods. 
+You may find it helpful to implement an extra `display_contacts` method as well, as it can be used in other methods.
 
 ### Requiring Files
 
@@ -403,7 +403,7 @@ class CRM
 
   # Can I access name here, outside of the method?
   # No, and this is because the variable only has a local scope.
-  
+
   .
   .
   .
@@ -417,7 +417,7 @@ class CRM
   .
   .
   .
-  
+
   def initialize(name_being_passed_in)
     @name = name_being_passed_in
   end
@@ -425,7 +425,7 @@ class CRM
   # Now I can access name here, outside of the method.
   # It's a Ruby thing, if a variable starts with the symbol @,
   # I can access it outside of the method it was defined in.
-  
+
   .
   .
   .

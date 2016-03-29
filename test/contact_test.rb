@@ -15,8 +15,8 @@ class TestContact < Minitest::Test
     assert_equal [@contact], Contact.all
   end
 
-  def test_get
-    assert_equal @contact, Contact.get(@contact.id)
+  def test_find
+    assert_equal @contact, Contact.find(@contact.id)
   end
 
   def test_search_by_attribute

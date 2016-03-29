@@ -16,7 +16,7 @@ class Contact
     # Implement this method
   end
 
-  def self.get(id)
+  def self.find(id)
     # Implement this method
   end
 
