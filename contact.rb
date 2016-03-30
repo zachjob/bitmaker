@@ -29,12 +29,12 @@ class Contact
   end
 
   # This method should take two string arguments (attribute, value)
-  # It should look for the contact with the attribute corresponding to the value
-  # and return that contact
+  # It should look for any contact with the attribute corresponding to the value
+  # and return an array of those contacts
   #
   # For example:
   #   Contact.find_by('first_name', 'Joe')
-  # should return the first contact with the first_name of Joe.
+  # should return an array of contacts with the first_name of Joe.
   def self.find_by(attribute, value)
     # Fill this in
   end
@@ -65,6 +65,7 @@ class Contact
   # It should delete the current instance of contact from memory
   def delete
     # Fill this in
+    # HINT: Use the Array class' built-in delete_if method -- http://ruby-doc.org/core-2.3.0/Array.html#method-i-delete_if
   end
 
 end
