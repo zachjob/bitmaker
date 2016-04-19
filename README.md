@@ -1,66 +1,53 @@
 # Customer Relationship Manager (CRM) Assignment
 
-The assignment is to implement a Customer Relationship Management (CRM) application.
+The assignment is to implement a customer relationship management (CRM) application.
 
-Please use the below as a guide and not as an exact "how-to" to implement your solution. Use common sense and judgement where appropriate.
-
-Be sure to read over the entire assignment first to get a general feeling and overview of what you have to do, before digging into each part.
+Be sure to start by reading over the entire assignment to get a general overview of what you have to do.
 
 ## User Stories
 
-Software developers use User Stories as a guide to know what to implement. They serve as a list of things that the customer thinks should be in an application. Below we have written out all of the user stories for the CRM. Use these as a to-do list or guide when implementing your solution.
+Software developers use "user stories" as a guide to know what to implement. They serve as descriptions of the interactions that users should be able to have with the application. Below we have written out all of the user stories for the CRM. Use these as a to-do list or guide when making your app.
 
-#### Implement the Contact Class
+* As a user, upon starting the CRM, I am presented with a prompt to **add**, **modify**, **delete**, **display all**, **search by attribute**,  and **exit**.
+* As a user, if I select **add** I am prompted to enter a 'first name', 'last name', 'email' and 'note'.
+* As a user, if I select **modify** I am prompted to enter an id for the contact to be modified.
+* As a user, when I enter the id of the user I want to modify I am then prompted to select which attribute I want to change from the list 'first name', 'last name', 'email', or 'note'.
+* As a user, when I enter the attribute I want to change I am then prompted to enter a new value for the attribute.
+* As a user, if I select **delete** I am then prompted to enter the id of the contact I want to delete.
+* As a user, if I select **display all** I am then shown all of the contacts that exist.
+* As a user, if **search by attribute** is selected, I am prompted to select which attribute I want to search by.
+* As a user, when I choose which attribute I want to search by, I am then prompted to enter the search term.
+* As a user, when I enter the search term I am then presented with a list of all the contacts who match my search.
+* As a user, if I select **exit** I am returned to the command line.
 
-* As a developer, the contact class should have five attributes: `id`, `first_name`, `last_name`, `email` and `note`.
-* As a developer, when a user creates a contact, all attributes can be provided except for `id`.
-* As a developer, when a user creates a new contact, the `id` will be set automatically by your class.
-* As a developer, I am able to modify all attributes except for `id` at any point in the program at a later time.
-* As a developer, the Contact class should maintain a collection of all of the contacts created.
-* As a developer, the Contact class should have a method that returns all of the contacts.
-
-#### Implement the CRM
-
-* As a user, I am presented with a prompt to **add**, **modify**, **delete**, **display all**, **search by attribute**,  and **exit**.
-* As a user, if **add** is selected, I am prompted to give my 'first name', 'last name', 'email' and 'note'.
-* As a user, if **modify** is selected, I am prompted to enter an id for the contact to be modified.
-* As a user, when an id is entered, I am prompted to type `yes` or `no` to confirm my selection.
-* As a user, if `yes` is typed, I am prompted to change 'first name', 'last name', 'email' or 'note' by number. You shouldn't be able to change the 'id'.
-* As a user, when an attribute is entered, I am prompted to enter a new value for the attribute.
-* As a user, if `no` is entered, I am returned back to the main menu.
-* As a user, if **delete** is selected, I am prompted to enter the 'id' of the contact to be deleted.
-* As a user, if **display all** is selected, I am shown all of the contacts that exist with their 'id's.
-* As a user, if **search by attribute** is selected, I am prompted to select an attribute by number, and enter a *value* for that attribute so that I can see all of the matching contacts.
-* As a user, if **exit** is selected, I am exited out of the program and returned to the command line.
-
-Below is a guide on how to get started, how to implement the first few user stories, and some examples of how to work with classes, objects, instance variables and other things you will need to be successful.
+Below is a guide on how to get started, how to implement the first few user stories, and some examples of how to work with classes, objects, instance variables and other things you will need.  However, this guide is not meant to be enough to get you through this assignment from start to finish.  Writing your first multi-class program is challenging and we anticipate that you will get stuck more than once in the process.  Asking for help is encouraged and expected!
 
 ## Creating a Contact class
 
-First, let's get to the crux of this app: How are we going to store all of the information of the contacts?
+First, let's get to the crux of this app: How are we going to store all of the contacts' information?
 
-We could store it into an array, or even better a hash. Something like this:
+We could store it into an array or hash. Something like this:
 
 ```ruby
 contacts = [
   {
-    first_name: 'F. Ross',
-    last_name: 'Johnson',
-    email: 'rossjohnson@hotmail.com',
-    note: 'Such a cool dude.'
+    first_name: 'Betty',
+    last_name: 'Maker',
+    email: 'bettymakes@gmail.com',
+    note: 'Loves Pokemon.'
   },
   {
-    first_name: 'Adrian',
-    last_name: 'Carton de Wiart',
-    email: 'adrianwiart@gmail.com',
-    note: 'Even cooler.'
+    first_name: 'Octo',
+    last_name: 'Cat',
+    email: 'octocat@github.com',
+    note: 'Is it an octopus? Is it a cat?'
   }
 ]
 ```
 
 We can do better though. We could make a class called `Contact`.
 
-What are classes and why do we use them? It's similar to the reason why we use methods – they let us organize our lines of code, otherwise our code would become a mess.
+What are classes and why do we use them? It's similar to the reason why we use methods – they let us organize our code.
 
 Imagine if we had dozens of methods floating around with no structure – classes let us organize these methods into categories.
 
@@ -90,25 +77,25 @@ end
 Now whenever we want to make a new contact, we could do something like this:
 
 ```ruby
-contact = Contact.new('Adrian', 'Carton de Wiart', 'adianwiart@gmail.com', 'Even cooler.')
+contact = Contact.new('Betty', 'Maker', 'bettymakes@gmail.com', 'Loves Pokemon')
 ```
 
 ### Using Getters and Setters
 
-What if after we've created a new contact, we want to find out what its email is, for example, or even modify it?
+What if after we want to find out what the contact's email is after we've created it?  Or change the notes?
 
 ```ruby
 contact = Contact.new(
-  'Adrian',
-  'Carton de Wiart',
-  'adianwiart@gmail.com',
-  'Even cooler.'
+  'Betty',
+  'Maker',
+  'bettymakes@gmail.com',
+  'Loves Pokemon'
 )
 # How can I get contact's email?
-# Then how can I change contact's note to 'Buy him a present.'?
+# Then how can I change contact's note to 'Loves HTML & CSS'?
 ```
 
-What we are in need of are getters and setters inside of the `Contact` class. In this scenario we need to be able to get the email and set the note of a contact.
+We need some attribute 'getters' (or 'readers') and 'setters' (or 'writers') inside the `Contact` class. In this scenario we need to be able to 'get' the email and 'set' the note of a contact.
 
 ```ruby
 class Contact
@@ -129,11 +116,12 @@ class Contact
   .
 end
 
-contact.email # => 'adianwiart@gmail.com'
-contact.note = 'Buy him a present.'
+# now we can do this:
+contact.email # => 'bettymakes@gmail.com'
+contact.note = 'Loves HTML & CSS'
 ```
 
-We can easily add these kinds of methods in to our class by leveraging `attr_accessor`, `attr_reader`, or `attr_writer`.
+Instead of writing out these methods ourselves like we did in the above code snippet, we could just use `attr_accessor`, `attr_reader`, and `attr_writer`.
 
 These are special Ruby methods that will automatically create getters and setters for you.
 
@@ -153,13 +141,30 @@ end
 
 After you add `attr_reader` and `attr_accessor`, be sure to remove the `email` and `note=` methods if you actually implemented them in your class. As mentioned before, the getters and setters will be automatically created for you.
 
+If you don't add getters and setters to your class's attributes then you won't be able to access or update those attributes from the code outside of your class definition:
+
+```ruby
+class Contact
+.
+.
+.
+  #no getters or setters here!
+.
+.
+.
+end
+
+contact.email # this is cause an error!
+contact.note = "new note" # this will also cause an error!
+```
+
 ### Storing all new Contacts in a list
 
-We need to store our newly created `Contact` objects somewhere. Since it will be a list of contacts, the best object type to use would be an `Array`, since it represents an ordered list of objects. We'll give the responsibility of keeping track of the list of contacts to **the `Contact` class itself** rather than to any individual contact. To do this, we'll use a **class variable**.
+We need to store our newly created `Contact` objects somewhere. Since it will be a list of contacts, the best object type to use would be an `Array`, since it represents an ordered list of objects. We want our `Contact` class to keep track of this list, so we'll store it in a **class variable**.
 
 ### Class variables
 
-A class variable is a variable that's declared at the class level and shared across all objects of the same type. In our case, we'll setup a class variable to store the array of all the contacts we create. We'll also create a class variable to ensure that our contacts each have a unique identifier.
+A class variable is a variable that's declared at the class level and shared across all objects of the same type. In our case, we'll setup a class variable to store the array of all the contacts we create. We'll also create a class variable called `@@id` to ensure that our contacts each have a unique identifier.
 
 ```ruby
 class Contact
@@ -178,25 +183,30 @@ These variables will be available to all `Contact` object instances.
 
 ### Add a method to create new Contacts
 
-We have two similar but distinct pieces of functionality to provide. The first is to instantiate a new contact instance and the second is to create a new contact and save it in the list. We want to keep our methods focused and simple so we'll separate the functionality of instantiating an object from the functionality of adding it to our list with a new **class method**.
+Adding a contact to our CRM has two steps: first we need to make ("instantiate") a new contact object and then we need to save it into the list of contacts. We want to keep our methods focused and simple so we'll separate the functionality of instantiating an object from the functionality of adding it to our list with a new **class method**.
 
 ### Class methods
 
-So far, all of the methods we've created were **instance methods**. Instance methods can only be called on a specific instance of an object, not the class itself (hence the name!).
+So far, all of the methods we've created were **instance methods**. Instance methods can only be used by a specific instance of an object, not the class itself (hence the name!).  Put another way, and instance method is an action that an instance knows how to perform.
 
-Class methods are called directly on the class name and are usually reserved for actions that operate on the whole set of objects of that type. Instantiating a new contact and storing it in the list of all contacts affects the collection of all contacts so it's a good use case for a class method. You define a class method by prefixing the name of the method with `self`.
+Class methods are performed by the class itself and are usually reserved for actions that operate on the whole set of objects of that type. Instantiating a new contact and storing it in the list of all contacts affects the collection of all contacts so it's a good use case for a class method. It wouldn't make senese to give that responsibility to any single contact object.  You can call a class method on the name of the class itself, eg. `Contact.super_fun_class_method`. 
 
-Go ahead and implement the `self.create` method as follows:
+You define a class method by prefixing the name of the method with `self`.
+
+What purpose do class methods serve and why would we want to use them? This is a great example of where object oriented design comes into play. Instance methods should involve logic that only make sense being applied to *an instance* of something, such as updating the email of *a specific person*.  A class method involves logic that should be applied on the whole scale of the model, such as cleaning up the email addresses of all the contacts. So the first example would be `some_contact.update_email(email)` and the second `Contact.clean_email_addresses`.
+
+Go ahead and implement the `create` method as follows:
 
 ```ruby
+# remember, we preface the method name with 'self.' if it is a class method
 def self.create(first_name, last_name, email, note)
   new_contact = Contact.new(first_name, last_name, email, note)
   @@contacts << new_contact
-  new_contact
+  return new_contact
 end
 ```
 
-Our Contact class has an initialize method that asks us to set the attributes for a contact instance. We now also need it to ensure that each contact has a unique identifier. We'll have to set this directly on the instance variable in the initialize method since we don't have access to set the id from outside the object (we used `attr_reader` for id, rather than `attr_accessor`).
+Our initialize method should be responsible for setting the first name, last name, email, and note that get passed in from the `create` method.  Additionally, it should set the id of the contact and increment the class `@@id` variable so that the next contact will get a different id.
 
 ```ruby
 def initialize(first_name, last_name, email, note)
@@ -204,7 +214,7 @@ def initialize(first_name, last_name, email, note)
   .
   .
   @id = @@id
-  @@id += 1
+  @@id += 1 # this way the next contact will get a different id
 end
 ```
 
@@ -214,23 +224,11 @@ The implementation of the following methods are left up to you:
 
 * `self.all`
 * `self.find`
-* `self.find_by`
+* `self.search_by`
 * `self.delete_all`
 * `full_name`
 * `update`
 * `delete`
-
-### Testing the Contact Class
-
-To help you implement the `Contact` class, we have written a set of simple tests that you can run against your code.
-
-In the command line, execute the following:
-
-```bash
-ruby test/contact_test.rb
-```
-
-This will run all the tests against your `Contact` class. At this point they will all fail spectacularly, but as you implement each of the missing methods, they should start to pass, one by one.
 
 ## Creating a CRM Class
 
@@ -242,7 +240,7 @@ If you look at our user stories, you'll see we need to be able to prompt the use
 
 ```ruby
 def main_menu
-  while true
+  while true # repeat indefinitely
     print_main_menu
     user_selected = gets.to_i
     call_option(user_selected)
@@ -260,7 +258,7 @@ def print_main_menu
 end
 ```
 
-We have two methods, `print_main_menu` prints out the menu. `main_menu` calls `print_main_menu` and then stores the user input (a number) into a variable called `user_selected`. That variable then gets passed into a method we haven't defined yet called `call_option`.
+We have two methods: `print_main_menu` prints out the menu and `main_menu` calls `print_main_menu` and then stores the user input (a number) into a variable called `user_selected`. That variable then gets passed as an argument into a method we haven't defined yet called `call_option`.
 
 What do you think `call_option` should do? Remember, `user_selected` is going to be a number. What we want to do in this method is call other methods based on the number. We've started off this method for you:
 
@@ -314,10 +312,9 @@ Implementation of the following methods are you to you.
 
 * `modify_existing_contact`
 * `delete_contact`
+* `display_contacts`
 * `display_all_contacts`
 * `search_by_attribute`
-
-You may find it helpful to implement an extra `display_contacts` method as well, as it can be used in other methods.
 
 ### Requiring Files
 
@@ -360,11 +357,9 @@ When we do:
 a_crm_app = CRM.new
 ```
 
-We're creating a *new instance* of the class CRM, and we're saving that new instance into a variable called `a_crm_app`. This is just like having a blueprint of a House, and every time you build a house off the blueprint you will end up creating a new instance of a House.
+We're creating a *new instance* of the class CRM, and we're saving that new instance into a variable called `a_crm_app`. This is just like having a blueprint of a house, and every time you build a house off the blueprint you create a new instance of a house.
 
-Then we can call the methods inside of the class on the instance. `main_menu` and `print_main_menu` are methods inside of the class CRM, and we can call them on `a_crm_app`, which is an instance of the class. For example, `a_crm_app.main_menu`.
-
-Now it shouldn't be too hard to figure out why these kinds of methods called **instance methods**: they are methods we call on instances.
+Then we can **call** the methods that we defined inside the class **on** the instance. `main_menu` and `print_main_menu` are methods inside of the class CRM, and we can call them on `a_crm_app`, which is an instance of the class. For example, `a_crm_app.main_menu` tells `a_crm_app` to perform the `main_menu` action.
 
 ### Passing in Arguments when Initializing
 
@@ -454,52 +449,7 @@ end
 
 You don't have to implement the `what_is_the_name_of_this_CRM_again` method, it was just for fun to show you how the `@name` instance variable can be used.
 
-### Using a class method
 
-Implement the `self.run` method in `crm.rb`:
-
-```ruby
-class CRM
-
-  def self.run(name)
-    crm = CRM.new(name)
-    crm.main_menu
-  end
-  .
-  .
-  .
-end
-```
-
-You might have noticed the word `self` in front of the names of the methods. When this is the case, the method is not an instance method, it is a *class method*. Class methods are called differently from instance methods:
-
-```ruby
-contact = Contact.new(...) # instance method
-CRM.run 'Bitmaker CRM' # class method
-```
-
-If `run` was an instance method, we would have had to call it like this:
-
-```ruby
-an_instance_of_crm = CRM.new('Bitmaker CRM')
-an_instance_of_crm.run
-```
-
-What purpose do class methods serve and why would we want to use them? This is a great example of where Object Oriented Design comes into play. Instance methods should involve logic that only make sense being applied to *an instance* of something, for example setting the email of *a* user, while a class method involves logic that should be applied on the whole scale of the model, for example cleaning up the email addresses of all the users. So the first example would be `user.set_email(email)` and the second `User.clean_email_addresses`.
-
-In this case, our `run` class method takes care of initializing a new CRM instance and running the main menu afterwards, so the only code we need to run outside the class is minimized.
-
-So go ahead and stick the `CRM.run` call at the bottom of the `crm.rb` file.
-
-```ruby
-class CRM
-  .
-  .
-  .
-end
-
-CRM.run 'Bitmaker CRM'
-```
 
 ## Running the Program
 
@@ -509,7 +459,9 @@ Run the CRM program at the command line:
 ruby crm.rb
 ```
 
-If all goes well, you will be presented with the main menu, from where you can then manually try out your program.
+If all goes well, you will be presented with the main menu, from where you can then manually try out your program.  
+
+If nothing happens, maybe you forgot to create an instance of the CRM outside of the class definition, or maybe you forgot to tell that instance to do anything.  Which method should you call in order to start the program?
 
 ## What We've Learned
 
@@ -522,7 +474,7 @@ If all goes well, you will be presented with the main menu, from where you can t
 * Class methods
 * How to "import" a file with `require_relative`
 
-And that is our first practical look at OOP! Please feel free to take your application to the next level by adding your own functionality where you see fit. We'll be letting those of you that want to show off your applications do so when they are due.
+And that is our first practical look at OOP! Please feel free to take your application to the next level by adding your own functionality where you see fit.
 
 ## Tips & Tricks
 
@@ -532,5 +484,4 @@ To enhance the user experience of your program, you can use `puts "\e[H\e[2J"` t
 
 * [Stack Overflow: `attr_accessor`, `attr_reader`, `attr_writer`](http://stackoverflow.com/questions/5046831/why-use-rubys-attr-accessor-attr-reader-and-attr-writer)
 * [Blog - User Stories](http://codesqueeze.com/the-easy-way-to-writing-good-user-stories/)
-* [Object Oriented Design](http://en.wikipedia.org/wiki/Object-oriented_design)
 * [Instance Method versus Class Method – Stack Overflow](http://stackoverflow.com/questions/11655593/ruby-on-rails-should-i-use-class-method-or-instance-method-and-why)
