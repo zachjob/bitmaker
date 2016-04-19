@@ -1,71 +1,58 @@
 class Contact
 
-  # Add any attr_reader and attr_accessors here
+  # This method should initialize the contact's attributes
+  def initialize
 
-  # Add any class variables here
-
-  # This method should take four string arguments (first_name, last_name, email, note),
-  # and initialize this instance of Contact.
-  def initialize(first_name, last_name, email, note)
-    # Fill this in
   end
 
-  # This method should take four string rguments (first_name, last_name, email, note),
-  # and return the newly created contact
-  def self.create(first_name, last_name, email, note)
-    # Fill this in
+  # This method should call the initializer, 
+  # store the newly created contact, and then return it
+  def self.create
+
   end
 
-  # This method takes no arguments
-  # and return all of the existing contacts in array form
+  # This method should return all of the existing contacts
   def self.all
-    # Fill this in
+
   end
 
-  # This method should take an integer id argument
-  # and return the contact that corresponds to the id
-  def self.find(id)
-    # Fill this in
+  # This method should accept an id as an argument
+  # and return the contact who has that id
+  def self.find
+
   end
 
-  # This method should take two string arguments (attribute, value)
-  # It should look for any contact with the attribute corresponding to the value
-  # and return an array of those contacts
-  #
-  # For example:
-  #   Contact.find_by('first_name', 'Joe')
-  # should return an array of contacts with the first_name of Joe.
-  def self.find_by(attribute, value)
-    # Fill this in
+  # This method should allow you to specify 
+  # 1. which of the contact's attributes you want to update
+  # 2. the new value for that attribute
+  # and then make the appropriate change to the contact
+  def update
+
   end
 
-  # This method takes no arguments
-  # It should delete all of the contacts from memory
+  # This method should work similarly to the find method above
+  # but it should allow you to search for contacts using attributes other than id
+  # by specifying both the name of the attribute and the value
+  # eg. searching for 'first_name', 'Betty' should return all contacts named Betty
+  def self.search_by
+
+  end
+
+  # This method should delete all of the contacts
   def self.delete_all
-    # Fill this in
+
   end
 
-  # This method takes no arguments
-  # It should return a string that is composed of the first and last names of the contact.
   def full_name
-    # Fill this in
+
   end
 
-  # This method should take two string arguments (attribute, value)
-  # It should update the current instance of contact with the new value of the attribute
-  #
-  # For example:
-  #   mary.update('email', 'mary_new_email@gmail.com')
-  # should update mary's email address to the new one.
-  def update(attribute, value)
-    # Fill this in
-  end
-
-  # This method takes no arguments
-  # It should delete the current instance of contact from memory
+  # This method should delete the contact
+  # HINT: Check the Array class docs for built-in methods that might be useful here
   def delete
-    # Fill this in
-    # HINT: Use the Array class' built-in delete_if method -- http://ruby-doc.org/core-2.3.0/Array.html#method-i-delete_if
+
   end
 
+  # Feel free to add other methods here, if you need them.
+  
 end
