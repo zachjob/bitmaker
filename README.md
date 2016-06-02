@@ -17,7 +17,7 @@ Software developers use "user stories" as a guide to know what to implement. The
 * As a user, if I select **display all** I am then shown all of the contacts that exist.
 * As a user, if **search by attribute** is selected, I am prompted to select which attribute I want to search by.
 * As a user, when I choose which attribute I want to search by, I am then prompted to enter the search term.
-* As a user, when I enter the search term I am then presented with a list of all the contacts who match my search.
+* As a user, when I enter the search term I am then presented with the first contact who matches my search.
 * As a user, if I select **exit** I am returned to the command line.
 
 Below is a guide on how to get started, how to implement the first few user stories, and some examples of how to work with classes, objects, instance variables and other things you will need.  However, this guide is not meant to be enough to get you through this assignment from start to finish.  Writing your first multi-class program is challenging and we anticipate that you will get stuck more than once in the process.  Asking for help is encouraged and expected!
@@ -224,7 +224,7 @@ The implementation of the following methods are left up to you:
 
 * `self.all`
 * `self.find`
-* `self.search_by`
+* `self.find_by`
 * `self.delete_all`
 * `full_name`
 * `update`

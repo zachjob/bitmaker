@@ -31,10 +31,10 @@ class Contact
   end
 
   # This method should work similarly to the find method above
-  # but it should allow you to search for contacts using attributes other than id
+  # but it should allow you to search for a contact using attributes other than id
   # by specifying both the name of the attribute and the value
-  # eg. searching for 'first_name', 'Betty' should return all contacts named Betty
-  def self.search_by
+  # eg. searching for 'first_name', 'Betty' should return the first contact named Betty
+  def self.find_by
 
   end
 
