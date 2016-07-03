@@ -1,5 +1,5 @@
 # Bikini Bottom Election
-![Bikini Bottom](bikini-bottom.jpg)
+![Bikini Bottom](images/bikini-bottom.jpg)
 
 ## Overview
 Bikini Bottom needs a new mayor. And its up to the brave students of Bitmaker to bring the vote to the people.
@@ -14,7 +14,7 @@ Its up to you to build a wonderful frontend for this API, and talk to it asynchr
 
 Let's get started!
 
-![The](the.jpg)
+![The](images/the.jpg)
 
 ## Part 0 - Setup and Review
 **First**, I recommend installing a browser addon to help you test making requests to the API. You can always use the command line program `curl` to make requests, but it can be a little intimidating.
@@ -39,7 +39,7 @@ The server you'll be interacting with is deployed at:
 If you go to it now in your browser, you'll see some lovely JSON data!
 
 ## Part 1 - Listing Current Results
-![Grasp](grasp.jpg)
+![Grasp](images/grasp.jpg)
 
 As you may have already seen if you went to the API in your browser, our first endpoint, the one that returns election results, lives at **the root of our API**, or `/`.
 
@@ -86,7 +86,7 @@ Let's think about what's being returned. The response contains an array called `
 Ok, so we can make a `GET` request to our server and get a bunch of data back, but what do we do with it?
 
 ## Part 2 - Voting
-![Wish](wish.jpg)
+![Wish](images/wish.jpg)
 
 Now that we've covered listing out the candidates and their vote count, lets add some buttons that'll let us vote for a candidate!
 
