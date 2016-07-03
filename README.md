@@ -25,10 +25,10 @@ A couple great choices are [Postman](https://www.getpostman.com/), which has bot
 
 **Third**, make sure you understand the various parts of a request. Here's a quick review. When you make a request:
 1. There's a **method**: `GET`, `POST`, `PUT`, `PATCH`, or `DELETE`. We'll be using `GET` to retrieve data, and `POST` to submit data.
-1. The **url**, broken down into three parts: `host`, `path`, and `query`
+1. The **url**, broken down into three parts: `host`, `path`, and `query string`
   + The **host** is the part of the url that doesn't change on a website.  If you go to https://alexa.bitmaker.co/weeks/current, the host is `alexa.bitmaker.co`
   + The **path**, or the route we're taking in the website. In https://github.com/bitmakerlabs/bb-election, the path is `/bitmakerlabs/bb-election`
-  + The **query** contains additional parameters not in the path.  In https://www.google.ca/search?q=spongebob, the query is everything after `?`, `q=spongebob`
+  + The **query string** contains additional parameters not in the path.  In https://www.google.ca/search?q=spongebob, the query is everything after `?`, `q=spongebob`
 1. The **body**. In a `GET` request, the body is empty, but in a `POST`, it'll contain data. This data can be in multiple formats, but today it'll all be JSON, like this: `{ "key" : "value" }`
 
 There are other parts as well, but this is what you'll need for this assignment.
@@ -81,5 +81,36 @@ Let's think about what's being returned. The response contains an array called `
 
 **NOTE:** If you're observant, you may have noticed that the ids look a little different than what you're used to seeing. That's because the server uses MongoDB as a database instead of Postgres or SQLite like normal, and the ids are [hex strings](https://en.wikipedia.org/wiki/Hexadecimal) instead of numbers. Don't stress out about this, to the frontend, **it doesn't actually matter** what technology the server is using, it not going to change how we interact with the server, except that our ids will be `Strings` instead `Numbers`.
 
-## Part 2 - Voting
+Ok, so we can make a `GET` request to our server and get a bunch of data back, but what do we do with it?
 
+## Part 2 - Voting
+Now that we've covered listing out the candidates and their vote count, lets add some buttons that'll let us vote for a candidate!
+
+We're gonna be making use of a second endpoint in our API to do this, `POST /vote`. This endpoint requires either an `id` or a `name` be given to it, so that it knows who the vote is going to.  We can insert this info either into the **query string** or the **body** of the request:
+```js
+// THESE TWO ARE THE EQUIVALENT
+  method: POST,
+  url: "https://bb-election-api.herokuapp.com/vote?id=577805c3e30089e66c1ede19",
+  body: {}
+// ============================
+  method: POST,
+  url: "https://bb-election-api.herokuapp.com/vote",
+  body: { "id" : "577805c3e30089e66c1ede19" }
+
+// AND THESE TWO ARE EQUIVALENT
+  method: POST,
+  url: "https://bb-election-api.herokuapp.com/vote?name=Gary",
+  body: {}
+// ============================
+  method: POST,
+  url: "https://bb-election-api.herokuapp.com/vote",
+  body: { "name" : "Gary" }
+```
+
+If you want to see it in action, try sending some requests through one of the addons I mentioned above.
++ If you receive a response with a `200` status, and message of `Ok`, it worked!
++ If you get a `400`, you left out `id` and `name`.
++ If you get a `404`, it means that there's no candidate matching the `id` or `name` you entered.
++ `500` means there's a server error of some kind. Either you encountered a bug, or something crashed on the server.
+
+Alright, let's make it happen. The first thing you'll want to do is add a `<button>` or `<a>` tag to each candidate. Each one should have a `data-id` or `data-name` attribute where we'll store the id or name of the candidate:
