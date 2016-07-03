@@ -39,6 +39,8 @@ The server you'll be interacting with is deployed at:
 If you go to it now in your browser, you'll see some lovely JSON data!
 
 ## Part 1 - Listing Current Results
+![Grasp](grasp.jpg)
+
 As you may have already seen if you went to the API in your browser, our first endpoint, the one that returns election results, lives at **the root of our API**, or `/`.
 
 Making a `GET` request to `/` is going to return a bunch of JSON data to us, that'll look something like this:
@@ -84,6 +86,8 @@ Let's think about what's being returned. The response contains an array called `
 Ok, so we can make a `GET` request to our server and get a bunch of data back, but what do we do with it?
 
 ## Part 2 - Voting
+![Wish](wish.jpg)
+
 Now that we've covered listing out the candidates and their vote count, lets add some buttons that'll let us vote for a candidate!
 
 We're gonna be making use of a second endpoint in our API to do this, `POST /vote`. This endpoint requires either an `id` or a `name` be given to it, so that it knows who the vote is going to.  We can insert this info either into the **query string** or the **body** of the request:
