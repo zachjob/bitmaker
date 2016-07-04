@@ -5,6 +5,7 @@
 Bikini Bottom needs a new mayor. And its up to the brave students of Bitmaker to bring the vote to the people.
 
 This assignment has two parts:
+
 1. Listing out the current election results
 1. Allowing the user to vote.
 
