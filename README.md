@@ -90,8 +90,8 @@ Ok, so we can make a `GET` request to our server and get a bunch of data back, b
 1. In the `election.js` file, build an AJAX request that makes a `GET` request to the root path, and expects a JSON response.
   + *Make sure you're making this request within your `$(document).ready` block*
 1. Add a `<ul>` to your `index.html` file, with an id.  This is what we'll attach our data to.
-1. In the `.done(function(data){})` **callback function** for the AJAX request, parse the JSON with `JSON.parse(data)`, loop over the candidates, and insert a `<li>` element for each candidate into the DOM at our `<ul>` from the last step.
-1. Add a **"Refresh"** button or link to the `index.html` file. Create a `click` event handler for this button in `election.js`. When its clicked, update the vote counts of the various candidates.
+1. In the `.done(function(data){})` **callback function** for the AJAX request, parse the JSON with `JSON.parse(data)`, loop over the candidates, and [append](http://api.jquery.com/append/) a `<li>` element for each candidate into the DOM at our `<ul>` from the last step. You'll want to show the `name` and `votes` count of each candidate.
+1. Add a **"Refresh"** button or link to the `index.html` file. Create a `click` event handler for this button in `election.js`. When its clicked, update the vote counts of the various candidates. You'll have to update the existing `<li>` elements now instead of appending.
 1. **STRETCH:** Since we're making the same AJAX request in two seperate places, when we load the page and when we hit **"Refresh"**, DRY up your code a bit by putting this AJAX call into a function that we can call.
 
 ## Part 2 - Voting
@@ -130,18 +130,19 @@ Alright, let's make it happen.
 
 ### TODO
 
-1. Add a vote `<button>` or `<a>` tag to each candidates `<li>` element.
+1. Add a vote `<button>` or `<a>` tag to each candidate, under the `<li>` element. You'll have to add these buttons with jQuery after your first load of the candidates completes, because the candidates won't be populated until this request completes.
 1. Each one should have a `data-id` or `data-name` attribute where we'll store the id or name of the candidate. Update your code from **Part 1** where you're inserting the `<li>` element to also insert the candidate's id or name into one of these `data-` attributes.
-1. Create a `click` event handler for these buttons. You should only need one event handler for every vote button, you won't need a seperate handler for each button.
+1. Create a `click` event handler for these buttons. A couple tips:
+  + Remember that your page doesn't have vote buttons until after your first load of the candidates, so you can't define your click handler until this request completes. If you try to define your click handler on page load, it won't work.
+  + You should only need one event handler for every vote button, you won't need a seperate handler for each button.
 1. Construct a `POST` request to `https://bb-election-api.herokuapp.com/vote`:
   + This request should be made whenever the `click` event from one of our vote buttons is fired.
-  + Get the `name` or `id` of the candidate who's button was pressed from the `data-` attribute you defined in step 2.
-  + Put this `name` or `id` in either the **query string** or the **body** of the `POST` request we're making. Try both!
-  + Once we click the vote button, and our `POST` request is sent, make sure that we're receiving a `200` status code in response to our AJAX request. You can verify this in the **callback function** of `.done` from the AJAX request. If you're getting back a different status code, something isn't quite right with your request, review the codes listed out above.
+  + Get the `name` or `id` of the candidate who's button was pressed from the `data-` attribute you defined in step 2. You can make use of `$(this).data('id')` or `($this).data('name')` in your click handler for this.
+  + Put the `name` or `id` in either the **query string** or the **body** of the `POST` request we're making. Try both!
+  + Once we click the vote button, and our `POST` request is sent, make sure that we're receiving a `200` (a success) status code in response to our AJAX request. You'll need to chain another function to your AJAX request in addition to `.done`, called `.fail`. `.done` is triggered when the request completes successfully, `.fail` when it does not. If you're getting back a different status code, something isn't quite right with your request, review the codes listed out above.
 1. **STRETCH:**
   + Update the vote counts after a vote
-  + Disable the vote buttons after a vote
-
+  + Disable the vote buttons after a vote (its fine if they reenable after refresh)
 
 ## We're done!
 
