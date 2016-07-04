@@ -10,7 +10,7 @@ This assignment has two parts:
 
 We're providing you with a server to interact with for this assignment. You'll be communicating with it through a JSON API.  The API will give you the current election results, and allow you to submit a vote.
 
-Its up to you to build a wonderful frontend for this API, and talk to it asynchronously. You will be writing exclusively client-side code for this assignment, no Rails app.
+Its up to you to build a wonderful frontend for this API. You will be writing exclusively client-side code for this assignment, no Rails app.
 
 Let's get started!
 
@@ -39,11 +39,11 @@ The server you'll be interacting with is deployed at:
 If you go to it now in your browser, you'll see some lovely JSON data!
 
 ## Part 1 - Listing Current Results
-![Grasp](images/grasp.jpg)
+![List](images/list.png)
 
 As you may have already seen if you went to the API in your browser, our first endpoint, the one that returns election results, lives at **the root of our API**, or `/`.
 
-Making a `GET` request to `/` is going to return a bunch of JSON data to us, that'll look something like this:
+Making a `GET` request to `https://bb-election-api.herokuapp.com/` is going to return a bunch of JSON data to us, that'll look something like this:
 ```json
 {
   "candidates": [
@@ -83,7 +83,15 @@ Let's think about what's being returned. The response contains an array called `
 
 **NOTE:** If you're observant, you may have noticed that the ids look a little different than what you're used to seeing. That's because the server uses MongoDB as a database instead of Postgres or SQLite like normal, and the ids are [hex strings](https://en.wikipedia.org/wiki/Hexadecimal) instead of numbers. Don't stress out about this, to the frontend, **it doesn't actually matter** what technology the server is using, it not going to change how we interact with the server, except that our ids will be `Strings` instead `Numbers`.
 
-Ok, so we can make a `GET` request to our server and get a bunch of data back, but what do we do with it?
+Ok, so we can make a `GET` request to our server and get a bunch of data back, but what do we do with this data?
+
+### TODO
+1. In the `election.js` file, build an AJAX request that makes a `GET` request to the root path, and expects a JSON response.
+  + *Make sure you're making this request within your `$(document).ready` block*
+1. Add a `<ul>` to your `index.html` file, with an id.  This is what we'll attach our data to.
+1. In the `.done(function(data){})` **callback function** for the AJAX request, parse the JSON with `JSON.parse(data)`, loop over the candidates, and insert a `<li>` element for each candidate into the DOM at our `<ul>` from the last step.
+1. Add a **"Refresh"** button or link to the `index.html` file. Create a `click` event handler for this button in `election.js`. When its clicked, update the vote counts of the various candidates.
+1. **STRETCH:** Since we're making the same AJAX request in two seperate places, when we load the page and when we hit **"Refresh"**, DRY up your code a bit by putting this AJAX call into a function that we can call.
 
 ## Part 2 - Voting
 ![Wish](images/wish.jpg)
@@ -117,4 +125,26 @@ If you want to see it in action, try sending some requests through one of the ad
 + If you get a `404`, it means that there's no candidate matching the `id` or `name` you entered.
 + `500` means there's a server error of some kind. Either you encountered a bug, or something crashed on the server.
 
-Alright, let's make it happen. The first thing you'll want to do is add a `<button>` or `<a>` tag to each candidate. Each one should have a `data-id` or `data-name` attribute where we'll store the id or name of the candidate:
+Alright, let's make it happen.
+
+### TODO
+
+1. Add a vote `<button>` or `<a>` tag to each candidates `<li>` element.
+1. Each one should have a `data-id` or `data-name` attribute where we'll store the id or name of the candidate. Update your code from **Part 1** where you're inserting the `<li>` element to also insert the candidate's id or name into one of these `data-` attributes.
+1. Create a `click` event handler for these buttons. You should only need one event handler for every vote button, you won't need a seperate handler for each button.
+1. Construct a `POST` request to `https://bb-election-api.herokuapp.com/vote`:
+  + This request should be made whenever the `click` event from one of our vote buttons is fired.
+  + Get the `name` or `id` of the candidate who's button was pressed from the `data-` attribute you defined in step 2.
+  + Put this `name` or `id` in either the **query string** or the **body** of the `POST` request we're making. Try both!
+  + Once we click the vote button, and our `POST` request is sent, make sure that we're receiving a `200` status code in response to our AJAX request. You can verify this in the **callback function** of `.done` from the AJAX request. If you're getting back a different status code, something isn't quite right with your request, review the codes listed out above.
+1. **STRETCH:**
+  + Update the vote counts after a vote
+  + Disable the vote buttons after a vote
+
+
+## We're done!
+
+Congratulations, you've helped bring Bikini Bottom into the 21st century. A winner is you!
+
+![To-Do](images/to-do.jpg)
+
