@@ -98,5 +98,5 @@ Ok, so we can make a `GET` request to our server and get a bunch of data back, b
 1. **STRETCH:** Since we're making the same AJAX request in two seperate places, when we load the page and when we hit **"Refresh"**, DRY up your code a bit by putting this AJAX call into a function that we can call.
 
 ### To be continued?
-That's it for today. Tomorrow in [Part 2](https://github.com/devonoel/bb-election-part-2) we'll pick up where we left off, and add voting to our app.
+That's it for today. Tomorrow in [Part 2](https://github.com/bitmakerlabs/bb-election-part-2) we'll pick up where we left off, and add voting to our app.
 
