@@ -27,6 +27,7 @@ A couple great choices are [Postman](https://www.getpostman.com/), which has bot
 **Second**, go ahead and fork the repo at https://github.com/bitmakerlabs/bb-election-part-1, where you'll find the skeleton of the frontend you'll be building.
 
 **Third**, make sure you understand the various parts of a request. Here's a quick review. When you make a request:
+
 1. There's a **method**: `GET`, `POST`, `PUT`, `PATCH`, or `DELETE`. We'll be using `GET` to retrieve data, and `POST` to submit data.
 1. The **url**, broken down into three parts: `host`, `path`, and `query string`
   + The **host** is the part of the url that doesn't change on a website.  If you go to https://alexa.bitmaker.co/weeks/current, the host is `alexa.bitmaker.co`
