@@ -32,10 +32,10 @@ A couple great choices are [Postman](https://www.getpostman.com/), which has bot
 1. The **url**, broken down into three parts: `host`, `path`, and `query string`
   + The **host** is the part of the url that doesn't change on a website.  If you go to https://alexa.bitmaker.co/weeks/current, the host is `alexa.bitmaker.co`
   + The **path**, or the route we're taking in the website. In https://github.com/bitmakerlabs/bb-election-part-1, the path is `/bitmakerlabs/bb-election-part-1`
-  + The **query string** contains additional parameters not in the path.  In https://www.google.ca/search?q=spongebob, the query is everything after `?`, `q=spongebob`
+  + The **query string** contains additional parameters not in the path.  In https://www.google.ca/search?q=spongebob, the query is everything after `?`, so `q=spongebob` is the query
 1. The **body**. Sometimes the body is called `data`. In a `GET` request, the body is empty, but in a `POST`, it'll contain data. This data can be in multiple formats, but today it'll all be JSON, like this: `{ "key" : "value" }`
 
-There are other parts as well, but this is what you'll need for this assignment.
+There are other parts to a request as well, but what we laid out above is what you'll need for this assignment.
 
 The server you'll be interacting with is deployed at:
 + https://bb-election-api.herokuapp.com/
@@ -85,11 +85,11 @@ Let's think about what's being returned. The response contains an array called `
 + A `name`
 + A `votes` count
 
-**NOTE:** If you're observant, you may have noticed that the ids look a little different than what you're used to seeing. That's because the server uses MongoDB as a database instead of Postgres or SQLite like normal, and the ids are [hex strings](https://en.wikipedia.org/wiki/Hexadecimal) instead of numbers. Don't stress out about this, to the frontend, **it doesn't actually matter** what technology the server is using, it not going to change how we interact with the server, except that our ids will be `Strings` instead `Numbers`.
+**NOTE:** If you're observant, you may have noticed that the ids look a little different than what you're used to seeing. That's because the server uses MongoDB as a database instead of Postgres or SQLite like normal, and the ids are [hex strings](https://en.wikipedia.org/wiki/Hexadecimal) instead of numbers. Don't stress out about this, to the frontend, **it doesn't actually matter** what technology the server is using, it's not going to change how we interact with the server, except that our ids will be `Strings` instead of `Numbers`.
 
 Ok, so we can make a `GET` request to our server and get a bunch of data back, but what do we do with this data?
 
-### TODO
+### Your TODO
 1. In the `election.js` file, build an AJAX request that makes a `GET` request to the root path, and expects a JSON response.
   + *Make sure you're making this request within your `$(document).ready` block*
 1. Add a `<ul>` to your `index.html` file, with an id.  This is what we'll attach our data to.
