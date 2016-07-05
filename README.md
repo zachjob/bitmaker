@@ -32,7 +32,7 @@ A couple great choices are [Postman](https://www.getpostman.com/), which has bot
   + The **host** is the part of the url that doesn't change on a website.  If you go to https://alexa.bitmaker.co/weeks/current, the host is `alexa.bitmaker.co`
   + The **path**, or the route we're taking in the website. In https://github.com/bitmakerlabs/bb-election-part-1, the path is `/bitmakerlabs/bb-election-part-1`
   + The **query string** contains additional parameters not in the path.  In https://www.google.ca/search?q=spongebob, the query is everything after `?`, `q=spongebob`
-1. The **body**. In a `GET` request, the body is empty, but in a `POST`, it'll contain data. This data can be in multiple formats, but today it'll all be JSON, like this: `{ "key" : "value" }`
+1. The **body**. Sometimes the body is called `data`. In a `GET` request, the body is empty, but in a `POST`, it'll contain data. This data can be in multiple formats, but today it'll all be JSON, like this: `{ "key" : "value" }`
 
 There are other parts as well, but this is what you'll need for this assignment.
 
