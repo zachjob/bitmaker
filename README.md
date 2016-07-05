@@ -16,5 +16,5 @@ Start with small steps:
 2. Add a click listener to the switch and incorporate the changes listed above in 'Your Assignment'
 3. Confirm the switch works
 4. How do we switch the classes back now?
-  1. First try it the easy way by using a Javascript `if` statement
-  2. Then try it without a Javascript `if` statement (and without any Javascript conditional statement), but instead by attaching events to the global scope
+- This is easy if we knew what class was currently on the switch
+- Javascript "IF" will give us an easy way, but there's a way to do this by attaching the events to the global scope
