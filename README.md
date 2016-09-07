@@ -222,7 +222,7 @@ Every statement in JS ends with a semi-colon. If you forget it, things will prob
 
 ## Data Types
 
-There are six data types that are [`primitives`](https://developer.mozilla.org/en-US/docs/Glossary/Primitive) and one Object data type. A primitive data type is a basic building block of the language.
+There are several data types that are [`primitives`](https://developer.mozilla.org/en-US/docs/Glossary/Primitive) and one Object data type. A primitive data type is a basic building block of the language.
 
 - [`Undefined`](https://developer.mozilla.org/en-US/docs/Glossary/Undefined)
 - [`Null`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/null)
@@ -274,7 +274,7 @@ Strings are text. You set them up by putting quotes around them.
 > name
 ```
 
-Unlike in Ruby, there is no difference between using single-quotes and double-quotes. By convention in JavaScript, developers prefer __single-quotes__.
+By convention in JavaScript, developers prefer __single-quotes__ unless __double-quotes__ are needed (i.e. because the string has a __single-quote__ within it).
 
 You can concatenate (join together) strings together using a `+`.
 
@@ -483,9 +483,7 @@ for (<<initializer>>; <<condition>>; <<post iteration>>) {
 }
 ```
 
-Pac-Man just ate a powerPellet and wants to eat all four ghosts!
-
-_(note: the `...` in the code block below will output by your Node REPL when you start your for loop)_
+Pac-Man just ate a power-pellet and wants to eat all four ghosts!
 
 ```javascript
 // pacman-for-loop.js
