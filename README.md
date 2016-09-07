@@ -8,7 +8,7 @@ This assignment will cover programming concepts that you're already familiar wit
 
 We'll be using the 80's iconic classic arcade game _Pac-Man_ for our example code.
 
-Start by forking this repository to use as a shell for all the mini javascript files you'll be creating.
+Start by [forking this repository](https://github.com/bitmakerlabs/wdi-js-fundamentals-pre-lesson-assignment) to use as a shell for all the mini javascript files you'll be creating.
 
 ## A note about conventions
 
