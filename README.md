@@ -92,7 +92,7 @@ $ brew install node
 
 #### Ubuntu Linux
 
-Follow the instructions at [http://www.hostingadvice.com/how-to/install-nodejs-ubuntu-14-04/#node-version-manager] (http://www.hostingadvice.com/how-to/install-nodejs-ubuntu-14-04/#node-version-manager)
+Follow the instructions at http://www.hostingadvice.com/how-to/install-nodejs-ubuntu-14-04/#node-version-manager
 
 ## Verify Node is Installed
 
@@ -117,7 +117,7 @@ $ node
 Try doing a little math with JavaScript code at the node prompt:
 
 ```javascript
-> 8 * 8
+> 8 * 8;
 64
 >
 ```
@@ -127,7 +127,7 @@ The Node REPL is a great place to experiment with your code when you're trying t
 Like `irb` in Ruby, the Node REPL reports back the return value of the function you just ran. Often this will be `undefined` as that's the default return value of all functions.
 
 ```javascript
-> 4 * 10
+> 4 * 10;
 40 // 40 is the return value of 4 * 10
 > var enemy = "Ghost";
 undefined // Assigning a variable returns undefined
@@ -205,7 +205,7 @@ JavaScript:
 
 ```javascript
 // I am a comment!
-var ghost = "Blinky!" // <<-- this variable assignment is not a comment, but everything after the // in this sentence is a comment.
+var ghost = "Blinky!"; // <<-- this variable assignment is not a comment, but everything after the // in this sentence is a comment.
 /*
   Each
   of
@@ -218,21 +218,18 @@ var ghost = "Blinky!" // <<-- this variable assignment is not a comment, but eve
 
 ## Semi-colons
 
-Semi-colons are optional at the end of a line, as long as your next line of code starts on a new line.
+Every statement in JS ends with a semi-colon. If you forget it, things will probably still work, but it's best not to rely on that.
 
 ## Data Types
 
-There are six data types that are `primitives` and one Object data type.
+There are six data types that are [`primitives`](https://developer.mozilla.org/en-US/docs/Glossary/Primitive) and one Object data type. A primitive data type is a basic building block of the language.
 
+- [`Undefined`](https://developer.mozilla.org/en-US/docs/Glossary/Undefined)
+- [`Null`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/null)
 - `Boolean`
-- `Null`
-- `Undefined`
 - `Number`
 - `String`
-- `Symbol` (new in ECMAScript 6)
 - `Object` (not a primitive)
-
-You'll mainly use the _String_, _Number_ and _Boolean_ data types.
 
 ## Dynamic Typing
 
@@ -245,13 +242,13 @@ $ node
 ```
 
 ```javascript
-> var ghost = 'Inky'
+> var ghost = 'Inky';
 > ghost
 'Inky'
-> typeof ghost
+> typeof(ghost);
 'string' // JavaScript automatically made 'ghost' a 'string' data type
-> var numberOfGhosts = 4
-> typeof numberOfGhosts
+> var numberOfGhosts = 4;
+> typeof(numberOfGhosts);
 'number' // JavaScript automatically made 'numberOfGhosts' a 'number' data type
 ```
 
@@ -262,66 +259,48 @@ Notice how we used camel case for the `numberOfGhosts` variable, instead of unde
 Variables can vary, and can be defined using the var keyword.
 
 ```javascript
-> var ghost = 'Inky'
-> console.log(ghost)
-> ghost = 'Blinky' // We're redefining the ghost variable
-> console.log(ghost)
+> var ghost = 'Inky';
+> ghost
+> ghost = 'Blinky'; // We're redefining the ghost variable
+> ghost
 ```
-
-## Constants
-
-__Variables__ can change, but __Constants__ are forever (forever being as long as the JavaScript session is running).
-
-Let's test this:
-
-```shell
-$ node
-```
-
-```javascript
-// First create a ghost constant
-> const NUMBER_OF_GHOSTS = 4
-> const GHOST = 'Inky'
-> console.log(NUMBER_OF_GHOSTS)
-> console.log(GHOST)
-> GHOST = 'Blinky' // this should generate an errors
-> console.log(GHOST)
-```
-
-Notice what happened when you tried to redefine the `GHOST` constant.
-
-The convention in JavaScript is to define constants using ALL_CAPITALS_WITH_UNDERSCORES_SEPARTING_WORDS.
 
 ## Strings
 
 Strings are text. You set them up by putting quotes around them.
 
 ```javascript
-> var name = 'Pac-Man'
-> console.log(name)
+> var name = 'Pac-Man';
+> name
 ```
+
+Unlike in Ruby, there is no difference between using single-quotes and double-quotes. By convention in JavaScript, developers prefer __single-quotes__.
 
 You can concatenate (join together) strings together using a `+`.
 
 ```javascript
-> var num_ghosts = 4
-> var name = 'Pac-Man'
-> var sentence = 'Our hero, ' + name + ', must eat ' + num_ghosts + ' ghosts for maximum points.'
-> console.log(sentence)
+> var num_ghosts = 4;
+> var name = 'Pac-Man';
+> var sentence = 'Our hero, ' + name + ', must eat ' + num_ghosts + ' ghosts for maximum points.';
+> sentence
 ```
 
 Strings have the length property and many useful methods.
 
 ``` javascript
-> var name = 'Pac-Man'
-> name.length
-> name.toUpperCase()
-> name.replace('Man', 'Woman')
+> var name = 'Pac-Man';
+> name.length;
+> name.toUpperCase();
+> name.replace('Man', 'Woman');
 ```
+
+You can learn more here: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String
 
 ## Booleans (true and false)
 
-The following are false:
+Truthiness and falsiness are a bit more complicated in JavaScript than in Ruby.
+
+The following are falsey:
 
 - undefined
 - null
@@ -330,7 +309,7 @@ The following are false:
 - NaN
 - '' (empty string)
 
-Everything else is true.
+Everything else is truthy.
 
 Test this out in the Node REPL:
 
@@ -367,12 +346,12 @@ irb > num_that_looks_like_an_float
 Now let's try a similar experiment in the Node:
 
 ```javascript
-> var numThatLooksLikeAnInteger = 1
-> var numThatLooksLikeAFloat = 1
-> numThatLooksLikeAnInteger.constructor
-[Function: Number]
-> numThatLooksLikeAFloat.constructor
-[Function: Number]
+> var numThatLooksLikeAnInteger = 1;
+> var numThatLooksLikeAFloat = 1;
+> typeof(numThatLooksLikeAnInteger);
+"number"
+> typeof(numThatLooksLikeAFloat);
+"number"
 > numThatLooksLikeAnInteger
 1
 > numThatLooksLikeAFloat
@@ -410,52 +389,25 @@ puts ghosts[3]
 
 ```javascript
 // pacman-arrays.js
-var ghosts = ['Inky', 'Blinky', 'Pinky', 'Clyde']
-console.log('There are ' + ghosts.length + ' ghosts.')
-console.log('Their names are: ')
-console.log(ghosts[0])
-console.log(ghosts[1])
-console.log(ghosts[2])
-console.log(ghosts[3])
+var ghosts = ['Inky', 'Blinky', 'Pinky', 'Clyde'];
+
+console.log('There are ' + ghosts.length + ' ghosts.');
+console.log('Their names are: ');
+console.log(ghosts[0]);
+console.log(ghosts[1]);
+console.log(ghosts[2]);
+console.log(ghosts[3]);
 ```
 
 ```shell
 $ node pacman-arrays.js
 ```
 
-## Maps
-
-Maps in JavaScript can serve for a similar purpose that hashes provide in Ruby.
-
-#### Ruby:
-
-```ruby
-# pacman.rb
-ghosts = {}
-ghosts['Inky'] = 'Cyan'
-ghosts['Blinky'] = 'Red'
-ghosts['Pinky'] = 'Pink'
-ghosts['Clyde'] = 'Orange'
-puts ghosts
-```
-
-#### JavaScript:
-
-```javascript
-// pacman-maps.js
-var ghosts = new Map()
-ghosts.set('Inky', 'Cyan')
-ghosts.set('Blinky', 'Red')
-ghosts.set('Pinky', 'Pink')
-ghosts.set('Clyde', 'Orange')
-console.log(ghosts)
-```
-
-Now run `pacman-maps.js` again from the command line using `node`.
-
 ## Objects
 
 Objects are defined using `objectName = {}` and properties are assigned using dot notation.
+
+A JavaScript Object is kind of quirky; it's halfway between a Ruby Object and a Ruby Hash, as you'll see below.
 
 #### Ruby:
 
@@ -474,19 +426,38 @@ puts inky.inspect
 
 ```javascript
 // pacman-objects-1.js
-var inky = {}
-inky.colour = 'Cyan'
-inky.personality = 'Shadow'
-console.log(inky)
+var inky = {};
+inky.colour = 'Cyan';
+inky.personality = 'Shadow';
+console.log(inky);
 ```
 
 We can also setup an object when we first define it:
 
 ```javascript
 // pacman-objects-2.js
-var ghosts = {inky: 'Cyan', blinky: 'Red', pinky: 'Pink', clyde: 'Orange' }
-console.log(ghosts)
+var ghosts = {inky: 'Cyan', blinky: 'Red', pinky: 'Pink', clyde: 'Orange' };
+console.log(ghosts);
 ```
+
+You can retrieve the values in your object using either dot-notation or square bracket notation.
+
+```javascript
+ghosts.inky; // => 'Cyan'
+ghosts.blinky; // => 'Red'
+
+// same as above
+ghosts['inky'] // => 'Cyan'
+ghosts['blinky'] // => 'Red'
+```
+
+The square bracket notation is used when the property you want to retrieve on the object is stored in a variable:
+
+```javascript
+var ghostName = 'clyde';
+ghosts[ghostName]; // => 'Orange'
+```
+
 
 # Loops
 
@@ -501,96 +472,32 @@ ghosts.each do |ghost|
 end
 ```
 
+Most of the looping and iteration functionality in JavaScript is performed at a lower level than in Ruby.
+
 ## For Loop
 
 Often loops in JavaScript will follow a more conventional approach:
 ```javascript
-for (<<initializer>>, <<condition>>, <<post iteration>>) {
+for (<<initializer>>; <<condition>>; <<post iteration>>) {
   <<statement>>
 }
 ```
 
-Pac-Man just ate an powerPellet and wants to eat all four ghosts!
+Pac-Man just ate a powerPellet and wants to eat all four ghosts!
 
 _(note: the `...` in the code block below will output by your Node REPL when you start your for loop)_
 
 ```javascript
 // pacman-for-loop.js
-var ghosts = ['Inky', 'Blinky', 'Pinky', 'Clyde']
+var ghosts = ['Inky', 'Blinky', 'Pinky', 'Clyde'];
+
 for (var index = 0; index < ghosts.length; index++) {
-  console.log('Pac-Man eats ' + ghosts[index])
+  console.log('Pac-Man eats ' + ghosts[index]);
 }
 ```
 
-## for...each
+That unusual `index++` notation increments the value of `index` by 1. You can also use `index--` to decrement (reduce) the value by 1.
 
-Pac-Man ate all of the ghosts, and now they're coming out of their base one by one as their regular colour. Let Pac-Man know what colour each ghost is.
-
-```javascript
-// pacman-for-each.js
-var ghosts = new Map()
-ghosts.set('Inky', 'Cyan')
-ghosts.set('Blinky', 'Red')
-ghosts.set('Pinky', 'Pink')
-ghosts.set('Clyde', 'Orange')
-ghosts.forEach(function (value, key) {
-  console.log(key + ' is ' + value)
-})
-```
-
-## for...in
-
-Now let's let Pac-Man know each ghost's personality so he knows how to react around them:
-
-```javascript
-// pacman-for-in.js
-var ghosts = {inky: 'shadow', blinky: 'speedy', pinky: 'bashful', clyde: 'pokey' }
-for (ghost in ghosts) {
-  console.log(ghost + ' is ' + ghosts[ghost])
-}
-```
-
-## While loop
-
-As long as we have money, we should play Pac-Man!
-
-```javascript
-// pacman-while.js
-var quarters = 4
-while (quarters >= 1) {
-  console.log('Play a game of Pac-Man')
-  quarters--
-}
-```
-
-## Do..While
-
-If you know you want to loop to execute at least once, you can use `do...while`.
-
-```javascript
-// pacman-do-while.js
-var quarters = 4
-do {
-  console.log('Play a game of Pac-Man')
-  quarters--
-} while (quarters > 0)
-```
-
-## Break
-
-`break` can be used to exit a loop
-
-```javascript
-// pacman-break.js
-var quarters = 4
-while (true) {
-  console.log('Play a game of Pac-Man')
-  quarters--
-  if (quarters <= 0 ) {
-    break
-  }
-}
-```
 
 ## Conditionals
 
@@ -606,6 +513,7 @@ power_pellet_eaten = false
 ghosts = 4
 while true do
   puts "Ghosts remaining: #{ghosts}"
+
   if power_pellet_eaten == false
     puts 'Pac-Man eats the power pellet.'
     power_pellet_eaten = true
@@ -616,6 +524,7 @@ while true do
     break
   end
 end
+
 puts 'Pac-Man goes home after a long day in the maze.'
 ```
 
@@ -623,21 +532,24 @@ puts 'Pac-Man goes home after a long day in the maze.'
 
 ```javascript
 // pacman-if-else.js
-var powerPelletEaten = false
-var ghosts = 4
+var powerPelletEaten = false;
+var ghosts = 4;
+
 while (true) {
-  console.log('Ghosts remaining: ' + ghosts)
+  console.log('Ghosts remaining: ' + ghosts);
+
   if (powerPelletEaten == false) {
-    console.log('Pac-Man eats the power pellet.')
-    powerPelletEaten = true
+    console.log('Pac-Man eats the power pellet.');
+    powerPelletEaten = true;
   } else if (ghosts > 0) {
-    console.log('Pac-Man eats a ghost.')
-    ghosts--
+    console.log('Pac-Man eats a ghost.');
+    ghosts--;
   } else {
-    break
+    break;
   }
 }
-console.log('Pac-Man returns home after a long day in the maze.')
+
+console.log('Pac-Man returns home after a long day in the maze.');
 ```
 
 ### Switch
@@ -668,42 +580,53 @@ puts "#{ghost} is the colour #{colour}"
 // pacman-switch.js
 var ghost = 'Blinky'
 switch (ghost) {
-case 'Inky':
-  colour = 'Cyan'
-  break
-case 'Blinky':
-  colour = 'Red'
-  break
-case 'Pinky':
-  colour = 'Pink'
-  break
-case 'Clyde':
-  colour = 'Orange'
-  break
+  case 'Inky':
+    colour = 'Cyan'
+    break
+  case 'Blinky':
+    colour = 'Red'
+    break
+  case 'Pinky':
+    colour = 'Pink'
+    break
+  case 'Clyde':
+    colour = 'Orange'
+    break
 }
 console.log(ghost + ' is the colour ' + colour)
 ```
 
 ## Functions
 
-Functions are similar to `methods` in Ruby, but they are also more powerful, and less often attached to a class.
+Functions are similar to `methods` in Ruby, but they are also more powerful. Technically speaking, the difference between a function and a method is that functions stand alone, but methods are behaviours of an object.
 
-### Declaring a Function
+JavaScript has __first-order functions__. This means you can define functions on their own (without an object), you can store a function in a variable and you can provide a function as an argument to a different function!
+
+### Defining a Function
 
 #### Ruby:
 
 ```ruby
 # pacman.rb
 def eat_dot
-  @score += 10
+  puts "MUNCH!"
 end
 ```
 
 ##### JavaScript:
 
+There are two main ways to define functions in JavaScript:
+
 ```javascript
+// Named function
 function eatDot() {
-  score += 10
+  console.log("MUNCH!");
+}
+
+// Anonymous function
+// Here we assign the function to a variable instead of giving it a name directly
+var eatDot = function() {
+  console.log("MUNCH!");
 }
 ```
 
@@ -714,40 +637,29 @@ Note that you shouldn't actually see anything yet if you typed that in -- that's
 Functions are called by putting `()` after the function name. Let's try this out in Node REPL.
 
 ```javascript
-> var score = 0
 > function eatDot() {
-    score += 10
+    console.log("MUNCH!");
   }
-> score
-0
-> eatDot()
-> score
-10
-> eatDot()
-> score
-20
+> eatDot();
+MUNCH!
 ```
 
 Let's try calling the function without the brackets:
 
 ```javascript
-> score
-20
 > eatDot
 [Function: eatDot] // eatDot without () returns the actual function, but doesn't execute it
-> score
-20 // score has remained the same
 ```
 
 We can see evidence of trying to call the function without brackets by testing it out with the built in JavaScript String data type:
 
 ```javascript
 > var hero = 'Pac-Man'
-> hero.toUpperCase
+> hero.toUpperCase;
 [Function: toUpperCase] // no (), so we didn't call this function
-> hero.toUpperCase()
+> hero.toUpperCase();
 'PAC-MAN' // now we have (), so we did call this function
-> hero.length
+> hero.length;
 7 // length returned 7, the number of characters in 'Pac-Man', because length is a property of the String type, not a function of the String type
 ```
 
@@ -756,17 +668,17 @@ We can see evidence of trying to call the function without brackets by testing i
 Often you'll pass parameters into the function, in which case you put the parameters between the brackets. Let's create a function to keep track of high scores.
 
 ```javascript
-> var highScores = []
-> function addHighScore(playerInitials, score) {
-    var record = { player: playerInitials, score: score }
-    highScores.push(record) // add record to array
+> var highScores = [];
+> function addHighScore(highScoreList, playerInitials, score) {
+    var record = { player: playerInitials, score: score };
+    highScoreList.push(record); // add record to array
   }
 > highScores
 [] // empty array to start
-> addHighScore('SDL', 2000)
+> addHighScore(highScores, 'SDL', 2000);
 > highScores
 [ { player: 'SDL', score: 2000 } ]
-> addHighScore('JSL', 10000)
+> addHighScore(highScores, 'JSL', 10000);
 > highScores
 [ { player: 'SDL', score: 2000 },
   { player: 'JSL', score: 10000 } ]
@@ -783,53 +695,30 @@ Let's have Pac-Man earn some points:
 function addScore(currentScore, eaten) {
   switch (eaten) {
   case 'dot':
-    scoreToAdd = 10
-    break
+    scoreToAdd = 10;
+    break;
   case 'powerPellet':
-    scoreToAdd = 50
-    break
+    scoreToAdd = 50;
+    break;
   case 'firstGhost':
-    scoreToAdd = 200
-    break
+    scoreToAdd = 200;
+    break;
   case 'secondGhost':
-    scoreToAdd = 400
-    break
+    scoreToAdd = 400;
+    break;
   }
-  return currentScore + scoreToAdd
+
+  return currentScore + scoreToAdd;
 }
-var score = 0
 
-score = addScore(score, 'dot')
-score = addScore(score, 'dot')
-score = addScore(score, 'dot')
-score = addScore(score, 'powerPellet')
-score = addScore(score, 'firstGhost')
-console.log('Your score: ' + score)
-```
+var score = 0;
 
-## Scope
-
-I haven't told you this yet, because you generally shouldn't do this, but I feel you should know about it. You can declare a variable without the var keyword. This creates a __global variable__ accessible to the entire program. Globals are frowned upon, but I thought I should mention it in case you inadvertently create a global and you're not sure what just happened.
-
-```JavaScript
-function scoreDefiner() {
-  var localScore = 100
-  globalScore = 200
-  console.log('Scores have been defined.')
-}
-scoreDefiner()
-globalScore
-localScore // should return an error
- ```
-
-Variables defined outside of functions are accessible within the function.
-
-```JavaScript
-var localScore = 300
-function scoreCheck() {
-  console.log('Your score is ' + localScore)
-}
-scoreCheck()
+score = addScore(score, 'dot');
+score = addScore(score, 'dot');
+score = addScore(score, 'dot');
+score = addScore(score, 'powerPellet');
+score = addScore(score, 'firstGhost');
+console.log('Your score: ' + score);
 ```
 
 # Game Over
