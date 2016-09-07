@@ -226,14 +226,14 @@ Display the remaining dots left, similar to how you display the remaining Power-
 
 There are 256 levels. Add the appropriate fruits. Make the fruit option randomly appear in the menu after the player eats some dots.
 
-Level 1: Cherry / 100 points
-Level 2: Strawberry / 300 points
-Level 3 & 4: Orange / 500 points
-Level 5 & 6: Apple / 700 points
-Level 7 & 8: Pineapple / 1,000 points
-Level 9 & 10: Galaxian Spaceship / 2,000 points
-Level 11 & 12: Bell / 3,000 points
-Level 13+: Key / 5,000
+- Level 1: Cherry / 100 points
+- Level 2: Strawberry / 300 points
+- Level 3 & 4: Orange / 500 points
+- Level 5 & 6: Apple / 700 points
+- Level 7 & 8: Pineapple / 1,000 points
+- Level 9 & 10: Galaxian Spaceship / 2,000 points
+- Level 11 & 12: Bell / 3,000 points
+- Level 13+: Key / 5,000
 
 # Stretch Goal 3: High Score
 
