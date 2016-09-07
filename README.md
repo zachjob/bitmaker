@@ -39,12 +39,12 @@ This game loop processes whatever key is entered, and then draws the screen agai
 
 # Step 3: Add some ghosts!
 
-Add Pac-Man's enemies -- the evil Inky, Blinky, Pinky and Clyde. Set them up as objects. Here are their colours are personalities:
+Add Pac-Man's enemies -- the evil Inky, Blinky, Pinky and Clyde. Set them up as objects. Here are their colours and personalities:
 
 - Inky: Red, Shadow
 - Blinky: Cyan, Speedy
 - Pinky: Pink, Bashful
-- Cyan: Orange, Pokey
+- Clyde: Orange, Pokey
 
 I'll help you with the first one:
 
