@@ -1,4 +1,4 @@
-# CSS Positioning Lab
+# Creating Layouts with Display and Float
 
 ## Introduction
 
