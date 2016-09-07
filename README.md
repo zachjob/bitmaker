@@ -41,12 +41,12 @@ This game loop processes whatever key is entered, and then draws the screen agai
 
 Add Pac-Man's enemies -- the evil Inky, Blinky, Pinky and Clyde. Set them up as objects.
 
-Here are their names, colours, and character traits, and menu options:
+Here are their names, colours, character traits, and menu options:
 
 - Inky: Red, Shadow, 1
 - Blinky: Cyan, Speedy, 2
 - Pinky: Pink, Bashful, 3
-- Cyan: Orange, Pokey, 4
+- Clyde: Orange, Pokey, 4
 
 I'll help you with the first one:
 
