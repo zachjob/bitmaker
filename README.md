@@ -1,10 +1,10 @@
 # Pac-Man JS
 
-In this assignment, you'll be creating Pac-Man in the terminal. We've provided a barebones JavaScript program.
+In this assignment, you'll be creating Pac-Man in the terminal. We've provided a barebones JavaScript program to help you get started.
 
-Currently it:
+Currently `pacman.js` has the following functionality:
 
-- keeps score
+- keep a score
 - displays a screen with stats, menu, and prompt
 - processes two commands:
   - (d) eat dot
@@ -12,7 +12,7 @@ Currently it:
 
 Your job will be to bring the game to life!
 
-Before you begin, fork this repository.
+Before you begin, [fork this repository](https://github.com/bitmakerlabs/wdi-pacman-js).
 
 # Step 1: Play the game
 
@@ -37,31 +37,44 @@ stdin.on('data', function(key) {
 
 This game loop processes whatever key is entered, and then draws the screen again.
 
-# Step 3: Add some ghosts!
+# Step 3a: Add Ghosts!
 
-Add Pac-Man's enemies -- the evil Inky, Blinky, Pinky and Clyde. Set them up as objects. Here are their colours are personalities:
+Add Pac-Man's enemies -- the evil Inky, Blinky, Pinky and Clyde. Set them up as objects.
 
-- Inky: Red, Shadow
-- Blinky: Cyan, Speedy
-- Pinky: Pink, Bashful
-- Cyan: Orange, Pokey
+Here are their names, colours, and character traits, and menu options:
+
+- Inky: Red, Shadow, 1
+- Blinky: Cyan, Speedy, 2
+- Pinky: Pink, Bashful, 3
+- Cyan: Orange, Pokey, 4
 
 I'll help you with the first one:
 
 ```javascript
-var inky = { name: 'Inky', colour: 'Red', character: 'Shadow', edible: false };
+var inky = {
+  name: 'Inky',
+  menu_option: '1',
+  color: 'Red',
+  character: 'Shadow',
+  edible: false
+};
 ```
-Now you setup the other three ghosts.
+Setup all four ghosts in the `// Define your ghosts here` section in `pacman.js`.
 
 Run and play `pacman.js` again. You shouldn't notice anything different -- we've just setup the ghosts as variables, but we aren't doing anything with them yet.
 
 Commit your code to github.
 
-For the remaining steps, be sure to play and commit each time you add a new step.
+For the remaining steps, each time you add new code, be sure to play the game and ensure it's working, and then commit your code.
 
-# Step 4: Add Ghosts to Menu
+# Step 3b: Create the Ghosts Array
 
-Add the option to eat the ghosts to the menu. Review how the 'eat dot' and 'quit' options were implemented to figure out how you should add items to the menu. You may want to put each ghost under a number (i.e. (1) eats Inky, (2) eats Blinky, etc.). Put the processing of each menu option in its own function so you're switch statement doesn't become too cluttered.
+Create an array called `ghosts` and store each ghost object inside of it.
+
+
+# Step 3c: Add Ghosts to the Menu
+
+Add the options to eat the ghosts to the menu. Review how the __eat dot__ and __quit__ options were implemented to figure out how you should add items to the menu. Use the array of ghosts you setup in the previous step to cycle through and display each ghost.
 
 Your game should look similar to this now:
 
@@ -80,16 +93,24 @@ Select Option:
 Waka Waka :v
 ```
 
+# Step 3d: Process Eating an Inedible Ghost
 
-# Step 5: Process Eating a Ghost
+Because the ghosts aren't edible yet (i.e. the `edible` property is set to false), Pac-Man should lose a life if he tries to eat one of the ghosts.
 
-Because the ghosts aren't edible yet, Pac-Man should lose a life if he tries to eat one of the ghosts. Decrease the `life` variable by one each time Pac-Man tries to eat a ghost.
+- add a function called `eatGhost` that accepts a ghost as an argument
+- the `eatGhost` should check to see if a ghost is edible. If it's not, Pac-Man should lose a life
+- include a quick sentence that says the name and colour of the ghost kills Pac-Man (similar to how it quickly flashes `chomp` on the screen when you eat a dot)
 
-If Pac-Man's lives go below 0, you should exit the game.
+# Step 4: Process Game Over
 
-# Step 6: Power-Pellets
+If Pac-Man's lives go below 0, it's __Game Over__ and you should exit the game. Create a function that checks for this every time Pac-Man loses a life, and calls `process.exit();` if necessary.
 
-That wasn't very fair of us -- we added ghosts, but we never gave Pac-Man a fighting chance! Add the ability for Pac-Man to eat a __Power-Pellet__. There should be four power-pellets altogether. Display how many power-pellets are left underneath the stats area (where Score and Lives are displayed).
+# Step 5a: Power-Pellets
+
+That wasn't very fair of us -- we added ghosts, but we never gave Pac-Man a fighting chance! Add the ability for Pac-Man to eat a __Power-Pellet__. There should be four power-pellets altogether.
+
+- add a powerPellets variable, similar to how `score` and `lives` are setup. It should start off as `4`.
+- display how many power-pellets are left underneath the stats area (where Score and Lives are displayed).
 
 Your game should look similar to this now:
 
@@ -110,21 +131,64 @@ Select Option:
 Waka Waka :v
 ```
 
-# Step 7: Process Power-Pellets
+# Step 5b: Add Eat Power-Pellet to the Menu
 
-Pac-Man scores 50 points each time he eats a Power-Pellet and we should switch all the ghosts `edible` property to true. We should also reduce the number of Power-Pellets left by one.
+Add the option to eat a power-pellet to the menu.
 
-# Step 8: Power-Pellet Check
+Your game should look similar to this now:
 
-Ensure that Pac-Man can't eat Power-Pellets if there are none left.
+```
+Score: 0     Lives: 2
 
-# Step 9: Eat Edible Ghosts
+Power-Pellets: 4
 
-Now that we have Power-Pellets, let's re-visit the the process eat ghost function.
+Select Option:
 
-If a ghost is edible, Pac-Man scores points! And then switch it back to non-edible, as it will regenerate again to its offensive form.
+(d) Eat Dot
+(p) Eat Power-Pellet
+(1) Eat Inky
+(2) Eat Blinky
+(3) Eat Pinky
+(4) Eat Clyde
+(q) Quit
 
-# Step 10: Adjust Ghosts in Menu
+Waka Waka :v
+```
+
+# Step 5c: Process Power-Pellets
+
+Create an `eatPowerPellet` function that's executed when the `p` key is entered. It should:
+
+- increase Pac-Man's score by 50 points
+- change all the ghost's `edible` property to true
+- reduce the number of Power-Pellets remaining
+
+# Step 5d: Power-Pellet Check
+
+Ensure that Pac-Man can't eat a Power-Pellet if there are none left:
+
+- remove the __(p) Eat Power-Pellet__ option from the menu
+
+- ensure you don't allow the user to enter (p) to try to eat a Power-Pellet. You could put a warning in saying __No Power-Pellets left!__ similar to how the warning __Invalid Command!__ is implemented
+
+# Step 6a: Edible Ghosts
+
+Now that we have Power-Pellets, let's re-visit the process eat a ghost function. This is what happens if Pac-Man eats an edible ghost:
+
+- say a quick sentence about the ghost just eaten and its personality (similar to how it flashes __Chomp!__ when Pac-Man eats a dot)
+
+- Pac-Man's score increases:
+
+  - The first ghost is worth 200 points
+  - The second ghost is worth 400 points
+  - The third ghost is worth 800 points
+  - The fourth ghost is worth 1,600 points
+
+  So if Pac-Man eats all the ghosts, he'll score 3,000 points in total.
+
+- the ghost's edible property changes to false (as it regenerates in its offensive form)
+
+# Step 6b: Adjust Ghosts in Menu
 
 Update the eat ghost options in the menu to display whether a ghost is edible or inedible.
 
@@ -138,6 +202,7 @@ Power-Pellets: 3
 Select Option:
 
 (d) Eat Dot
+(p) Eat Power-Pellet
 (1) Eat Inky (edible)
 (2) Eat Blinky (inedible)
 (3) Eat Pinky (edible)
@@ -146,20 +211,6 @@ Select Option:
 
 Waka Waka :v
 ```
-
-# Step 10: Score Ghosts
-
-With each Power-Pellet, Pac-Man scores eaten ghosts like so:
-
-The first ghost is worth 200 points
-The second ghost is worth 400 points
-The third ghost is worth 800 points
-The fourth ghost is worth 1,600 points
-
-So if Pac-Man eats all the ghosts, he'll score 3000 points in total.
-
-Update the game to reflect the scoring.
-
 
 # Stretch Goal 1: Keep track of dots
 
@@ -195,4 +246,4 @@ Add a high score stat on the top of the screen.
 
 Remember to submit your assignment after you've finished.
 
-Now travel back in time, visit an arcade, and see if you get the highst-score possible (3,333,360 points!) before Billy Mitchell scores it on July 4, 1999.
+Now that you're all done, go outside and find the nearest time-machine, travel back to a 1980s arcade, and see if you can get the highest-score possible (3,333,360 points!).

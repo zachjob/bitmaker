@@ -1,13 +1,8 @@
-// Setup Input and Output to work nicely in our Terminal
-var stdin = process.stdin;
-var stdout = process.stdout;
-stdin.setRawMode(true);
-stdin.resume();
-stdin.setEncoding('utf8');
-
 // Setup initial game stats
 var score = 0;
 var lives = 2;
+
+// Define your ghosts here
 
 // Draw the screen functionality
 function drawScreen() {
@@ -24,18 +19,18 @@ function clearScreen() {
 }
 
 function displayStats() {
-  stdout.write('Score: ' + score)
-  stdout.write('     Lives: ' + lives)
+  console.log('Score: ' + score + '     Lives: ' + lives);
 }
 
 function displayMenu() {
-  console.log('\n\nSelect Option:\n');
-  console.log('(d) Eat Dot')
-  console.log('(q) Quit')
+  console.log('\n\nSelect Option:\n');  // each \n creates a new line
+  console.log('(d) Eat Dot');
+  console.log('(q) Quit');
 }
 
 function displayPrompt() {
-  stdout.write('\nWaka Waka :v '); // :v is the Pac-Man emoji.
+  // process.stdout.write is similar to console.log except it doesn't add a new line after the text
+  process.stdout.write('\nWaka Waka :v '); // :v is the Pac-Man emoji.
 }
 
 // Menu Options
@@ -47,7 +42,7 @@ function eatDot() {
 // Process Player's Input
 function processInput(key) {
   switch(key) {
-    case '\u0003':
+    case '\u0003': // This makes it so CTRL-C will quit the program
     case 'q':
       process.exit();
       break;
@@ -59,12 +54,22 @@ function processInput(key) {
   }
 }
 
+
+// YOU PROBABLY DON'T WANT TO CHANGE CODE BELOW THIS LINE
+//
+
+// Setup Input and Output to work nicely in our Terminal
+var stdin = process.stdin;
+stdin.setRawMode(true);
+stdin.resume();
+stdin.setEncoding('utf8');
+
 // Draw screen when game first starts
 drawScreen();
 
 // Process input and draw screen each time player enters a key
 stdin.on('data', function(key) {
-  stdout.write(key);
+  process.stdout.write(key);
   processInput(key);
   setTimeout(drawScreen, 300);
 });
