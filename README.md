@@ -177,14 +177,7 @@ Now that we have Power-Pellets, let's re-visit the process eat a ghost function.
 
 - say a quick sentence about the ghost just eaten and its personality (similar to how it flashes __Chomp!__ when Pac-Man eats a dot)
 
-- Pac-Man's score increases:
-
-  - The first ghost is worth 200 points
-  - The second ghost is worth 400 points
-  - The third ghost is worth 800 points
-  - The fourth ghost is worth 1,600 points
-
-  So if Pac-Man eats all the ghosts, he'll score 3,000 points in total.
+- Pac-man gains 200 points
 
 - the ghost's edible property changes to false (as it regenerates in its offensive form)
 
