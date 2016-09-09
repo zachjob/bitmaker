@@ -217,7 +217,7 @@ Display the remaining dots left, similar to how you display the remaining Power-
 
 # Stretch Goal 2: Keep track of level and add fruits
 
-After Pac-man has eaten all 4 power pellets and all 240 dots in the maze, he advances to the next level and the dots and pellets are reset.  There are 256 levels. Add the appropriate fruits. Make the fruit option randomly appear in the menu after the player eats some dots.
+After Pac-man has eaten all 4 power pellets and all 240 dots in the maze, he advances to the next level and the dots and pellets are reset.  The ghosts should also be reset to inedible.  There are 256 levels. Add the appropriate fruits. Make the fruit option randomly appear in the menu after the player eats some dots.
 
 - Level 1: Cherry / 100 points
 - Level 2: Strawberry / 300 points
