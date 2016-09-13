@@ -578,22 +578,25 @@ puts "#{ghost} is the colour #{colour}"
 
 ```javascript
 // pacman-switch.js
-var ghost = 'Blinky'
+var ghost = 'Blinky';
+var colour;
+
 switch (ghost) {
   case 'Inky':
-    colour = 'Cyan'
-    break
+    colour = 'Cyan';
+    break;
   case 'Blinky':
-    colour = 'Red'
-    break
+    colour = 'Red';
+    break;
   case 'Pinky':
-    colour = 'Pink'
-    break
+    colour = 'Pink';
+    break;
   case 'Clyde':
-    colour = 'Orange'
-    break
+    colour = 'Orange';
+    break;
 }
-console.log(ghost + ' is the colour ' + colour)
+
+console.log(ghost + ' is the colour ' + colour);
 ```
 
 ## Functions
