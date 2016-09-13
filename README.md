@@ -16,5 +16,6 @@ Start with small steps:
 2. Add a click listener to the switch and incorporate the changes listed above in 'Your Assignment'
 3. Confirm the switch works
 4. How do we switch the classes back now?
-  1. First try it with a regular javascript `if` statement
-  2. Then try it with the jquery`toggleClass` function
+  - use an `if` statement to change the text
+  - use the jquery `toggleClass` function to change the light and dark backgrounds
+  - you should be able to click the switch many times and it should switch back and forth between light and dark modes
