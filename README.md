@@ -94,8 +94,6 @@ Ok, so we can make a `GET` request to our server and get a bunch of data back, b
   + *Make sure you're making this request within your `$(document).ready` block*
 1. Add a `<ul>` to your `index.html` file, with an id.  This is what we'll attach our data to.
 1. In the `.done(function(responseData){})` **callback function** for the AJAX request loop over the candidates in `responseData`, and [append](http://api.jquery.com/append/) a `<li>` element for each candidate into the DOM at our `<ul>` from the last step. You'll want to show the `name` and `votes` count of each candidate.
-1. Add a **"Refresh"** button or link to the `index.html` file. Create a `click` event handler for this button in `election.js`. When it's clicked, update the vote counts of the various candidates. You'll have to update the existing `<li>` elements now instead of appending.
-1. **STRETCH:** Since we're making the same AJAX request in two seperate places, when we load the page and when we hit **"Refresh"**, DRY up your code a bit by putting this AJAX call into a function that we can call.
 
 ### To be continued?
 That's it for today. Tomorrow in [Part 2](https://github.com/bitmakerlabs/bb-election-part-2) we'll pick up where we left off, and add voting to our app.
