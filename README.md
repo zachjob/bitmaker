@@ -39,21 +39,23 @@ This game loop processes whatever key is entered, and then draws the screen agai
 
 # Step 3a: Add Ghosts!
 
-Add Pac-Man's enemies -- the evil Inky, Blinky, Pinky and Clyde. Set them up as objects.
+Add Pac-Man's enemies -- the evil Inky, Blinky, Pinky and Clyde.
 
-Here are their names, colours, character traits, and menu options:
+Here are their menu options, names, colours, and character traits:
 
-- Inky: Red, Shadow, 1
-- Blinky: Cyan, Speedy, 2
-- Pinky: Pink, Bashful, 3
-- Clyde: Orange, Pokey, 4
+- 1, Inky, Red, Shadow
+- 2, Blinky, Cyan, Speedy
+- 3, Pinky, Pink, Bashful
+- 4, Clyde, Orange, Pokey
+
+Eacho ghost should be setup as an object with the traits above, and also an `edible` trait with a starting value of `false`.
 
 I'll help you with the first one:
 
 ```javascript
 var inky = {
-  name: 'Inky',
   menu_option: '1',
+  name: 'Inky',
   color: 'Red',
   character: 'Shadow',
   edible: false
@@ -74,7 +76,7 @@ Create an array called `ghosts` and store each ghost object inside of it.
 
 # Step 3c: Add Ghosts to the Menu
 
-Add the options to eat the ghosts to the menu. Review how the __eat dot__ and __quit__ options were implemented to figure out how you should add items to the menu. Use the array of ghosts you setup in the previous step to cycle through and display each ghost.
+Add the option to eat the ghosts to the menu. Review how the __eat dot__ and __quit__ options were implemented to figure out how you should add more options to the menu. Use the array of ghosts you setup in the previous step to cycle through and display each ghost.
 
 Your game should look similar to this now:
 
@@ -99,7 +101,7 @@ Because the ghosts aren't edible yet (i.e. the `edible` property is set to false
 
 - add a function called `eatGhost` that accepts a ghost as an argument
 - the `eatGhost` should check to see if a ghost is edible. If it's not, Pac-Man should lose a life
-- include a quick sentence that says the name and colour of the ghost kills Pac-Man (similar to how it quickly flashes `chomp` on the screen when you eat a dot)
+- include a quick sentence that says the name and colour of the ghost that kills Pac-Man (similar to how it quickly flashes `chomp` on the screen when you eat a dot)
 
 # Step 4: Process Game Over
 
@@ -177,7 +179,7 @@ Now that we have Power-Pellets, let's re-visit the process eat a ghost function.
 
 - say a quick sentence about the ghost just eaten and its personality (similar to how it flashes __Chomp!__ when Pac-Man eats a dot)
 
-- Pac-man gains 200 points
+- Pac-Man gains 200 points
 
 - the ghost's edible property changes to false (as it regenerates in its offensive form)
 
@@ -205,7 +207,15 @@ Select Option:
 Waka Waka :v
 ```
 
-# Stretch Goal 1: Keep track of dots
+# Game Over
+
+Congratulations! You've won this assignment.
+
+See below for stretch goals or [try winning a game of The World's Biggest Pac-Man](http://worldsbiggestpacman.com/).
+
+Remember to submit your assignment after you've finished.
+
+# Stretch Goal: Keep track of dots
 
 The maze has 240 small dots in total. Add options for Pac-Man to eat:
 
@@ -215,9 +225,20 @@ The maze has 240 small dots in total. Add options for Pac-Man to eat:
 
 Display the remaining dots left, similar to how you display the remaining Power-Pellets. Only display the 'eat 10 dots' and 'eat 100 dots' options if there are enough dots to eat.
 
-# Stretch Goal 2: Keep track of level and add fruits
+# Stretch Goal: Properly score eating ghosts
 
-After Pac-man has eaten all 4 power pellets and all 240 dots in the maze, he advances to the next level and the dots and pellets are reset.  The ghosts should also be reset to inedible.  There are 256 levels. Add the appropriate fruits. Make the fruit option randomly appear in the menu after the player eats some dots.
+The main assignment only had you scoring 200 points per ghost eaten, but the real Pac-Man game actually scores more points each time he eats a ghost:
+
+1. 200 points for the first ghost eaten
+2. 400 points for the second ghost eaten
+3. 800 points for the third ghost eaten
+4. 1,600 points for the fourth ghost eaten
+
+Adjust your program to properly reflect the ghost eating scoring.
+
+# Stretch Goal: Keep track of level and add fruits
+
+After Pac-Man has eaten all 4 power pellets and all 240 dots in the maze, he advances to the next level and the dots and pellets are reset.  The ghosts should also be reset to inedible.  There are 256 levels. Add the appropriate fruits. Make the fruit option randomly appear in the menu after the player eats some dots.
 
 - Level 1: Cherry / 100 points
 - Level 2: Strawberry / 300 points
@@ -228,15 +249,22 @@ After Pac-man has eaten all 4 power pellets and all 240 dots in the maze, he adv
 - Level 11 & 12: Bell / 3,000 points
 - Level 13+: Key / 5,000
 
-# Stretch Goal 3: High Score
+# Stretch Goal: High Score
 
 Add a high score stat on the top of the screen.
 
 - figure out how to let the user input 3 characters for their initials
 - save the high score to disk so that when you play Pac-Man again, it will read the high score and display it
 
+# Stretch Goal: Eat all four ghosts first before eating a new power pellet
+
+Prevent Pac-Man from eating a power-pellet if one has already been consumed and there are edible ghosts remaining.
+
+# Stretch Goal: Make Pac-Man Real-Time
+
+Integrate `setTimeout()` into `eatPowerPellet()` so that all ghosts return to `edible: false` after 10 seconds.
+
 # Submit Your Work
 
 Remember to submit your assignment after you've finished.
 
-Now that you're all done, go outside and find the nearest time-machine, travel back to a 1980s arcade, and see if you can get the highest-score possible (3,333,360 points!).
