@@ -56,7 +56,7 @@ I'll help you with the first one:
 var inky = {
   menu_option: '1',
   name: 'Inky',
-  color: 'Red',
+  colour: 'Red',
   character: 'Shadow',
   edible: false
 };
