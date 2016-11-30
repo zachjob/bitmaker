@@ -8,3 +8,9 @@
 <% if @project.image.present? %>
   <%= image_tag @project.image.thumb.url %>
 <% end %>
+
+<h2>Rewards</h2>
+<% @project.rewards.each do |reward| %> 
+  <p><%= number_to_currency(reward.dollar_amount) %></p>
+  <p><%= reward.description %></p>
+<% end %>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140717150139) do
+ActiveRecord::Schema.define(version: 20161130010955) do
 
   create_table "projects", force: :cascade do |t|
     t.string   "title"
@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 20140717150139) do
   create_table "rewards", force: :cascade do |t|
     t.integer  "project_id"
     t.string   "description"
-    t.integer  "amount"
+    t.integer  "amount_in_cents"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
