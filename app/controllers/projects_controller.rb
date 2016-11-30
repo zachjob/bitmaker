@@ -1,8 +1,8 @@
 class ProjectsController < ApplicationController
   before_action :require_login, only: [:new, :create]
-  load_and_authorize_resource
 
   def index
+    @projects = Project.all
     @projects = @projects.order(:end_date)
   end
 
@@ -11,6 +11,7 @@ class ProjectsController < ApplicationController
   end
 
   def new
+    @project = Project.new
     @project.rewards.build
   end
 
@@ -26,6 +27,6 @@ class ProjectsController < ApplicationController
 
   private
   def project_params
-    params.require(:project).permit(:title, :description, :goal, :start_date, :end_date, :image, :image_cache, :remove_image, rewards_attributes: [:amount, :description, :image, :image_cache, :remove_image])
+    params.require(:project).permit(:title, :description, :goal, :start_date, :end_date, :image, rewards_attributes: [:dollar_amount, :description])
   end
 end

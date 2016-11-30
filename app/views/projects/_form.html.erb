@@ -16,15 +16,7 @@
 
   <div>
     <%= f.label :image %>
-    <%= f.file_field :image %>
-    <%= f.hidden_field :image_cache %>
-  </div>
-
-  <div>
-    <%= f.label :remove_image do %>
-      <%= f.check_box :remove_image %>
-      Remove image 
-    <% end %>
+    <%= f.text_field :image %>
   </div>
 
   <div>
@@ -38,10 +30,6 @@
   </div>
 
   <p>Rewards</p>
-  <div>
-    <%= f.label :image %>
-    <%= f.file_field :image %>
-  <div>
 
   <%= f.fields_for :rewards do |r| %>
     <%= render 'reward_fields', :f => r %>

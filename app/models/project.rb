@@ -5,5 +5,4 @@ class Project < ActiveRecord::Base
   accepts_nested_attributes_for :rewards
   validates_presence_of :title, :description, :goal, :start_date, :end_date
 
-  mount_uploader :image, ImageUploader
 end
