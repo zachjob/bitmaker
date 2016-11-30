@@ -5,15 +5,25 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+Pledge.destroy_all
+Reward.destroy_all
+User.destroy_all
+Project.destroy_all
 
 25.times do
-  Project.create!(
+  p = Project.create!(
     title: Faker::App.name,
     description: Faker::Lorem.paragraph,
     goal: rand(100000),
     start_date: Time.now.utc - rand(60).days,
     end_date: Time.now.utc + rand(10).days
   )
+ 5.times do
+   p.rewards.create!(
+     description: Faker::Superhero.power,
+     dollar_amount: rand(100),
+   )
+ end
 end
 
 5.times do
@@ -23,5 +33,14 @@ end
     email: Faker::Internet.free_email,
     password: 'password',
     password_confirmation: 'password'
+  )
+end
+
+20.times do
+  r = Reward.all.sample
+  Pledge.create!(
+    user: User.all.sample,
+    reward: r,
+    dollar_amount: r.dollar_amount + rand(10)
   )
 end

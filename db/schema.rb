@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161130021925) do
+ActiveRecord::Schema.define(version: 20161130145722) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,9 +18,9 @@ ActiveRecord::Schema.define(version: 20161130021925) do
   create_table "pledges", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "reward_id"
-    t.integer  "amount_in_cents"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.float    "dollar_amount"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
     t.index ["reward_id"], name: "index_pledges_on_reward_id", using: :btree
     t.index ["user_id"], name: "index_pledges_on_user_id", using: :btree
   end
@@ -39,7 +39,7 @@ ActiveRecord::Schema.define(version: 20161130021925) do
   create_table "rewards", force: :cascade do |t|
     t.integer  "project_id"
     t.string   "description"
-    t.integer  "amount_in_cents"
+    t.float    "dollar_amount"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -6,8 +6,8 @@ class Pledge < ApplicationRecord
   validate :enough_pledged
 
   def enough_pledged
-    unless amount_in_cents >= reward.amount_in_cents
-      self.errors.add(:amount_in_cents, "Amount pledged must be at least $#{reward.dollar_amount}")
+    unless self.dollar_amount >= reward.dollar_amount
+      self.errors.add(:dollar_amount, "Amount pledged must be at least $#{reward.dollar_amount}")
     end
   end
 end
