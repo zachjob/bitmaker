@@ -2,3 +2,15 @@
 // Read more: https://necolas.github.io/normalize.css/
 // You can find this file in vendor/assets/stylesheets
 @import 'normalize';
+
+// Third-party stylesheets
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
+// Base styles
+@import 'variables';
+@import 'base';
+@import 'typography';
+
+// Module styles
+@import 'projects';
