@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  reward: one
+  amount_in_cents: 1
+
+two:
+  user: two
+  reward: two
+  amount_in_cents: 1
