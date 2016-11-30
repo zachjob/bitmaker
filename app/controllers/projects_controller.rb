@@ -1,5 +1,5 @@
 class ProjectsController < ApplicationController
-  before_filter :require_login, only: [:new, :create]
+  before_action :require_login, only: [:new, :create]
   load_and_authorize_resource
 
   def index
