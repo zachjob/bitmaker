@@ -8,4 +8,8 @@ FactoryGirl.define do
   trait :no_confirm do
     password_confirmation nil
   end
+
+  trait :email_no_sequence do
+    email "test@example.com"
+  end
 end

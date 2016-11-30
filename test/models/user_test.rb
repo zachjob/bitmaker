@@ -2,8 +2,8 @@ require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
   test "email must be unique" do
-    user = FactoryGirl.create(:user, email: 'test@example.com')
-    user2 = FactoryGirl.build(:user, email: 'test@example.com')
+    user = FactoryGirl.create(:user, :email_no_sequence)
+    user2 = FactoryGirl.build(:user, :email_no_sequence)
     refute user2.valid?
   end
 
