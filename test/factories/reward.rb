@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :reward do
     project
-    amount 10
+    amount_in_cents 100
     description "test"
   end
 end

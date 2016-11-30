@@ -25,9 +25,6 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
-
 # Authentication and authorization
 gem 'sorcery'
 gem 'cancancan', '~> 1.8'
@@ -41,6 +38,8 @@ gem 'acts-as-taggable-on'
 # File uploading
 gem 'carrierwave'
 gem 'rmagick', :require => 'RMagick'
+
+gem 'coffee-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
