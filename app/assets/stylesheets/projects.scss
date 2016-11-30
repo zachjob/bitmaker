@@ -4,10 +4,19 @@
 
 .project {
   text-align: center;
+  margin-bottom: 1rem;
 }
 
 .project-link {
   display: block;
   text-decoration: none;
   color: cadetblue;
+}
+
+.project-title {
+  margin-bottom: 0;
+}
+
+.project-days-left {
+  font-size: 0.75em;
 }
