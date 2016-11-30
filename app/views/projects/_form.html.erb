@@ -9,6 +9,34 @@
     <%= f.text_field :description %>
   </div>
 
+  <div>
+    <%= f.label :goal %>
+    <%= f.number_field :goal %>
+  </div>
+
+  <div>
+    <%= f.label :image %>
+    <%= f.file_field :image %>
+    <%= f.hidden_field :image_cache %>
+  </div>
+
+  <div>
+    <%= f.label :remove_image do %>
+      <%= f.check_box :remove_image %>
+      Remove image 
+    <% end %>
+  </div>
+
+  <div>
+    <%= f.label :start_date %>
+    <%= f.datetime_select :start_date %>
+  </div>
+
+  <div>
+    <%= f.label :end_date %>
+    <%= f.datetime_select :end_date %>
+  </div>
+
   <p>Rewards</p>
   <div>
     <%= f.label :image %>

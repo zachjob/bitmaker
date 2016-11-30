@@ -16,3 +16,6 @@
 /tmp
 *~
 /public/uploads
+*.swp
+*.swn
+*.swo
