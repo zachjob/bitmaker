@@ -27,17 +27,10 @@ gem 'bcrypt', '~> 3.1.7'
 
 # Authentication and authorization
 gem 'sorcery'
-gem 'cancancan', '~> 1.8'
 
 # Dynamically create nested objects in forms
 gem "cocoon"
 
-# Adding tags to objects
-gem 'acts-as-taggable-on'
-
-# File uploading
-gem 'carrierwave'
-gem 'rmagick', :require => 'RMagick'
 
 gem 'coffee-rails'
 # Scalable vector icon pack

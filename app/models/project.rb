@@ -6,5 +6,4 @@ class Project < ActiveRecord::Base
   validates_presence_of :title, :description, :goal, :start_date, :end_date
 
   mount_uploader :image, ImageUploader
-  acts_as_taggable
 end
