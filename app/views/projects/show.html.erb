@@ -13,4 +13,10 @@
 <% @project.rewards.each do |reward| %> 
   <p><%= number_to_currency(reward.dollar_amount) %></p>
   <p><%= reward.description %></p>
+
+  <%= form_for reward.pledges.new do |f| %>
+    <%= f.number_field :amount_in_cents, value: reward.amount_in_cents %>
+    <%= f.submit "Pledge" %>
+  <% end %>
+
 <% end %>
