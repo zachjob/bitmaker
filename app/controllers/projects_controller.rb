@@ -3,6 +3,7 @@ class ProjectsController < ApplicationController
   load_and_authorize_resource
 
   def index
+    @projects = @projects.order(:end_date)
   end
 
   def show

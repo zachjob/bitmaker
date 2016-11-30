@@ -5,3 +5,23 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+25.times do
+  Project.create!(
+    title: Faker::App.name,
+    description: Faker::Lorem.paragraph,
+    goal: rand(100000),
+    start_date: Time.now.utc - rand(60).days,
+    end_date: Time.now.utc + rand(10).days
+  )
+end
+
+5.times do
+  User.create!(
+    first_name: Faker::Name.first_name,
+    last_name: Faker::Name.last_name,
+    email: Faker::Internet.free_email,
+    password: 'password',
+    password_confirmation: 'password'
+  )
+end
