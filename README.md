@@ -1,4 +1,4 @@
 # CSS Selectors
 
 Find the full instructions for this assignment here:
-[ADD ALEXA LINK HERE]
+https://alexa.bitmaker.co/cohorts/67/assignments/2071
