@@ -115,14 +115,17 @@ numbers.forEach( function( number ) {
 } );
 ```
 
-"Hmm... both examples are only 3 lines long, so what makes the `.forEach()` approach better?"" I'm glad you asked! When working with `.forEach()`, we append it to our source array (eg. `numbers`) and pass the callback that should be invoked once *for each* item. Each time our callback is invoked, the first argument will contain the current item in the array. This means that:
+"Hmm... both examples are only 3 lines long, so what makes the `.forEach()` approach better?"" I'm glad you asked! When working with `.forEach()`, we append it to our source array (eg. `numbers`) and pass the callback that should be invoked once *for each* item. Each time our callback is invoked, the first argument will contain the current item in the array, which means:
 - We **don't** have to define or update a 'counter' variable.
 - We **don't** have to define a condition.
 - We **don't** have to access the current item using both the source array and the 'counter'.
 
-In short, `.forEach()` allows us to focus on what we want to **do** with the items in our array (eg. by defining our callback function), rather than on how to access each item. Wait, it gets event better!. We're not limited to *just* the `.forEach()` method. There are actually a variety of array **Iteration Methods**, and they all have a few things in common:
+In short, `.forEach()` allows us to focus on what we want to **do** with the items in our array (eg. by defining our callback function), rather than on how to access each item.
+
+Wait, it gets event better! We're not limited to *just* the `.forEach()` method. There are actually a variety of array **Iteration Methods**, and they all have a few things in common:
 - Each method is called *on* an array.
 - Each method accepts one argument: a 'callback' function.
 
-Have a look at the following documentation, then move on to the first exercise!
+### Getting Started
+Now that you have an idea of what callbacks are (and how to use them), start by taking a quick look at the following documentation and then move on to the first exercise!
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array#Iteration_methods
