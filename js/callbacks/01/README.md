@@ -1,0 +1,2 @@
+- Built out basic loops using `for`, `while`, and/or `do while` statements. Examples:
+- Add notes on updating existing code to use Array iteration methods.
