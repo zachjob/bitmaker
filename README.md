@@ -189,7 +189,7 @@ $ ruby geordis-replicator 3
 
 Hmmm.. it seems like there's a problem with the temperature.
 
-Add `require pry` to the top of `episode-3/replicator.rb`, and inside of `Replicator#adjust_temperature`, add `binding.pry`:
+Add `require 'pry'` to the top of `episode-3/replicator.rb`, and inside of `Replicator#adjust_temperature`, add `binding.pry`:
 
 ```ruby
   def adjust_temperature
