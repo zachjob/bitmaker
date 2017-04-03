@@ -11,7 +11,9 @@ Now that you're familiar with programming fundamentals, we'd like to introduce y
 
 Today you are Geordi La Forge, chief engineer of the Enterprise from Star Trek. Just like Geordi would climb through the narrow corridors of the Jefferies tubes to troubleshoot the Enterprise's issues, you'll be using debugging techniques to get in between the nooks and crannies of your programs to figure out what's really going on.
 
-![](base/art/geordi-data-crawling-through-jefferies-tubes.jpg)*Geordi and Data Crawling Through a Jefferies Tube*
+![](base/art/geordi-data-crawling-through-jefferies-tubes.jpg)
+
+*Geordi and Data Crawling Through a Jefferies Tube*
 
 
 ## Prerequisite Knowledge
@@ -397,6 +399,7 @@ Remember to submit your code when you're finished.
 Currently our replicator only handles beverages. Expand the replicator's capabilities to handle solid foods, and then treat yourself to Worf's favourite dish: **Rokeg blood pie**. You deserve it!
 
 ![](base/art/rokeg-blood-pie.jpg)
+
 *Rokeg Blood Pie... mmmmm...yum.*
 
 > Without requirements or design, programming is the art of adding bugs to an empty text file.
