@@ -92,7 +92,7 @@ Let's first run this episode and see what happens:
 $ ruby geordis-replicator.rb 3
 ```
 
-To troubleshoot it, we'll need to follow the flow of the progarm. Let's start with `geordis_replicator.rb`, the program you run from the command line:
+To troubleshoot it, we'll need to follow the flow of the program. Let's start with `geordis_replicator.rb`, the program you run from the command line:
 
 ```ruby
 require_relative 'base/app'
@@ -221,7 +221,7 @@ Type `glass_in_tummy` at the prompt to see what the glass currently looks like.
  @temperature=37>
 ```
 
-Notice the temperature is 37 Celcius.
+Notice the temperature is 37 Celsius.
 
 Let's move our `binding.pry` statement to after the temperature adjustment has been finished:
 
@@ -370,9 +370,12 @@ Every time you run the program, each episode will have one of the following outc
 - drink has the wrong ingredients
 - syntax error
 
-You can look at the `episode.json` file in each episode folder to see what temperature each beverage should be as well as what ingredients it should contain (though you shouldn't modify this file).
+You can look at the `episode.json` file in each episode folder to see what temperature each beverage should be as well as what ingredients it should contain (note: you shouldn't modify this file).
 
-Complete the remaining episodes using your newly learned debugging techniques to make all of our Star Trek characters happy!
+Feel free to change any `.rb` files inside of each `/episode-XX/` folder in order to fix the problem.  Some exercises have multiple bugs. How you fix issues is up to you: for example, you could adjust a program's logic and / or increase the amount times components are stocked. As long as our characters get the drink they want with the right ingredients and at the right temperature, then any fix is valid. 
+
+And now, fix the issues the remaining episodes. Engage!
+
 
 > Debugging is anticipated with distaste, performed with reluctance, and bragged about forever.
 *- Dan Kaminsky*
@@ -389,7 +392,7 @@ Remember to submit your code when you're finished.
 ### Stretch Goal #1: Create your own episodes
 
 1. Copy the folder `episode-01` to `episode-16`.
-- Modify the episode's paramters in `episode-16/episode.json` to reflect a new character, beverage and add some funny lines for this character.
+- Modify the episode's parameters in `episode-16/episode.json` to reflect a new character, beverage and add some funny lines for this character.
 - Introduce some bugs in various components of the Enterprise (i.e. `.rb` in `episode-16/`)
 - Test to ensure the program runs (but branches to the character not being happy)
 - Send over the `episode-16` folder to your classmates. Have them place your folder in their folder, and then try to solve your exercise.
