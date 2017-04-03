@@ -38,10 +38,10 @@ In addition, you'll need to download this repo and ensure `pry` is installed.
 
 ```bash
 # Clone Repo
-git clone git@github.com:bitmakerlabs/geordies-replicator.git
+git clone git@github.com:bitmakerlabs/geordis-replicator.git
 
 # Go into project folder
-cd geordies-replicator
+cd geordis-replicator
 
 # Install pry
 gem install pry
@@ -57,7 +57,7 @@ Let's run the app once. Use the replicator to make Geordi a coffee and get the d
 $ ruby geordis-replicator.rb 1
 ```
 
-Notice the `1` in the command above. It's an argument you're passing into the `geordies-replicator` ruby program. That number `1` represents the episode number you'd like to play.
+Notice the `1` in the command above. It's an argument you're passing into the `geordis-replicator` ruby program. That number `1` represents the episode number you'd like to play.
 
 The program should run properly. In this case the replicator should make a coffee for Geordi, and then prompt you to move on to the next episode. Before you start the next episode, take a look at the files in the `/episode-01/` subfolder. In here you'll find the *Enterprise* class, *Replicator* class, and all the other classes to make the replicator work. Episode 1 doesn't have any bugs, so you don't need to fix the program.
 

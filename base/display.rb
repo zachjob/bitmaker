@@ -1,12 +1,9 @@
 class Display
 
+  include StringHelper
+
   def initialize(episode)
     @episode = episode
-  end
-
-  def word_wrap(str)
-    width=60
-    str.gsub!(/(.{1,#{width}})(\s+|\Z)/, "\\1\n ").rstrip
   end
 
   def enterprise_image
@@ -25,12 +22,6 @@ class Display
 
   end
 
-
-  def word_wrap(str)
-    width=60
-    str.gsub!(/(.{1,#{width}})(\s+|\Z)/, "\\1\n ").rstrip
-  end
-
   def star_saying_replicator_command
     puts " #{@episode.star} says:"
     puts
@@ -39,13 +30,10 @@ class Display
   end
 
   def press_any_key
-    unless ARGV.last == 'fast'
-      press_any_key_line = 'Press any key to start the replicator.'
-      print press_any_key_line
-      exit if STDIN.getch == "\u0003" # Control-C
-      print "\b" * press_any_key_line.size
-      print ' ' * press_any_key_line.size
-      print "\b" * press_any_key_line.size
+    unless ARGV.last == 'fast' || ARGV.last == 'super-fast'
+      temp_print('Press any key to start the replicator.') do
+        exit if STDIN.getch == "\u0003" # Control-C
+      end
     end
   end
 
@@ -106,7 +94,9 @@ class Display
   end
 
   def pause(time)
-    if ARGV.last == 'fast'
+    if ARGV.last == 'super-fast'
+      return
+    elsif ARGV.last == 'fast'
       sleep time / 10
     else
       sleep time

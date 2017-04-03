@@ -1,24 +1,13 @@
 require 'minitest/autorun'
 require 'pry'
+require_relative './string_helper'
 
 class TestApp < Minitest::Test
 
-  def compress(output)
-    output.split("\n").delete_if(&:empty?).map(&:strip)
-  end
-
-  def erase_msg(msg)
-    print "\b" * msg.size
-    print ' ' * msg.size
-    print "\b" * msg.size
-  end
-
-  def pad_with_zero(num)
-    num.to_s.size == 1 ? "0#{num}" : num
-  end
+  include StringHelper
 
   def run_episode(num)
-    `ruby geordis-replicator.rb #{num} fast`
+    `ruby geordis-replicator.rb #{num} super-fast`
   end
 
   def test_reset_exercises
@@ -43,13 +32,12 @@ class TestApp < Minitest::Test
     (2..15).each do |num|
 
       msg = "Testing Episode #{num}"
-      print msg
 
-      output = compress(run_episode(num))
-      assert_match "Episode ##{pad_with_zero(num)}", output.first
-      assert_equal output.last, "Use your newly learned debugging techniques to fix the issue and play the episode again."
-
-      erase_msg(msg)
+      temp_print(msg) do
+        output = compress(run_episode(num))
+        assert_match "Episode ##{pad_with_zero(num)}", output.first
+        assert_equal output.last, "Use your newly learned debugging techniques to fix the issue and play the episode again."
+      end
 
     end
 

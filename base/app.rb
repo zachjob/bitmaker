@@ -1,6 +1,7 @@
 require 'io/console'
 require 'json'
 require 'fileutils'
+require_relative './string_helper'
 require_relative './display'
 require_relative './generator'
 require_relative './episode'
@@ -8,6 +9,8 @@ require_relative './recipe'
 require_relative './validator'
 
 class App
+
+  include StringHelper
 
   attr_reader :episode, :enterprise
 
@@ -46,10 +49,6 @@ class App
 
   def load_episode_files(episode)
     Dir.glob("episode-#{episode.number}/*.rb").each { |file| require "./#{file}" }
-  end
-
-  def pad_with_zero(command)
-    command.size == 1 ? "0#{command}" : command
   end
 
 end
