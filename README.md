@@ -388,11 +388,11 @@ Remember to submit your code when you're finished.
 
 ### Stretch Goal #1: Create your own episodes
 
-1. Copy the folder `episode-01` to `episode-21`.
-- Modify the episode's paramters in `episode-21/episode.json` to reflect a new character, beverage and add some funny lines for this character.
-- Introduce some bugs in various components of the Enterprise (i.e. `.rb` in `episode-21/`)
+1. Copy the folder `episode-01` to `episode-16`.
+- Modify the episode's paramters in `episode-16/episode.json` to reflect a new character, beverage and add some funny lines for this character.
+- Introduce some bugs in various components of the Enterprise (i.e. `.rb` in `episode-16/`)
 - Test to ensure the program runs (but branches to the character not being happy)
-- Send over the `episode-21` files to your classmates. Have them place your folder in their folder, and then try to solve your exercise.
+- Send over the `episode-16` folder to your classmates. Have them place your folder in their folder, and then try to solve your exercise.
 
 ### Stretch Goal #2: Expand the Replicator's Capabilities
 
