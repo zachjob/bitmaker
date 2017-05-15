@@ -1,8 +1,6 @@
 permutations = {}
 
-(2..12).each do |number|
-  permutations[number] = 0
-end
+(2..12).each { |number| permutations[number] = 0 }
 
 (1..6).each do |die1|
   (1..6).each do |die2|
@@ -10,6 +8,4 @@ end
   end
 end
 
-permutations.each do |key, value|
-  puts "#{key} occurs #{value} times"
-end
+permutations.each { |key, value| puts "#{key} occurs #{value} times" }

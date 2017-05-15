@@ -1,11 +1,7 @@
 results = []
 
-10.times do
-  results << Random.rand(6) + 1
-end
+10.times { results << Random.rand(6) + 1 }
 
 results.sort!
 
-results.each do |result|
-  puts "The result of your roll is #{result}."
-end
+results.each { |result| puts "The result of your roll is #{result}." }

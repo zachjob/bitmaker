@@ -1,5 +1,3 @@
-require 'irb'
-
 permutations = {}
 number_of_permutations = 0
 

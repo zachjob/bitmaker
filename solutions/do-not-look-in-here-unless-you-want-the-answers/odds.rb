@@ -1,9 +1,7 @@
 permutations = {}
 number_of_permutations = 0
 
-(2..12).each do |number|
-  permutations[number] = 0
-end
+(2..12).each { |number| permutations[number] = 0 }
 
 (1..6).each do |die1|
   (1..6).each do |die2|
