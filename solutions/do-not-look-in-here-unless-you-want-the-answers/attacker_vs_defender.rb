@@ -3,13 +3,15 @@ defender_armies = 5
 
 while attacker_armies > 1 && defender_armies > 0
 
-  puts
-  puts "New Battle Begins!"
-  puts "=================="
-  puts
-  puts "Armies before the battle:"
-  puts "Attacker: #{attacker_armies} armies"
-  puts "Defender: #{defender_armies} armies"
+  puts <<~ooo
+
+  New Battle Begins!
+  ==================
+
+  Armies before the battle:
+  Attacker: #{attacker_armies} armies
+  Defender: #{defender_armies} armies
+  ooo
 
   attacker_die_1 = Random.rand(5) + 1
   defender_die_1 = Random.rand(5) + 1
@@ -49,26 +51,30 @@ while attacker_armies > 1 && defender_armies > 0
     end
   end
 
-  puts
-  puts "Armies after the battle:"
-  puts "Attacker: #{attacker_armies} armies"
-  puts "Defender: #{defender_armies} armies"
-  puts
+  puts <<~ooo
+
+  Armies after the battle:
+  Attacker: #{attacker_armies} armies
+  Defender: #{defender_armies} armies
+  ooo
 
 end
 
-puts
-puts "Final Outcome"
-puts "============="
-puts
-puts "Attacker's final army count: #{attacker_armies}"
-puts "Defender's final army count: #{defender_armies}"
-puts
+puts <<~ooo
+
+Final Outcome
+=============
+
+Attacker's final army count: #{attacker_armies}
+Defender's final army count: #{defender_armies}
+
+ooo
+
 
 if defender_armies == 0
-  puts "Attacker takes the country!"
+  puts 'Attacker takes the country!'
 else
-  puts "Defender retains their country!"
+  puts 'Defender retains their country!'
 end
 
 puts
