@@ -1,9 +1,11 @@
 attacker_lost_armies = 0
 defender_lost_armies = 0
 
-puts
-puts "Attack | Def"
-puts "------------"
+puts <<~ooo
+
+Attack | Def
+------------
+ooo
 
 (1..6).each do |attack_die_1|
   (1..6).each do |attack_die_2|
@@ -29,13 +31,14 @@ end
 
 defender_loses_per_100_attacker_loses = (defender_lost_armies.to_f / attacker_lost_armies * 100).round
 
-puts
-puts "Final Outcome"
-puts "============="
-puts
-puts "Attacker lost #{attacker_lost_armies} armies."
-puts "Defender lost #{defender_lost_armies} armies."
-puts
-print "For every 100 armies the attacker loses, "
-puts  "the defender loses #{defender_loses_per_100_attacker_loses} armies."
-puts
+puts <<~ooo
+
+Final Outcome
+=============
+
+Attacker lost #{attacker_lost_armies} armies.
+Defender lost #{defender_lost_armies} armies.
+
+For every 100 armies the attacker loses, the defender loses #{defender_loses_per_100_attacker_loses} armies.
+
+ooo
