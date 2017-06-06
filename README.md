@@ -6,7 +6,9 @@
 2. When the user clicks the `.close` button, `display` (or fade out) out the `.modal` window
 3. When the user clicks the `.submit` button, add an `.error` class to both `<input>` elements
 4. When the user puts their cursor in one of the input fields, remove the `.error` class from both input elements
-5. Now only remove the `.error` class from an individual `<input>` when the cursor enters it
+5. Now only remove the `.error` class from any individual `<input>` when the cursor enters it
+  - First try writing one event listener/handler per input element
+  - Then do this by writing only ONE event listener/handler for all input elements
 
 ### Advanced:
 
