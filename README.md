@@ -17,7 +17,7 @@ Today you are going to be working in a land of Ice and Fire with Dragons, and th
 
 Fork the [assignment repository](https://github.com/bitmakerlabs/ice_and_fire/tree/master) on Github to your account and then clone it to your local machine.
 
-`cd` into the directory, and `bundle install`
+`cd` into the directory, `bundle install`, and then `rails db:setup`
 
 You'll be working with the app from today's lecture, but with several unfinished requirements. It's a skeleton of a rails app, with no controllers, routes, or views (you won't need them). This assignment focusses  solely on the `Dragon` and `Rider` models and the tests that support them.
 
