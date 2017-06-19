@@ -1,9 +1,8 @@
 class Rocket
-  def initialize(options)
+  def initialize(options = {})
     @name = options[:name] || random_name
     @colour = options[:colour] || random_colour
-    @flying = false
-    @speed = 0
+    @flying = options[:flying] || false
   end
 
   def name
@@ -22,39 +21,22 @@ class Rocket
     @colour = new_colour
   end
 
+  def flying?
+    @flying
+  end
+
   def lift_off
     if flying?
       return false
     else
       @flying = true
-      @speed = 1
       return true
-    end
-  end
-
-  def speed_up(amount)
-    if flying?
-      @speed += amount
-      return @speed
-    else
-      return false
-    end
-  end
-
-  def slow_down(amount)
-    if flying?
-      @speed -= amount
-      @speed = 1 if @speed < 1
-      return @speed
-    else
-      return false
     end
   end
 
   def land
     if flying?
       @flying = false
-      @speed = 0
       return true
     else
       return false
@@ -63,17 +45,13 @@ class Rocket
 
   def status
     if flying?
-      return "Rocket #{name} is flying through the sky at #{speed} km/s!"
+      return "Rocket #{name} is flying through the sky!"
     else
       return "Rocket #{name} is ready for lift off!"
     end
   end
 
   private
-
-  def flying?
-    @flying
-  end
 
   def random_name
     prefixes = ["aries", "taurus", "gemini", "cancer", "leo", "virgo", "libra", "scorpio", "sagittarius", "capricorn", "aquarius", "pisces"]
