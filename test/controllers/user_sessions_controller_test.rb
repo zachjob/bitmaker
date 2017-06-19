@@ -17,4 +17,16 @@ class UserSessionsControllerTest < ActionController::TestCase
     post :create, params: {user: {email: user.email, password: 'invalid'}}
     assert_template :new
   end
+
+  test "destroy redirects to projects when logged in" do
+    user = FactoryGirl.create(:user)
+    login_user(user = user)
+    delete :destroy
+    assert_redirected_to root_url
+  end
+
+  test "destroy redirects to root when logged out" do
+    delete :destroy
+    assert_redirected_to root_url
+  end
 end
