@@ -12,23 +12,32 @@ class ProjectTest < ActiveSupport::TestCase
 
   # To implement the story:
   # "As a user, when I create a new project I should become that project’s owner"
-  # - remove the above test
-  # - uncomment the following two tests
 
-  # test 'project is valid with owner' do
-  #   owner   = create_user
-  #   project = new_project
-  #   project.owner = owner
-  #   project.save
-  #   assert project.valid?
-  #   assert project.owner
-  # end
+  # 1. Remove the above test
+  # 2. Remove the 'skip' line from one of the following tests
+  # 3. Run the tests, and watch it fail
+  # 4. Implement the smallest changes to make them pass
+  # 5. Repeat until the test passes
+  # 6. Repeat entire process from step 2 for the second test
 
-  # test 'project is invalid without owner' do
-  #   project = new_project
-  #   project.save
-  #   assert project.invalid?
-  # end
+  test 'project is valid with owner' do
+    skip 'Need to implement owners on projects first!'
+
+    owner   = create_user
+    project = new_project
+    project.owner = owner
+    project.save
+    assert project.valid?
+    assert project.owner
+  end
+
+  test 'project is invalid without owner' do
+    skip 'Need to implement owners on projects first!'
+
+    project = new_project
+    project.save
+    assert project.invalid?
+  end
 
   private
 
