@@ -12,7 +12,7 @@ class ProjectTest < ActiveSupport::TestCase
 
   # To implement the story:
   # "As a user, when I create a new project I should become that project’s owner"
-  # - remove the above
+  # - remove the above test
   # - uncomment the following two tests
 
   # test 'project is valid with owner' do
