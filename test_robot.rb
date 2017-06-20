@@ -4,7 +4,7 @@ require './robot.rb'
 
 class TestRobot < MiniTest::Test
 
-  def test_station_needs_repairs_foreign_and_vintage_model_returns_1
+  def test_that_foreign_vintage_robot_needing_repairs_sent_to_station_1
     skip
     # arrange
     
@@ -13,7 +13,7 @@ class TestRobot < MiniTest::Test
     # assert
   end
 
-  def test_station_needs_repairs_foreign_model_returns_1
+  def test_that_foreign_robot_neeing_repairs_sent_to_station_1
     skip
     # arrange
     
@@ -22,7 +22,7 @@ class TestRobot < MiniTest::Test
     # assert
   end
 
-  def test_station_needs_repairs_vintage_model_returns_2
+  def test_that_vintage_robot_needing_repairs_sent_to_station_2
     skip
     # arrange
     
@@ -31,16 +31,7 @@ class TestRobot < MiniTest::Test
     # assert
   end
 
-  def test_station_needs_repairs_returns_3
-    skip
-    # arrange
-    
-    # act
-
-    # assert
-  end
-  
-  def test_station_good_condition_returns_4
+  def test_that_standard_robot_needing_repairs_sent_to_station_3
     skip
     # arrange
     
@@ -49,7 +40,16 @@ class TestRobot < MiniTest::Test
     # assert
   end
   
-  def test_prioritize_tasks_empty_todo_list_returns_negative_one
+  def test_that_robot_in_good_condition_sent_to_station_4
+    skip
+    # arrange
+    
+    # act
+
+    # assert
+  end
+  
+  def test_prioritize_tasks_with_empty_todo_list_returns_negative_one
     skip
     # arrange
     
@@ -58,7 +58,7 @@ class TestRobot < MiniTest::Test
     # assert
   end
 
-  def test_prioritize_tasks_not_empty_returns_max_value
+  def test_prioritize_tasks_with_todos_returns_max_todo_value
     skip
     # arrange
     
