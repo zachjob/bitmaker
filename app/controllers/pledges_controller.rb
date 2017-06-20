@@ -2,14 +2,14 @@ class PledgesController < ApplicationController
   before_action :require_login
 
   def create
-    @pledge = Pledge.new(pledge_params)
+    @project = Project.find(params[:project_id])
+
+    @pledge = @project.pledges.build(pledge_params)
     @pledge.user = current_user
-    @pledge.reward = Reward.find(params[:reward_id])
 
     if @pledge.save
-      redirect_to project_url(@pledge.project), notice: "You have successfully backed #{@pledge.project.title}!"
+      redirect_to project_url(@project), notice: "You have successfully backed #{@project.title}!"
     else
-      @project = @pledge.project
       render 'projects/show'
     end
   end
