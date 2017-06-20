@@ -10,7 +10,7 @@ Reward.destroy_all
 User.destroy_all
 Project.destroy_all
 
-25.times do
+10.times do
   project = Project.create!(
               title: Faker::App.name,
               description: Faker::Lorem.paragraph,
