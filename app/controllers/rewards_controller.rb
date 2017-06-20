@@ -6,7 +6,7 @@ class RewardsController < ApplicationController
   end
 
   def create
-
+    @reward = @project.rewards.build(reward_params)
   end
 
   def destroy
@@ -17,5 +17,9 @@ class RewardsController < ApplicationController
 
   def load_project
     @project = Project.find(params[:project_id])
+  end
+
+  def reward_params
+    params.require(:reward).permit(:dollar_amount, :description)
   end
 end
