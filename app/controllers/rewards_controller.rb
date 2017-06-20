@@ -7,10 +7,19 @@ class RewardsController < ApplicationController
 
   def create
     @reward = @project.rewards.build(reward_params)
+
+    if @reward.save
+      redirect_to project_url(@project), notice: 'Reward created'
+    else
+      render :new
+    end
   end
 
   def destroy
+    @reward = Reward.find(params[:id])
+    @reward.destroy
 
+    redirect_to project_url(@project), notice: 'Reward successfully removed'
   end
 
   private
