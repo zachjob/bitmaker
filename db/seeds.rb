@@ -38,11 +38,11 @@ end
 end
 
 20.times do
-  reward = Reward.all.sample
+  project = Project.all.sample
 
   Pledge.create!(
     user: User.all.sample,
-    reward: reward,
-    dollar_amount: reward.dollar_amount + rand(10)
+    project: project,
+    dollar_amount: project.rewards.sample.dollar_amount + rand(10)
   )
 end
