@@ -49,7 +49,7 @@ class TestRobot < MiniTest::Test
     # assert
   end
   
-  def test_prioritize_tasks_empty_todo_list
+  def test_prioritize_tasks_empty_todo_list_returns_negative_one
     skip
     # arrange
     
@@ -67,7 +67,7 @@ class TestRobot < MiniTest::Test
     # assert
   end
 
-  def test_workday_on_day_off
+  def test_workday_on_day_off_returns_true
     skip
     # arrange
     
@@ -76,7 +76,7 @@ class TestRobot < MiniTest::Test
     # assert
   end
 
-  def test_workday_not_day_off
+  def test_workday_not_day_off_returns_false
     skip
     # arrange
     
