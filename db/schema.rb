@@ -44,24 +44,6 @@ ActiveRecord::Schema.define(version: 20170620230230) do
     t.datetime "updated_at"
   end
 
-  create_table "taggings", id: :serial, force: :cascade do |t|
-    t.integer "tag_id"
-    t.string "taggable_type"
-    t.integer "taggable_id"
-    t.string "tagger_type"
-    t.integer "tagger_id"
-    t.string "context", limit: 128
-    t.datetime "created_at"
-    t.index ["tag_id", "taggable_id", "taggable_type", "context", "tagger_id", "tagger_type"], name: "taggings_idx", unique: true
-    t.index ["taggable_id", "taggable_type", "context"], name: "index_taggings_on_taggable_id_and_taggable_type_and_context"
-  end
-
-  create_table "tags", id: :serial, force: :cascade do |t|
-    t.string "name"
-    t.integer "taggings_count", default: 0
-    t.index ["name"], name: "index_tags_on_name", unique: true
-  end
-
   create_table "users", id: :serial, force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
