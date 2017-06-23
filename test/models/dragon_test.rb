@@ -56,6 +56,7 @@ class DragonTest < ActiveSupport::TestCase
 
   def test_that_the_right_rider_can_mount
     # use your knowledge of factories to make this test pass!
+    # Note: you'll need to do more than just supply the right names...
     owner = nil
     dragon = nil
 
