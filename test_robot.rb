@@ -67,7 +67,7 @@ class TestRobot < MiniTest::Test
     # assert
   end
 
-  def test_workday_on_day_off_returns_true
+  def test_workday_on_day_off_returns_false
     skip
     # arrange
     
@@ -76,7 +76,7 @@ class TestRobot < MiniTest::Test
     # assert
   end
 
-  def test_workday_not_day_off_returns_false
+  def test_workday_not_day_off_returns_true
     skip
     # arrange
     
