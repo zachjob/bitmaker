@@ -1,14 +1,4 @@
-# Introduction to Synchronous Callbacks in JavaScript
-
-## Prerequisites
-- Basic understanding of JavaScript functions.
-- Additional prerequisites may be included within each exercise's dedicated `README` file.
-
-## Environment(s)
-- These exercises are designed to run *in browser*.
-
-## Introduction
-### Working With Functions
+# Working With Functions
 In JavaScript, functions are not invoked (or 'called') until they're appended with parentheses. "Of course", you say, "but why is that important?" Well, it may not seem significant at first glance, but being able to either *refer to* or *invoke* functions allows us to use them in a variety of ways. For example:
 
 1. A function can be invoked by adding a trailing set of parentheses:
@@ -36,7 +26,7 @@ timesTwo( 5 ); // 10
 
 This ability to pass function references around allows us to take advantage of a useful pattern: callbacks.
 
-### What Is A 'Callback'?
+## What Is A 'Callback'?
 Simply put, a 'callback' is a function that has been passed as an argument to another function. In our example above, we invoked `double()` and passed in the number `5`, making it available within the body of the function. However, what if we wanted `double()` to return the new number *and* log some information to the console? We could achieve this with just a few changes to our existing code.
 
 ```
@@ -73,7 +63,7 @@ You may be wondering, "couldn't I have achieved the same thing by putting the co
 
 \* Our example only checks for the *presence* of the `callback` argument, not whether it's actually a function. A real program must do both!
 
-### Synchronous vs. Asynchronous Callbacks
+## Synchronous vs. Asynchronous Callbacks
 There are two different ways in which we can use the callback approach: synchronously; or asynchronously. This assignment focuses solely on synchronous callbacks. However, a very quick overview of each is useful.
 1. Synchronous callbacks
 - Like all synchronous operations, this type of callback will cause our program to 'hold' until it is resolved.
@@ -127,7 +117,3 @@ Wait, it gets event better! We're not limited to *just* the `.forEach()` method.
 - Each method is called *on* an array.
 - Each method accepts one argument: a 'callback' function.
 
-### Getting Started
-Now that you have an idea of what callbacks are (and how to use them), start by taking a quick look at the following documentation and then move on to the first exercise!
-
-https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array#Iteration_methods

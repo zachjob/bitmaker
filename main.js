@@ -1,37 +1,112 @@
-// --------------------------------------------------
-// INSTRUCTIONS
-// --------------------------------------------------
-/*
-BEFORE YOU START
-------------------------------
-- Open the `index.html` file in a browser (preferably Google Chrome).
-- Open the JavaScript console.
-- Ensure that information is being logged to the console.
-
-TO START
-------------------------------
-- Read through the questions included below.
-- Check out the example question and its solution.
-- Check out the structure of the `transactions` objects in the 'data.js' file.
-- Answer and test each question before moving on to the next one.
-
-TO TEST
-------------------------------
-- Open the `index.html` file and JavaScript console in browser.
-- Make sure that your solutions are being logged out.
-- Make sure that there are no errors.
-
-HINTS
-------------------------------
-- Each solution requires you to operate on the contents of the `transactions` array.
-- At the very least, you will need to use the following Array methods:
-	- .filter()
-	- .map()
-	- .reduce()
-	- .sort()
-- Documentation for these methods (and the other 'Array Extras') can be found here:
-	- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array#Iteration_methods
-*/
+var transactions = [
+	{
+		type: 'sale',
+		paymentMethod: 'cash',
+		customer: 'Isaac Asimov',
+		items: [
+			{ name: 'Byte', price: 1.00 },
+			{ name: 'Bit', price: 0.125 }
+		]
+	},
+	{
+		type: 'sale',
+		paymentMethod: 'credit',
+		customer: 'CJ Cherryh',
+		items: [
+			{ name: 'Bit', price: 0.125 },
+			{ name: 'Bit', price: 0.125 },
+			{ name: 'Bit', price: 0.125 }
+		]
+	},
+	{
+		type: 'purchase',
+		paymentMethod: 'credit',
+		vendor: 'Dick\'s Doodads',
+		items: [
+			{ name: 'XL Doodad', price: -3.00 },
+			{ name: 'XS Doodad', price: -0.50 }
+		]
+	},
+	{
+		type: 'purchase',
+		paymentMethod: 'cash',
+		vendor: 'Gibson Gadgets',
+		items: [
+			{ name: 'Basic Gadget', price: -2.00 },
+			{ name: 'Advanced Gadget', price: -3.50  }
+		]
+	},
+	{
+		type: 'sale',
+		paymentMethod: 'credit',
+		customer: 'Frederik Pohl',
+		items: [
+			{ name: 'Byte', price: 1.00 },
+			{ name: 'Byte', price: 1.00 },
+			{ name: 'Bit', price: 0.125 },
+			{ name: 'Bit', price: 0.125 },
+			{ name: 'Bit', price: 0.125 }
+		]
+	},
+	{
+		type: 'purchase',
+		paymentMethod: 'cash',
+		vendor: 'Clarke Computing',
+		items: [
+			{ name: 'Floppy Disk', price: -0.10 },
+			{ name: 'Floppy Disk', price: -0.10 },
+			{ name: 'Floppy Disk', price: -0.10 },
+			{ name: 'Floppy Disk', price: -0.10 },
+			{ name: 'Floppy Disk', price: -0.10 },
+			{ name: 'Floppy Disk', price: -0.10 },
+			{ name: 'Floppy Disk', price: -0.10 }
+		]
+	},
+	{
+		type: 'sale',
+		paymentMethod: 'credit',
+		customer: 'Neal Stephenson',
+		items: [
+			{ name: 'kilobyte', price: 1024.00 }
+		]
+	},
+	{
+		type: 'purchase',
+		paymentMethod: 'credit',
+		vendor: 'Gibson Gadgets',
+		items: [
+			{ name: 'Advanced Gadget', price: -3.50  },
+			{ name: 'Advanced Gadget', price: -3.50  },
+			{ name: 'Advanced Gadget', price: -3.50  },
+			{ name: 'Advanced Gadget', price: -3.50  }
+		]
+	},
+	{
+		type: 'purchase',
+		paymentMethod: 'credit',
+		vendor: 'Dick\'s Doodads',
+		items: [
+			{ name: 'XL Doodad', price: -3.00 },
+			{ name: 'XL Doodad', price: -3.00 },
+			{ name: 'XL Doodad', price: -3.00 }
+		]
+	},
+	{
+		type: 'sale',
+		paymentMethod: 'cash',
+		customer: 'Isaac Asimov',
+		items: [
+			{ name: 'Bit', price: 0.125 },
+			{ name: 'Bit', price: 0.125 },
+			{ name: 'Bit', price: 0.125 },
+			{ name: 'Bit', price: 0.125 },
+			{ name: 'Bit', price: 0.125 },
+			{ name: 'Bit', price: 0.125 },
+			{ name: 'Bit', price: 0.125 },
+			{ name: 'Bit', price: 0.125 },
+		]
+	}
+];
 
 
 // --------------------------------------------------
