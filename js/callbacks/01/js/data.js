@@ -1,3 +1,6 @@
+/*
+/// TODO[@jrmykolyn] - Provide description/notes re: `transactions` (eg. why is it available within `main.js`? etc.).
+*/
 var transactions = [
 	{
 		type: 'sale',
