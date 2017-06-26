@@ -2,6 +2,7 @@
 
 ## Prerequisites
 - Basic understanding of JavaScript functions.
+- Additional prerequisites may be included within each exercise's dedicated `README` file.
 
 ## Environment(s)
 - These exercises are designed to run *in browser*.
@@ -128,4 +129,5 @@ Wait, it gets event better! We're not limited to *just* the `.forEach()` method.
 
 ### Getting Started
 Now that you have an idea of what callbacks are (and how to use them), start by taking a quick look at the following documentation and then move on to the first exercise!
+
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array#Iteration_methods
