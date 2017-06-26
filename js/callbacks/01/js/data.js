@@ -23,17 +23,17 @@ var transactions = [
 		paymentMethod: 'credit',
 		vendor: 'Dick\'s Doodads',
 		items: [
-			{ name: 'XL Doodad', price: 3.00 },
-			{ name: 'XS Doodad', price: 0.50 }
+			{ name: 'XL Doodad', price: -3.00 },
+			{ name: 'XS Doodad', price: -0.50 }
 		]
 	},
 	{
 		type: 'purchase',
 		paymentMethod: 'cash',
-		customer: 'Gibson Gadgets',
+		vendor: 'Gibson Gadgets',
 		items: [
-			{ name: 'Basic Gadget', price: 2.00 },
-			{ name: 'Advanced Gadget', price: 3.50  }
+			{ name: 'Basic Gadget', price: -2.00 },
+			{ name: 'Advanced Gadget', price: -3.50  }
 		]
 	},
 	{
@@ -44,21 +44,22 @@ var transactions = [
 			{ name: 'Byte', price: 1.00 },
 			{ name: 'Byte', price: 1.00 },
 			{ name: 'Bit', price: 0.125 },
+			{ name: 'Bit', price: 0.125 },
 			{ name: 'Bit', price: 0.125 }
 		]
 	},
 	{
-		type: 'sale',
+		type: 'purchase',
 		paymentMethod: 'cash',
-		customer: 'Clarke Computing',
+		vendor: 'Clarke Computing',
 		items: [
-			{ name: 'Floppy Disk', price: 0.10 },
-			{ name: 'Floppy Disk', price: 0.10 },
-			{ name: 'Floppy Disk', price: 0.10 },
-			{ name: 'Floppy Disk', price: 0.10 },
-			{ name: 'Floppy Disk', price: 0.10 },
-			{ name: 'Floppy Disk', price: 0.10 },
-			{ name: 'Floppy Disk', price: 0.10 }
+			{ name: 'Floppy Disk', price: -0.10 },
+			{ name: 'Floppy Disk', price: -0.10 },
+			{ name: 'Floppy Disk', price: -0.10 },
+			{ name: 'Floppy Disk', price: -0.10 },
+			{ name: 'Floppy Disk', price: -0.10 },
+			{ name: 'Floppy Disk', price: -0.10 },
+			{ name: 'Floppy Disk', price: -0.10 }
 		]
 	},
 	{
@@ -72,12 +73,12 @@ var transactions = [
 	{
 		type: 'purchase',
 		paymentMethod: 'credit',
-		customer: 'Gibson Gadgets',
+		vendor: 'Gibson Gadgets',
 		items: [
-			{ name: 'Advanced Gadget', price: 3.50  },
-			{ name: 'Advanced Gadget', price: 3.50  },
-			{ name: 'Advanced Gadget', price: 3.50  },
-			{ name: 'Advanced Gadget', price: 3.50  }
+			{ name: 'Advanced Gadget', price: -3.50  },
+			{ name: 'Advanced Gadget', price: -3.50  },
+			{ name: 'Advanced Gadget', price: -3.50  },
+			{ name: 'Advanced Gadget', price: -3.50  }
 		]
 	},
 	{
@@ -85,9 +86,9 @@ var transactions = [
 		paymentMethod: 'credit',
 		vendor: 'Dick\'s Doodads',
 		items: [
-			{ name: 'XL Doodad', price: 3.00 },
-			{ name: 'XL Doodad', price: 3.00 },
-			{ name: 'XL Doodad', price: 3.00 }
+			{ name: 'XL Doodad', price: -3.00 },
+			{ name: 'XL Doodad', price: -3.00 },
+			{ name: 'XL Doodad', price: -3.00 }
 		]
 	},
 	{
