@@ -27,20 +27,20 @@ class TestApp < Minitest::Test
     assert_equal output.last, 'Congratulations! You may now move on to the next episode.'
   end
 
-  # def test_remaining_episodes_buggy
+  def test_remaining_episodes_buggy
 
-  #   (2..15).each do |num|
+    (2..15).each do |num|
 
-  #     msg = "Testing Episode #{num}"
+      msg = "Testing Episode #{num}"
 
-  #     temp_print(msg) do
-  #       output = compress(run_episode(num))
-  #       assert_match "Episode ##{pad_with_zero(num)}", output.first
-  #       assert_equal output.last, "Use your newly learned debugging techniques to fix the issue and play the episode again."
-  #     end
+      temp_print(msg) do
+        output = compress(run_episode(num))
+        assert_match "Episode ##{pad_with_zero(num)}", output.first
+        assert_equal output.last, "Use your newly learned debugging techniques to fix the issue and play the episode again."
+      end
 
-  #   end
+    end
 
-  # end
+  end
 
 end
