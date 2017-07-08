@@ -1,3 +1,7 @@
+# The Transporter moves the glass around
+# the ship and ingredients into the glass.
+# It requires power to work properly.
+
 class Transporter
 
   def initialize(enterprise)

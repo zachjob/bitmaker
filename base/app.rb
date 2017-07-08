@@ -8,6 +8,7 @@ class App
 
   def initialize
     silence_warnings_if_testing
+    load_pry_if_development
     load_framework
     run_generator_and_exit_if_generator_command
     Display.help_and_exit unless ARGV.first
@@ -24,9 +25,13 @@ class App
     require_relative './validator'
   end
 
+  def load_pry_if_development
+    require 'pry' if ARGV.grep(/dev/).any?
+  end
+
   def run_generator_and_exit_if_generator_command
     command = ARGV.first
-    if command.slice(0, 2) == '--'
+    if command&.slice(0, 2) == '--'
       # To rebuild exercises: ruby geordis-replicator.rb --reset-exercises
       Generator.invoke(command)
       exit
@@ -34,7 +39,7 @@ class App
   end
 
   def silence_warnings_if_testing
-    if ARGV.grep(/test/).size > 0
+    if ARGV.grep(/test/).any?
       require 'warning'
       Warning.ignore(/statement not reached/)
     end

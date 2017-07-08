@@ -1,3 +1,8 @@
+# The Pantry is where ingredients are stored.
+# When this is instatiated, it should put stock
+# its shelf with the necessary ingredients
+# to make the recipe if it's working properly.
+
 class Pantry
 
   def initialize

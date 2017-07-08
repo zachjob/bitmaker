@@ -1,11 +1,6 @@
 # IMPORTANT: DO NOT MODIFY THIS FILE.
 # To complete this assignment you only need to modify
 # the files inside the individual /episode-xx/ folders.
-# You may, however, take a look inside this file to see
-# how the entire program works. Ideally though, you'll
-# only need to work with the files inside the individual
-# /episode-xx/ folders to fix the replicator each episode.
-
 
 # First we load `app.rb`. We'll use this file to
 # bootstrap the Geordi's Replicator framework.
@@ -13,8 +8,8 @@
 require_relative 'base/app'
 
 # Instantiate the actual "App".
-# This actually runs the code and loads the Geordi's Replicator framework.
-app  = App.new
+# This loads the Geordi's Replicator framework.
+App.new
 
 # Instantiate this particular Episode. This loads all the files
 # in the Episode you're currently playing (i.e. files in /episode-XX/)

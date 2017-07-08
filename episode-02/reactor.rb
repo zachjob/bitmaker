@@ -1,9 +1,22 @@
+# The Reactor is what powers the ship.
+# It uses dilithium crystals as its fuel.
+# If it runs out of dilithium crystals, the power is turned off.
+# The Replicator and Transporter both rely on the
+# Reactor for power.
+
+# It's also responsbile for heating
+# and cooling the glass.
+
+# If it's working properly, when it's instantiated
+# the power should be turned on and it should be
+# stocked with @dilithium_crystals
+
 class Reactor
 
   def initialize(enterprise)
-    @enterprise = enterprise
-    @core = Location.new
-    @on = false
+    @enterprise         = enterprise
+    @core               = Location.new
+    @on                 = false
     @dilithium_crystals = 0
     stock
     turn_on
