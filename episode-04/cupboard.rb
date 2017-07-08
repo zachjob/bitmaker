@@ -1,13 +1,15 @@
 class Cupboard
 
-  attr_accessor :shelf
-
   def initialize
     @shelf = Location.new
-    stock_shelves
+    stock_shelf
   end
 
-  def stock_shelves
+  def shelf
+    @shelf
+  end
+
+  def stock_shelf
     5.times do
       @shelf.contents << Glass.new
     end

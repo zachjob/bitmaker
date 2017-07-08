@@ -15,7 +15,7 @@ class TestApp < Minitest::Test
   include StringHelper
 
   def run_episode(num)
-    `ruby geordis-replicator.rb #{num} super-fast`
+    `ruby geordis-replicator.rb #{num} test super-fast`
   end
 
   def test_reset_exercises

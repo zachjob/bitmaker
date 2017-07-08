@@ -1,7 +1,5 @@
 class Reactor
 
-  attr_reader :core, :on
-
   def initialize(enterprise)
     @enterprise = enterprise
     @core = Location.new
@@ -9,6 +7,14 @@ class Reactor
     @dilithium_crystals = 0
     stock
     turn_on
+  end
+
+  def core
+    @core
+  end
+
+  def on
+    @on
   end
 
   def stock
@@ -24,7 +30,7 @@ class Reactor
 
   def drain_power
     @dilithium_crystals -= 1 if on?
-    turn_off if @dilithium_crystals < 100
+    turn_off if @dilithium_crystals == 0
   end
 
   def turn_on
@@ -36,7 +42,7 @@ class Reactor
   end
 
   def on?
-    !@on
+    @on
   end
 
   def off?

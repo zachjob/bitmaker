@@ -1,10 +1,12 @@
 class Pantry
 
-  attr_accessor :shelf
-
   def initialize
     @shelf = Location.new
     stock_shelf
+  end
+
+  def shelf
+    @shelf
   end
 
   def stock_shelf
@@ -16,7 +18,7 @@ class Pantry
   end
 
   def find_ingredient(name)
-    @shelf.contents.find { |item| item.name == 'cherry' }
+    @shelf.contents.find { |item| item.name == name }
   end
 
 end

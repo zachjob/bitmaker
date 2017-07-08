@@ -1,7 +1,5 @@
 class Ingredient
 
-  attr_reader :name
-
   def self.names
     Episode::EPISODE_NUMBERS.map do |number|
       Episode.new(number).recipe.ingredients
@@ -10,6 +8,10 @@ class Ingredient
 
   def initialize(name)
     @name = name
+  end
+
+  def name
+    @name
   end
 
 end

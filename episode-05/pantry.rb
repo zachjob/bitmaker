@@ -1,10 +1,12 @@
 class Pantry
 
-  attr_accessor :shelf
-
   def initialize
     @shelf = Location.new
     stock_shelf
+  end
+
+  def shelf
+    @shelf
   end
 
   def stock_shelf

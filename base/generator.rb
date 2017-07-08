@@ -9,6 +9,11 @@
 class Generator
 
   def self.invoke(command)
+
+    # Usage:
+    # ruby geordis-replicator.rb --reset-exercises
+    # to rebuild the exercies
+
     send(command.slice(2..-1).gsub('-', '_'))
   end
 

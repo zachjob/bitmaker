@@ -1,13 +1,15 @@
 class Replicator
 
-  attr_reader :plate
-
   def initialize(enterprise)
     @enterprise  = enterprise
     @tummy = Location.new
     @plate = Location.new
     @power = false
     connect_to_power
+  end
+
+  def plate
+    @plate
   end
 
   def connect_to_power
@@ -24,7 +26,7 @@ class Replicator
   end
 
   def retrieve_glass
-    @enterprise.transporter.energize(obj: @enterprise.cupboard.find_glass, from: @enterprise.cupboard.shelf, to: @enterprise.cupboard.shelf)
+    @enterprise.transporter.energize(obj: @enterprise.cupboard.find_glass, from: @enterprise.cupboard.shelf, to: @tummy)
   end
 
   def glass_in_tummy

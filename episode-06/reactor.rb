@@ -1,7 +1,5 @@
 class Reactor
 
-  attr_reader :core, :on
-
   def initialize(enterprise)
     @enterprise = enterprise
     @core = Location.new
@@ -9,6 +7,14 @@ class Reactor
     @dilithium_crystals = 0
     stock
     turn_on
+  end
+
+  def core
+    @core
+  end
+
+  def on
+    @on
   end
 
   def stock
@@ -51,7 +57,7 @@ class Reactor
 
   def cool_items_in_core
     @core.contents.each do |item|
-      item.temperature -= 1 if draw_power(20)
+      item.temperature -= 1 if draw_power(2)
     end
   end
 

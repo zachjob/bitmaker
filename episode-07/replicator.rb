@@ -1,13 +1,15 @@
 class Replicator
 
-  attr_reader :plate
-
   def initialize(enterprise)
     @enterprise  = enterprise
     @tummy = Location.new
     @plate = Location.new
     @power = false
     connect_to_power
+  end
+
+  def plate
+    @plate
   end
 
   def connect_to_power
@@ -17,6 +19,7 @@ class Replicator
   def replicate(recipe)
     @recipe = recipe
     retrieve_glass
+    transport_ingredients_to_glass
     mix
     adjust_temperature
     transport_glass_to_replicator_plate
@@ -39,7 +42,7 @@ class Replicator
   end
 
   def mix
-    return if glass_in_tummy
+    return unless glass_in_tummy
 
     if @power && @enterprise.reactor.draw_power(3)
       glass_in_tummy.inside.contents.shuffle!.compact!

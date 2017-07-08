@@ -1,14 +1,20 @@
 class Reactor
 
-  attr_reader :core, :on
-
   def initialize(enterprise)
     @enterprise = enterprise
     @core = Location.new
     @on = false
     @dilithium_crystals = 0
     stock
-    # turn_on
+    turn_on
+  end
+
+  def core
+    @core
+  end
+
+  def on
+    @on
   end
 
   def stock

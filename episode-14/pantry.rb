@@ -1,16 +1,18 @@
 class Pantry
 
-  attr_accessor :shelf
-
   def initialize
     @shelf = Location.new
     stock_shelf
   end
 
+  def shelf
+    @shelf
+  end
+
   def stock_shelf
     Ingredient.names.each do |ingredient_name|
-      0.times do
-        @shelf.contents << Ingredient.new('butter tart')
+      3.times do
+        @shelf.contents << Ingredient.new(ingredient_name)
       end
     end
   end

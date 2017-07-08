@@ -6,6 +6,11 @@
 # only need to work with the files inside the individual
 # /episode-xx/ folders to fix the replicator each episode.
 
+if ARGV.grep(/test/).size > 0
+  require 'warning'
+  Warning.ignore(/statement not reached/)
+end
+
 require 'io/console'
 require 'json'
 require 'fileutils'
@@ -28,6 +33,11 @@ class App
     Display.help_and_exit unless command
 
     if command.slice(0, 2) == '--'
+
+      # Usage:
+      # ruby geordis-replicator.rb --reset-exercises
+      # to rebuild the exercies
+
       Generator.invoke(command)
     else
       episode_number = pad_with_zero(command)

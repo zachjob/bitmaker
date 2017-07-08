@@ -1,9 +1,15 @@
 class Location
 
-  attr_accessor :contents
-
   def initialize
     @contents = []
+  end
+
+  def contents
+    @contents
+  end
+
+  def contents=(value)
+    @contents = value
   end
 
 end
