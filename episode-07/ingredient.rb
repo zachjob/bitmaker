@@ -2,7 +2,7 @@ class Ingredient
 
   def self.names
     Episode::EPISODE_NUMBERS.map do |number|
-      Episode.new(number).recipe.ingredients
+      Episode.new.recipe.ingredients
     end.flatten.uniq
   end
 
