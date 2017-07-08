@@ -26,7 +26,11 @@ class Replicator
   end
 
   def retrieve_glass
-    @enterprise.transporter.energize(obj: @enterprise.cupboard.find_glass, from: @enterprise.cupboard.shelf, to: @tummy)
+    @enterprise.transporter.energize(
+      @enterprise.cupboard.find_glass,
+      @enterprise.cupboard.shelf,
+      @tummy
+    )
   end
 
   def glass_in_tummy
@@ -37,7 +41,11 @@ class Replicator
     return unless glass_in_tummy
 
     @recipe.ingredients.each do |ingredient_name|
-      @enterprise.transporter.energize(obj: @enterprise.pantry.find_ingredient(ingredient_name), from: @enterprise.pantry.shelf, to: glass_in_tummy.inside)
+      @enterprise.transporter.energize(
+        @enterprise.pantry.find_ingredient(ingredient_name),
+        @enterprise.pantry.shelf,
+        glass_in_tummy.inside
+      )
     end
   end
 
@@ -52,7 +60,11 @@ class Replicator
   def adjust_temperature
     return unless glass_in_tummy
 
-    glass_in_reactor_core = @enterprise.transporter.energize(obj: glass_in_tummy, from: @tummy, to: @enterprise.reactor.core)
+    glass_in_reactor_core = @enterprise.transporter.energize(
+      glass_in_tummy,
+      @tummy,
+      @enterprise.reactor.core
+    )
 
     desired_temperature = @recipe.temperature
     maximum_adjustments_allowed = 50
@@ -71,12 +83,20 @@ class Replicator
 
     end
 
-    @enterprise.transporter.energize(obj: glass_in_reactor_core, from: @enterprise.reactor.core, to: @tummy)
+    @enterprise.transporter.energize(
+      glass_in_reactor_core,
+      @enterprise.reactor.core,
+      @tummy
+    )
 
   end
 
   def transport_glass_to_replicator_plate
-    @enterprise.transporter.energize(obj: glass_in_tummy, from: @tummy, to: @plate)
+    @enterprise.transporter.energize(
+      glass_in_tummy,
+      @tummy,
+      @plate
+    )
   end
 
 end

@@ -10,7 +10,7 @@ class Transporter
     @power = @enterprise.reactor.on
   end
 
-  def energize(obj:, from:, to:)
+  def energize(obj, from, to)
     return unless @power
 
     if @enterprise.reactor.draw_power(3)
