@@ -1,4 +1,3 @@
-# Ruby Debugging:
-# Geordi's Replicator Woes
+# Ruby Debugging: Geordi's Replicator Woes
 
-[See assignment in alexa](https://alexa.bitmaker.co/assignments/2470/latest).
+Please see [assignment in alexa](https://alexa.bitmaker.co/assignments/2470/latest) for instructions.
