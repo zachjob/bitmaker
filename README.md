@@ -1,3 +1,3 @@
-# Roll of the Die
+# Ruby Iterators: Roll of the Die
 
-[See instructions in Alexa.](https://alexa.bitmaker.co/admin/wdi/may-2017/assignments/2338/)
+Please see [instructions in Alexa.](https://alexa.bitmaker.co/assignments/2458/latest)
