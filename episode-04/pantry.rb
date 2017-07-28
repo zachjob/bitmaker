@@ -8,7 +8,6 @@ class Pantry
   def initialize
     @shelf = Location.new
     stock_shelf
-    tribbles_eat_food
   end
 
   def shelf
@@ -21,10 +20,6 @@ class Pantry
         @shelf.contents << Ingredient.new(ingredient_name)
       end
     end
-  end
-
-  def tribbles_eat_food
-    @shelf.contents.size.times { @shelf.contents.pop }
   end
 
   def find_ingredient(name)

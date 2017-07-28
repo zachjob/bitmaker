@@ -20,9 +20,7 @@ class Cupboard
   end
 
   def find_glass
-    @shelf.contents.find do |obj|
-      obj.class == Glass
-    end
+    @shelf.contents.find { |obj| obj.class == Ingredient }
   end
 
 end

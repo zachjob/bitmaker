@@ -112,9 +112,7 @@ class Replicator
     # from pantry to glass, one by one.
     @recipe.ingredients.each do |ingredient_name|
       @enterprise.transporter.energize(
-        # Geordi is in a jokey mood and
-        # reprograms the replicator
-        @enterprise.pantry.find_ingredient('banana'),
+        @enterprise.pantry.find_ingredient(ingredient_name),
         @enterprise.pantry.shelf,
         glass_inside_replicator.inside
       )
@@ -148,7 +146,7 @@ class Replicator
 
     # Setup variables for temperature adjustment loop
     desired_temperature         = @recipe.temperature
-    maximum_adjustments_allowed = 50
+    maximum_adjustments_allowed = 5
     number_of_adjustments       = 0
 
     # Keep adjusting temperature until desired temperature is reached
