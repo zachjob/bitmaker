@@ -1,3 +1,3 @@
-# North Pole Writing Machine
+# ERB Templates: North Pole Writing Machine
 
-[See assignment in Alexa.](https://alexa.bitmaker.co/wdi/june-2017/assignments/2620)
+[See assignment in Alexa.](https://alexa.bitmaker.co/assignments/2620/latest)
