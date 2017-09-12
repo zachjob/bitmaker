@@ -42,3 +42,7 @@ h1, h2 {
 ol > li:nth-child(odd){
   background-color: green;
 }
+
+[title="Bitmaker"]:hover {
+  text-decoration: none;
+}
