@@ -25,3 +25,16 @@ h1, h2 {
   background-color: black;
   color: white;
 }
+
+#item1 {
+  font-size: 30px
+}
+
+#item2 {
+  text-align: right;
+}
+
+ol > li {
+  padding: 5px;
+  background-color: grey;
+}
