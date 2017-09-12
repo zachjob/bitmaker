@@ -7,3 +7,21 @@
 h1, h2 {
   font-family: Arial;
 }
+
+.class-list {
+  list-style-type: square;
+}
+
+.item {
+  display: block;
+  border: 10px solid red;
+}
+
+.even {
+  background-color: grey;
+}
+
+.odd {
+  background-color: black;
+  color: white;
+}
