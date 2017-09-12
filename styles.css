@@ -34,7 +34,11 @@ h1, h2 {
   text-align: right;
 }
 
-ol > li {
+/* ol > li {
   padding: 5px;
   background-color: grey;
+}*/
+
+ol > li:nth-child(odd){
+  background-color: green;
 }
