@@ -1,6 +1,16 @@
+body {
+  font-family: Helvetica;
+}
+
 header,
 footer {
   display: block;
   margin: 5px auto;
   text-align: center;
+}
+
+nav ul li {
+  display: inline-block;
+  background-color: lightgrey;
+  padding: 10px;
 }
