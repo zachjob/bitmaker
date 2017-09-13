@@ -38,11 +38,14 @@ nav a {
   color: white;
 }
 
+main {
+  width: 960px;
+  margin: 0px auto;
+}
+
 h2 {
   display: block;
-  margin: 0px 12.5%;
   padding: 10px;
-  width: 75%;
   background-color: lightgrey;
   font-weight: normal;
 }
@@ -56,12 +59,12 @@ h2 {
 
 main ul {
   text-align: center;
-  width: 75%;
   margin: 0px auto;
 }
 
 main ul li {
   display: inline-block;
+  width: 33%;
 }
 
 li > p {
