@@ -32,6 +32,12 @@ nav ul li {
   text-align: center;
 }
 
+nav a {
+  text-decoration: none;
+  font-weight: bold;
+  color: white;
+}
+
 h2 {
   display: block;
   margin: 0px 12.5%;
