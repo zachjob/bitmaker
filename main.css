@@ -21,11 +21,31 @@ nav {
   text-align: center;
 }
 
+nav ul {
+  margin: 5px auto 10px auto;
+}
+
 nav ul li {
   display: inline-block;
   background-color: lightgrey;
   padding: 10px;
   text-align: center;
+}
+
+h2 {
+  display: block;
+  margin: 0px 12.5%;
+  padding: 10px;
+  width: 75%;
+  background-color: lightgrey;
+  font-weight: normal;
+}
+
+#photoCount {
+  color: blue;
+  font-weight: bold;
+  border-bottom: yellow 3px solid;
+  margin: 5px auto;
 }
 
 main ul {
