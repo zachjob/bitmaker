@@ -18,6 +18,23 @@ main {
   align-items: center;
 }
 
+nav ul {
+  padding: 0;
+  position: relative;
+}
+
+nav ul li {
+  list-style: none;
+  display: inline;
+  margin-right: 1em;
+}
+
+nav ul li:nth-child(2) {
+  position: absolute;
+  top: 30%;
+  right: 32.5%;
+}
+
 aside > img {
   margin-right: 5em;
 }
