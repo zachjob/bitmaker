@@ -6,16 +6,16 @@ class ProjectTest < ActiveSupport::TestCase
     owner = new_user
     owner.save
     project = new_project
-    project.owner = owner
+    project.user = owner
     project.save
     assert project.valid?
     assert project.persisted?
-    assert project.owner
+    assert project.user
   end
 
   test 'project is invalid without owner' do
     project = new_project
-    project.owner = nil
+    project.user = nil
     project.save
     assert project.invalid?, 'Project should not save without owner.'
   end

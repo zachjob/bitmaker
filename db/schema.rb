@@ -34,8 +34,7 @@ ActiveRecord::Schema.define(version: 20170621010622) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string "image"
-    t.bigint "owner_id"
-    t.index ["owner_id"], name: "index_projects_on_owner_id"
+    t.integer "user_id"
   end
 
   create_table "rewards", id: :serial, force: :cascade do |t|

@@ -17,7 +17,7 @@ class PledgeTest < ActiveSupport::TestCase
     owner = new_user
     owner.save
     project = new_project
-    project.owner = owner
+    project.user = owner
     project.save
     pledge = Pledge.new(dollar_amount: 3.00, project: project)
     pledge.user = owner
