@@ -11,18 +11,9 @@ body {
 }
 
 main {
-  overflow: hidden;
-  clear: both;
   margin: 20% auto;
-}
-
-section > img {
-  display: inline-block;
-}
-
-main > img {
-  float: left;
-  margin-right: 5em;
+  display: flex;
+  flex-direction: row;
 }
 
 .description {
