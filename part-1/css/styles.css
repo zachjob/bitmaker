@@ -38,6 +38,9 @@ body {
 
 .green {
   background-color: lightgreen;
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
 }
 
 .blue {
@@ -49,8 +52,15 @@ body {
 
 .orange {
   background-color: orange;
+  position: absolute;
+  top: 75%;
+  right: 25%;
 }
 
 .yellow {
   background-color: yellow;
+  position: fixed;
+  width: 100%;
+  bottom: 0%;
+  float: left;
 }
