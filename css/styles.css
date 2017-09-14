@@ -40,3 +40,14 @@ section.hero h1{
   text-align: center;
   margin: 0px auto;
 }
+
+section.products {
+  overflow: hidden;
+}
+
+section.products img {
+  margin: 1em 2.5%;
+  float: left;
+  width: 25%;
+  border: black solid 2px;
+}
