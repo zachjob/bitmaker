@@ -6,7 +6,9 @@ class RewardsController < ApplicationController
   end
 
   def create
-    @reward = @project.rewards.build(reward_params)
+    @reward = @project.rewards.build
+    @reward.dollar_amount = params[:reward][:dollar_amount]
+    @reward.description = params[:reward][:description]
 
     if @reward.save
       redirect_to project_url(@project), notice: 'Reward created'
@@ -26,9 +28,5 @@ class RewardsController < ApplicationController
 
   def load_project
     @project = Project.find(params[:project_id])
-  end
-
-  def reward_params
-    params.require(:reward).permit(:dollar_amount, :description)
   end
 end
