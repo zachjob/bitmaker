@@ -243,6 +243,10 @@ figure {
 
 @media screen and (min-width: 992px) {
 
+  html {
+    position: relative;
+  }
+
   .site-logo {
     position: absolute;
     top: 0.5rem;
@@ -307,5 +311,13 @@ figure {
 
   .movie:first-child .movie-backdrop {
     display: block;
+  }
+
+  footer {
+    margin-top: 1%;
+    width: 100%;
+    height: 10%;
+    position: absolute;
+    top: 100%;
   }
 }
