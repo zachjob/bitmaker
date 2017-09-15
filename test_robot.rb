@@ -4,7 +4,7 @@ require './robot.rb'
 
 class TestRobot < MiniTest::Test
 
-  def test_that_foreign_robot_neeing_repairs_sent_to_station_1
+  def test_that_foreign_robot_needing_repairs_sent_to_station_1
     skip
     # arrange
 
