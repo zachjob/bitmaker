@@ -10,6 +10,7 @@ def wrap_text (my_string)
   return user_string = "#{user_symbol}#{user_symbol}#{user_symbol}#{my_string}#{user_symbol}#{user_symbol}#{user_symbol}"
 end
 
-puts wrap_text (user_string)
-puts wrap_text (user_string)
-puts wrap_text (user_string)
+user_string = wrap_text (user_string)
+user_string = wrap_text (user_string)
+user_string = wrap_text (user_string)
+puts user_string
