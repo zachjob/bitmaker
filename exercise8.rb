@@ -1,26 +1,37 @@
-puts "How far did person 1 run (in metres)?"
-distance1 = gets.to_f
-puts "How long (in minutes) did person 1 run take to run #{distance1} metres?"
-mins1 = gets.to_f
+def person_distance (user_distance)
+  puts "How far did person run (in metres)?"
+  distance = gets.to_f
+
+  return distance
+end
+
+def person_mins (user_mins)
+  puts "How long (in minutes) did person run take to run #{distance} metres?"
+  mins = gets.to_f
+
+  return mins
+end
+
+def person_speed (user_mins, user_distance)
+  user_secs = user_mins * 60
+  speed = user_distance/user_secs
+
+  return speed
+end
 
 
-puts "How far did person 2 run (in metres)?"
-distance2 = gets.to_f
-puts "How long (in minutes) did person 2 take to run #{distance2} metres?"
-mins2 = gets.to_f
+distance1 = person_distance (distance1)
+mins1 = person_mins (mins1)
 
+distance2 = person_distance (distance2)
+mins2 = person_mins (mins2)
 
-puts "How far did person 3 run (in metres)?"
-distance3 = gets.to_f
-puts "How long (in minutes) did person 3 take to run #{distance3} metres?"
-mins3 = gets.to_f
+distance3 = person_distance (distance3)
+mins3 = person_mins (mins3)
 
-secs1 = mins1 * 60
-speed1 = distance1/secs1
-secs2 = mins2 * 60
-speed2 = distance2/secs2
-secs3 = mins3 * 60
-speed3 = distance3/secs3
+speed1 = person_speed (mins1, distance1)
+speed2 = person_speed (mins2, distance2)
+speed3 = person_speed (mins3, distance3)
 
 if speed3 > speed2 && speed3 > speed1
   puts "Person 3 was the fastest at #{speed3} m/s"
