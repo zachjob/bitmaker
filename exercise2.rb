@@ -1,3 +1,5 @@
+# If they rate documentaries four or higher, recommend the documentary. If they rate documentaries 3 or lower but both comedies and dramas 4 or higher, recommend the dramedy. If they rate only dramas 4 or higher, recommend the drama. If they rate just comedies 4 or higher, recommend the comedy. Otherwise, recommend a good book.
+
 puts "Rate each genre below and receive a recommendation!"
 
 documentary_recommendation = "The 5th Estate"
@@ -13,13 +15,14 @@ comedy_rating = gets.to_i
 puts "Dramas (1-5):"
 drama_rating = gets.to_i
 
-
-if user_reply.capitalize == "Documentary\n" || user_reply.capitalize == "Documentaries\n"
+if doc_rating >= 4
+  puts documentary_recommendation
+elsif doc_rating >= 3 && comedy_rating >= 4 && drama_rating >= 4
   puts comedy_recommendation
-elsif user_reply.capitalize == "Comedy\n" || user_reply.capitalize == "Comedies\n"
-  puts comedy_recommendation
-elsif user_reply.capitalize == "Drama\n" || user_reply.capitalize == "Dramas\n"
+elsif drama_rating >= 4 && doc_rating <= 3 && comedy_rating <= 3
   puts drama_recommendation
+elsif comedy_rating >= 4 && drama_rating <= 3 && comedy_rating <= 3
+  puts comedy_recommendation
 else
-  puts "Your response is not an available option. Please pick between documentaries, comedies, or dramas."
+  puts "Maybe look into books."
 end
