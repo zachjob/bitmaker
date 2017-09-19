@@ -1,15 +1,15 @@
 def person_distance (user_distance)
   puts "How far did person run (in metres)?"
-  distance = gets.to_f
+  user_distance = gets.to_f
 
-  return distance
+  return user_distance
 end
 
 def person_mins (user_mins)
-  puts "How long (in minutes) did person run take to run #{distance} metres?"
-  mins = gets.to_f
+  puts "How long (in minutes) did person run?"
+  user_mins = gets.to_f
 
-  return mins
+  return user_mins
 end
 
 def person_speed (user_mins, user_distance)
@@ -29,9 +29,9 @@ mins2 = person_mins (mins2)
 distance3 = person_distance (distance3)
 mins3 = person_mins (mins3)
 
-speed1 = person_speed (mins1, distance1)
-speed2 = person_speed (mins2, distance2)
-speed3 = person_speed (mins3, distance3)
+speed1 = person_speed mins1, distance1
+speed2 = person_speed mins2, distance2
+speed3 = person_speed mins3, distance3
 
 if speed3 > speed2 && speed3 > speed1
   puts "Person 3 was the fastest at #{speed3} m/s"
