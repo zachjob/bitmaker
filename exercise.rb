@@ -41,3 +41,31 @@ colour_symbols = [
   :cyan,
   :cerulean
 ]
+
+# three words and their definitions
+dictionary = {
+  :the => "Used before singular or plural nouns and noun phrases that denote particular, specified persons or things",
+  :to => "In a direction toward so as to reach",
+  :it => "Used to refer to that one previously mentioned. Used of a nonhuman entity; an animate being whose sex is unspecified, unknown, or irrelevant; a group of objects or individuals; an action; or an abstraction"
+}
+
+# your favourite movie names and their year of creation
+movies = {
+  "Inception" => "2010",
+  "Spiderman: Homecoming" => "2017",
+  "Captain America: Civil War" => "2016"
+}
+
+# three cities of the world and their population
+cities = {
+  "Toronto" => "1",
+  "New York City" => "2",
+  "London" => "3"
+}
+
+# the names of your siblings/cousins/friends and their ages
+friends = {
+  "Aros" => "27",
+  "Sabrina" => "21",
+  "Mark" => "26"
+}
