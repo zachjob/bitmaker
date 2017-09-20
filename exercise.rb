@@ -80,6 +80,26 @@ friends = {
 
 # age << 0
 
-movies.each do |title, year|
-  puts "The movie #{title} was first shown in #{year}."
-end
+# puts movies["Inception"]
+
+# puts artists[0..1]
+
+# puts fav_colours.min
+
+# cities["Berlin"] = "4"
+
+# puts coin_flip.reverse
+
+# puts cities["Toronto"]
+
+# artists.each do |artist|
+#   puts "#{artist} is dope."
+# end
+
+# movies.each do |title, year|
+#  puts "The movie #{title} was first shown in #{year}."
+# end
+
+# puts age.sort.reverse
+
+# movies["Beauty and the Beast"] = ["1991", "2017"]
