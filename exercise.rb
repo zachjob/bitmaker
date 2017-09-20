@@ -76,6 +76,10 @@ friends = {
 
 # puts fav_colours[0]
 
-puts age.sort
+# puts age.sort
 
 # age << 0
+
+movies.each do |title, year|
+  puts "The movie #{title} was first shown in #{year}."
+end
