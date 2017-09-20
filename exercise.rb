@@ -74,4 +74,8 @@ friends = {
 #  puts flip
 # end
 
-puts fav_colours[0]
+# puts fav_colours[0]
+
+puts age.sort
+
+# age << 0
