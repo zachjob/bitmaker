@@ -1,4 +1,5 @@
 def convert_grade (user_grade)
+  puts "Please enter your percentage:"
   user_grade = gets.to_i
 
   if user_grade >= 80
