@@ -103,3 +103,15 @@ friends = {
 # puts age.sort.reverse
 
 # movies["Beauty and the Beast"] = ["1991", "2017"]
+
+puts age.sort_by {2}
+
+# puts coin_flip.length
+
+# puts age.max
+
+# artists.pop
+# puts artists
+
+# cities["Toronto"] = "8,000,000"
+# puts cities["Toronto"]
