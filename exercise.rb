@@ -70,6 +70,8 @@ friends = {
   "Mark" => "26"
 }
 
-coin_flip.each do |flip|
-  puts flip
-end
+# coin_flip.each do |flip|
+#  puts flip
+# end
+
+puts fav_colours[0]
