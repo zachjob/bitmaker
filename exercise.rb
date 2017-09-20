@@ -69,3 +69,7 @@ friends = {
   "Sabrina" => "21",
   "Mark" => "26"
 }
+
+coin_flip.each do |flip|
+  puts flip
+end
