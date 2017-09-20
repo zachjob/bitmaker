@@ -104,7 +104,12 @@ friends = {
 
 # movies["Beauty and the Beast"] = ["1991", "2017"]
 
-puts age.sort_by {2}
+# age.each do |user_age|
+#  if user_age.to_i < 20
+#    puts user_age
+#  end
+# end
+
 
 # puts coin_flip.length
 
