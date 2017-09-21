@@ -50,11 +50,11 @@ dictionary = {
 }
 
 # your favourite movie names and their year of creation
-movies = {
-  "Inception" => "2010",
-  "Spiderman: Homecoming" => "2017",
-  "Captain America: Civil War" => "2016"
-}
+# movies = {
+#   "Inception" => "2010",
+#   "Spiderman: Homecoming" => "2017",
+#   "Captain America: Civil War" => "2016"
+# }
 
 # three cities of the world and their population
 cities = {
@@ -143,3 +143,9 @@ friends = {
 
 # fav_colours << ["Violet", "Sanguine"]
 # puts fav_colours
+
+movies = {
+  1999 => ["The Matrix", "Star Wars: Episode 1", "The Mummy"],
+  2009 => ["Avatar", "Star Trek", "District 9"],
+  2019 => ["How to Train Your Dragon 3", "Toy Story 4", "Star Wars: Episode 9"],
+}
