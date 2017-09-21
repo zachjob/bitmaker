@@ -241,7 +241,7 @@ def display_list (groceries)
 end
 
 # grocery_list << "rice"
-grocery_list.pop
+# grocery_list.pop
 
 display_list grocery_list
 
