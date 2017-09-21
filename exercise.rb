@@ -214,3 +214,20 @@ countries = [
 #     puts islands
 #   end
 # end
+
+expenses = [250, 7.95, 30.95, 16.50]
+
+expenses2 = [50, 795, 30, 1650]
+
+expense_sum = 0
+
+def sum_expenses (expense_sheet)
+  sum = 0
+  expense_sheet.each do |item|
+    sum = sum + item
+  end
+  sum
+end
+
+expense_sum = sum_expenses expenses
+puts expense_sum
