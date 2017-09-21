@@ -154,5 +154,25 @@ dial = [
   [1, 2, 3],
   [4, 5, 6],
   [7, 8 ,9],
-  [0]
+  ["*", 0, "#"]
+]
+
+# Make a new array that contains information about three countries. Each country should be a hash that has a name, a continent, and whether or not it is an island.
+
+countries = [
+  canada = {
+    "name" => "Canada",
+    "continent" => "North America",
+    "island" => "is not an island."
+  },
+  australia = {
+    "name" => "Australia",
+    "continent" => "Australia",
+    "island" => "is an island."
+  },
+  england = {
+    "name" => "England",
+    "continent" => "Europe",
+    "island" => "is an island."
+  }
 ]
