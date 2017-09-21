@@ -110,7 +110,6 @@ friends = {
 #  end
 # end
 
-
 # puts coin_flip.length
 
 # puts age.max
@@ -120,3 +119,27 @@ friends = {
 
 # cities["Toronto"] = "8,000,000"
 # puts cities["Toronto"]
+
+
+# cities.each do |city, population|
+#   total_population = population.to_i
+#   total_population = total_population + population.to_i
+#   puts total_population
+# end
+
+# friends.each do |person, age|
+#   if age.to_i < 20
+#     puts "#{person} is young."
+#   else
+#     puts "#{person} is old."
+#   end
+# end
+
+# puts fav_colours[(fav_colours.length - 1)..fav_colours.length]
+
+# age.each do |user_age|
+#   puts user_age.to_i + 1
+# end
+
+# fav_colours << ["Violet", "Sanguine"]
+# puts fav_colours
