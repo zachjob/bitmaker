@@ -234,6 +234,12 @@ countries = [
 
 grocery_list = ["carrots", "toilet paper", "apples", "salmon"]
 
-grocery_list.each do |item|
-  puts "* #{item}"
+def display_list (groceries)
+  groceries.each do |item|
+    puts "* #{item}"
+  end
 end
+
+grocery_list << "rice"
+
+display_list grocery_list
