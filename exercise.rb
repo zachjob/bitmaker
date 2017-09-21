@@ -243,3 +243,5 @@ end
 grocery_list << "rice"
 
 display_list grocery_list
+
+puts grocery_list.length
