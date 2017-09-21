@@ -149,3 +149,10 @@ movies = {
   2009 => ["Avatar", "Star Trek", "District 9"],
   2019 => ["How to Train Your Dragon 3", "Toy Story 4", "Star Wars: Episode 9"],
 }
+
+dial = [
+  [1, 2, 3],
+  [4, 5, 6],
+  [7, 8 ,9],
+  [0]
+]
