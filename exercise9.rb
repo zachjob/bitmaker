@@ -6,8 +6,9 @@ students = {
 
 def student_population (class_size)
   class_size.each do |cohort, num_students|
-    num_students = num_students*1.05
-    puts "#{cohort}: #{num_students} students"
+    # num_students = num_students*1.05
+    # puts "#{cohort}: #{num_students} students"
+    puts "#{cohort}"
   end
 end
 
