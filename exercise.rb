@@ -176,3 +176,16 @@ countries = [
     "island" => "is an island."
   }
 ]
+
+# limit = 0
+# dont_skate = ["I will not skateboard in the halls"]
+#
+# until limit == 19
+#   limit += 1
+#   dont_skate << "I will not skateboard in the halls"
+#   puts dont_skate
+# end
+
+fifty = (1..50).to_a
+
+puts fifty.inject(:+)
