@@ -13,5 +13,6 @@ def student_population (class_size)
 end
 
 # students[:cohort4] = 43
+students.delete(:cohort2)
 
 student_population students
