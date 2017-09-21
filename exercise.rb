@@ -186,6 +186,31 @@ countries = [
 #   puts dont_skate
 # end
 
-fifty = (1..50).to_a
+# fifty = (1..50).to_a
+#
+# sum = 0
+#
+# fifty.each do |num|
+#   sum = sum + num
+#   puts sum
+# end
 
-puts fifty.inject(:+)
+# fifty = (1..50).to_a
+# times_three = []
+#
+# fifty.each do |num|
+#   3.times do
+#     times_three << num
+#   end
+# end
+#
+# puts times_three
+
+# islands = ["Japan"]
+#
+# countries.each do |place|
+#   if place["island"] == "is an island."
+#     islands << place["name"]
+#     puts islands
+#   end
+# end
