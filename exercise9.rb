@@ -10,4 +10,6 @@ def student_population (class_size)
   end
 end
 
+students[:cohort4] = 43
+
 student_population students
