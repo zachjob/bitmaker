@@ -9,20 +9,23 @@ schedule = [
   {train: "111", frequency_in_minutes: 15, direction: "south"}
 ]
 
-train_one_eleven = schedule[7][:direction]
-train_eighty_b = schedule[5][:frequency_in_minutes]
-train_six_ten = schedule[2][:direction]
+# train_one_eleven = schedule[7][:direction]
+# train_eighty_b = schedule[5][:frequency_in_minutes]
+# train_six_ten = schedule[2][:direction]
 
-puts "What driection are you travelling?"
-travelling = gets
-travelling = travelling.gsub("\n",'')
+# puts "What driection are you travelling?"
+# travelling = gets
+# travelling = travelling.gsub("\n",'')
+#
+# def direct (direction, trains)
+#   trains.each do |train|
+#     if train[:direction] == direction
+#       puts train
+#     end
+#   end
+# end
+#
+# direct(travelling, schedule)
 
-def direct (direction, trains)
-  trains.each do |train|
-    if train[:direction] == direction
-      puts train
-    end
-  end
-end
-
-direct(travelling, schedule)
+schedule[7].merge!(first_departure_time: 6)
+puts schedule[7]
