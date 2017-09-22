@@ -2,9 +2,9 @@
 
 ## Introduction
 
-In computer programming, a *linter* is a tool that analyzes code and flags suspicious language use.
+In computer programming, a *linter* is a tool that analyzes code and flags parts of the code that could cause bugs.
 
-*Rubocop* is a popular and easy to use Ruby linter. 
+*Rubocop* is a popular and easy to use Ruby linter.
 
 ## Getting Started
 
