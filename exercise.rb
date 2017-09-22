@@ -13,19 +13,16 @@ train_one_eleven = schedule[7][:direction]
 train_eighty_b = schedule[5][:frequency_in_minutes]
 train_six_ten = schedule[2][:direction]
 
-north = []
-east = []
+puts "What driection are you travelling?"
+travelling = gets
+travelling = travelling.gsub("\n",'')
 
-# schedule.each do |train|
-#   if train[:direction] == "north"
-#     north << train
-#   end
-# end
-
-schedule.each do |train|
-  if train[:direction] == "east"
-    east << train
+def direct (direction, trains)
+  trains.each do |train|
+    if train[:direction] == direction
+      puts train
+    end
   end
 end
 
-puts east
+direct(travelling, schedule)
