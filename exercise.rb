@@ -14,11 +14,18 @@ train_eighty_b = schedule[5][:frequency_in_minutes]
 train_six_ten = schedule[2][:direction]
 
 north = []
+east = []
+
+# schedule.each do |train|
+#   if train[:direction] == "north"
+#     north << train
+#   end
+# end
 
 schedule.each do |train|
-  if train[:direction] == "north"
-    north << train
+  if train[:direction] == "east"
+    east << train
   end
 end
 
-puts north
+puts east
