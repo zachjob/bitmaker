@@ -58,9 +58,9 @@ Run rubocop against `airplane.rb` again:
 $ rubocop airplane.rb
 ```
 
-Now Rubocop should only hand out a few offences. 
+Now Rubocop should only hand out a few offences.
 
-Read each offence carefully to see what line number, and what column Rubocop is complaining about.  Fix the offence and run again to ensure your fix worked by running:
+Read each offence carefully to see what line number, and what column Rubocop is complaining about.  Fix the offence and ensure your fix worked by running:
 
 ```bash
 $ rubocop airplane.rb
