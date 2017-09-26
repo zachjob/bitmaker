@@ -68,19 +68,9 @@ $ rubocop airplane.rb
 
 Keep fixing each offence until all the offences have been fixed. Rubocop should report *no offences* after you've completed this successfully.
 
-## Try Rubocop on a previous cohort student's assignment submission.
-
-Look up a previous cohort's submissions for the *Roll of the Die* assignment:
-
-[https://alexa.bitmaker.co/wdi/june-2017/assignments/2455/submissions](https://alexa.bitmaker.co/wdi/june-2017/assignments/2455/submissions)
-
-*Note: you can change `june-2017` in that URL to see other past cohorts.*
-
-Download one of the `.rb` files from their submission, and run Rubocop against it to see if there are any issues with it.
-
 ## Try Rubocop On Your Own Assignments
 
-Pick a previous assignment and run rubocop against it. Fix all the offences.
+Go through each of your Ruby files from your past assignments, run Rubocop against them, and fix the offences.  Commit and push those style improvements to your past repositories.
 
 ## Future Assignments
 
