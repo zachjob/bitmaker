@@ -31,17 +31,13 @@ project = {
   ]
 }
 
-project[:steps][0..2].each do |task|
-  task[:person] = project[:committee][0]
-  puts task
+def assign (tasks, person)
+  tasks.each do |task|
+    task[:person] = person
+    puts task
+  end
 end
 
-project[:steps][3..5].each do |task|
-  task[:person] = project[:committee][1]
-  puts task
-end
-
-project[:steps][6..7].each do |task|
-  task[:person] = project[:committee][2]
-  puts task
-end
+assign project[:steps][0..2], project[:committee][0]
+assign project[:steps][3..5], project[:committee][1]
+assign project[:steps][6..7], project[:committee][2]
