@@ -1,7 +1,7 @@
 project = {
   committee: ["Stella", "Salma", "Kai"],
   title: "Very Important Project",
-  due_date : "December 1, 2019",
+  due_date: "December 1, 2019",
   id: "3284",
   steps: [
     {description: "conduct interviews",
@@ -30,3 +30,7 @@ project = {
     }
   ]
 }
+
+project[:steps].each do |task|
+  
+end
