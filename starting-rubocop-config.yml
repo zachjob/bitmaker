@@ -259,7 +259,7 @@ Lint/Void:
 # Style
 
 Style/AccessorMethodName:
-  Enabled: true
+  Enabled: false 
 
 Style/AsciiIdentifiers:
   Enabled: true
