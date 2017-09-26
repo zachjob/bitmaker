@@ -31,7 +31,17 @@ project = {
   ]
 }
 
-project[:steps].each do |task|
+project[:steps][0..2].each do |task|
   task[:person] = project[:committee][0]
+  puts task
+end
+
+project[:steps][3..5].each do |task|
+  task[:person] = project[:committee][1]
+  puts task
+end
+
+project[:steps][6..7].each do |task|
+  task[:person] = project[:committee][2]
   puts task
 end
