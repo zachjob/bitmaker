@@ -32,5 +32,6 @@ project = {
 }
 
 project[:steps].each do |task|
-  
+  task[:person] = project[:committee][0]
+  puts task
 end
