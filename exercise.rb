@@ -3,11 +3,19 @@ house = { 'objects' => [{ 'first_name' => 'Scott', 'related' => { 'representativ
 # What are the keys in this (top-level) hash? HINT: use the keys method.
 puts house.keys
 # What is the data type of the value that goes with the first key?
-puts "A hash."
+puts "A string. Or a hash. I'm not entirely sure."
 # What is the data type of the value that goes with the last key?
+puts "An integer."
+# How many representatives are there in this collection
+counter = 0
+house["objects"].each do |things|
+  if things.has_key?("first_name")
+    counter += 1
+  end
+end
 
-# How many representatives are there in this collection?
-
+puts counter
 # Get the URL for the photo of one representative into a variable.
-
+photo = house["objects"][0]["photo_url"]
+puts photo
 # puts house["objects"][0].keys
