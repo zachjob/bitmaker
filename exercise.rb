@@ -1,3 +1,19 @@
+class Todolist
+
+  def initialize (project_name)
+    @project_name = project_name
+    @tasks = []
+  end
+
+  def add_task (description, due_date)
+    @tasks << Task.new(description, due_date)
+  end
+
+  def show_tasks
+    "#{@project_name} has #{@tasks.length} tasks. #{@tasks}"
+  end
+end
+
 class Task
 
   def initialize (description, due_date)
@@ -19,10 +35,10 @@ class Task
 
 end
 
-task1 = Task.new("Test", "today")
-task2 = Task.new("Commit", "tomorrow")
-task3 = Task.new("Submit", "tomorrow")
+project1 = Todolist.new("Reinforcing Exercises: OOP")
 
-puts task1.show_task
-puts task2.show_task
-puts task3.show_task
+project1.add_task("Test", "today")
+project1.add_task("Commit", "tomorrow")
+project1.add_task("Submit", "tomorrow")
+
+puts project1.show_tasks
