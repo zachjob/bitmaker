@@ -18,3 +18,11 @@ class Task
   end
 
 end
+
+task1 = Task.new("Test", "today")
+task2 = Task.new("Commit", "tomorrow")
+task3 = Task.new("Submit", "tomorrow")
+
+puts task1.show_task
+puts task2.show_task
+puts task3.show_task
