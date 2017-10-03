@@ -1,4 +1,4 @@
-{ data: { rooms:
+hotel = { data: { rooms:
     [ { id: 1, room_number: "201", capacity: 50}, { id: 2, room_number: "301", capacity: 200 }, { id: 3, room_number: "1B", capacity: 100}
     ],
     events: [
@@ -11,7 +11,9 @@
 }
 
 # Retrieve the capacity of room 201 and store it in a variable.
-  
+room = ""
+room = hotel[:data][:rooms][0][:room_number]
 
+puts room
 
 # Find all the events taking place in room 201. Iterate through them and print "ok" if the number of planned attendees will fit in the room.
