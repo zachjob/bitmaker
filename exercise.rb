@@ -17,3 +17,12 @@ room = hotel[:data][:rooms][0][:room_number]
 puts room
 
 # Find all the events taking place in room 201. Iterate through them and print "ok" if the number of planned attendees will fit in the room.
+hotel[:data][:rooms].each do |room|
+  hotel[:data][:events].each do |event|
+
+    if room[:id] == event[:room_id] && room[:capacity] >= event[:attendees]
+      puts "ok"
+    end
+
+  end
+end
