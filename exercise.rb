@@ -9,3 +9,9 @@
     ]
   }
 }
+
+# Retrieve the capacity of room 201 and store it in a variable.
+  
+
+
+# Find all the events taking place in room 201. Iterate through them and print "ok" if the number of planned attendees will fit in the room.
