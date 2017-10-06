@@ -1,8 +1,8 @@
 class BankAccount
-  @@interest_rate = 1.0115
 
   def initialize
     @balance = 0
+    @interest_rate = 1.0115
   end
 
   def balance
