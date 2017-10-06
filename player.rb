@@ -1,4 +1,4 @@
-def Player
+class Player
 
   def initialize
     @gold_coins = 0
@@ -19,7 +19,7 @@ def Player
   def collect_treasure
     @gold_coins +=1
 
-    if @gold_coins % 10 = 0
+    if @gold_coins % 10 == 0
       self.level_up
     end
   end
@@ -50,3 +50,9 @@ def Player
 end
 
 zach = Player.new
+
+puts zach.health
+zach.do_battle(5)
+zach.collect_treasure
+puts zach.health
+puts zach.gold
