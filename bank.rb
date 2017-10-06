@@ -18,7 +18,16 @@ class BankAccount
   end
 
   def gain_interest
-    @balance += @balance * @interest_rate
+    @balance *= @interest_rate
   end
 
 end
+
+zach = BankAccount.new
+puts zach.balance
+zach.deposit(5)
+puts zach.balance
+zach.withdraw(3)
+puts zach.balance
+zach.gain_interest
+puts zach.balance
