@@ -17,4 +17,8 @@ class BankAccount
     @balance -= amount
   end
 
+  def gain_interest
+    @balance += @balance * @interest_rate
+  end
+
 end
