@@ -23,6 +23,14 @@ class Paperboy
     "I'm #{@name}, I've delivered #{@experience} papers and I've earned $#{@earnings} so far!"
   end
 
+  def quota
+    @quota
+  end
+
+  def earnings
+    @earnings
+  end
+
 end
 
 tommy = Paperboy.new("Tommy")
