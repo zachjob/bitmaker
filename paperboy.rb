@@ -6,16 +6,19 @@ class Paperboy
     @earnings = 0.00
     @quota = 50
     @paper = 0.25
+    @preemo = 0.50
   end
 
   def deliver(start_address, end_address)
     delivered = (end_address - start_address) + 1
     if delivered < @quota
       @earnings += (delivered.to_f * @paper) - 2
+    elsif delivered > @quota
+      @earnings += (@quota * @paper) + ((delivered - @quota) * @preemo)
     else
       @earnings += (delivered.to_f * @paper)
     end
-
+    @experience += delivered
     @quota += delivered / 2
   end
 
@@ -34,7 +37,7 @@ class Paperboy
 end
 
 tommy = Paperboy.new("Tommy")
-tommy.quota # => 50
+puts tommy.quota # => 50
 tommy.deliver(101, 160) # => 17.5
-tommy.earnings #=> 17.5
-tommy.report # => "I'm Tommy, I've delivered 60 papers and I've earned $17.5 so far!"
+puts tommy.earnings #=> 17.5
+puts tommy.report # => "I'm Tommy, I've delivered 60 papers and I've earned $17.5 so far!"
