@@ -8,12 +8,9 @@ fr = ['un','deux','trois','quatre','cinq','six','sept','huit','neuf']
 translated = {}
 
 digits.each do |num|
-  en.each do |eng|
-    translated[num] = eng
-  end
-  fr.each do |fre|
-    translated[num] = fre
-  end
+  translated[num.to_i] =
+    {english: en[num.to_i]}
+    {french: fr[num.to_i]}
 end
 
 puts translated
