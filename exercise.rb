@@ -11,6 +11,9 @@ digits.each do |num|
   en.each do |eng|
     translated[num] = eng
   end
+  fr.each do |fre|
+    translated[num] = fre
+  end
 end
 
 puts translated
