@@ -6,11 +6,12 @@ fr = ['un','deux','trois','quatre','cinq','six','sept','huit','neuf']
 # Translated into a hash
 
 translated = {}
+location = 0
 
 digits.each do |num|
+  location = num.to_i - 1
   translated[num.to_i] =
-    {english: en[num.to_i]}
-    {french: fr[num.to_i]}
+    {english: en[location], french: fr[location]}
 end
 
 puts translated
