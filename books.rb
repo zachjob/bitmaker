@@ -51,7 +51,13 @@ class Book
   end
 
   def lent_out?
-    #code
+    @@on_loan.each do |book|
+      if self == book
+        puts "This book has been lent out."
+      else
+        puts "This book is available."
+      end
+    end
   end
 
 end
