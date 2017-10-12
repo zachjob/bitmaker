@@ -11,6 +11,7 @@ class BankAccount
     account = 0
     @@accounts.each do |amount|
       account += amount.update
+      account.to_s
     end
   end
 
