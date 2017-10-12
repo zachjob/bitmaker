@@ -4,7 +4,8 @@ class Book
 
   # Class Methods
   def self.create
-    #code
+    @@on_shelf << Book.new
+    Book
   end
 
   def self.current_due_date
@@ -20,7 +21,9 @@ class Book
   end
 
   def self.available
-    #code
+    @@on_shelf.each do |book|
+      puts "#{@title} by #{@author}; ISBN: #{@isbn}"
+    end
   end
 
   def self.borrowed
@@ -34,7 +37,7 @@ class Book
     @title = title
     @author = author
     @isbn = isbn
-    
+
   end
 
   def borrow
