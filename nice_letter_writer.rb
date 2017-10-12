@@ -8,9 +8,8 @@ kids_data.each_line do |kid|
   kid_data_array = kid.split
 
   name     = kid_data_array[0]
-  gender   = kid_data_array[1]
-  behavior = kid_data_array[2]
-  toys     = kid_data_array[3..8]
+  behavior = kid_data_array[1]
+  toys     = kid_data_array[2..7]
 
   next unless behavior == 'nice'
 
