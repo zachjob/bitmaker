@@ -29,8 +29,12 @@ class Book
 
 
   # Instance Methods
-  def initialize
-    #code
+  def initialize (title, author, isbn)
+    # initialize a book's title, author, and isbn
+    @title = title
+    @author = author
+    @isbn = isbn
+    
   end
 
   def borrow
