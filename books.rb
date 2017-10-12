@@ -17,7 +17,7 @@ class Book
   end
 
   def self.browse
-    #code
+    puts @@on_shelf.sample
   end
 
   def self.available
@@ -27,7 +27,9 @@ class Book
   end
 
   def self.borrowed
-    #code
+    @@on_loan.each do |book|
+      puts "#{@title} by #{@author}; ISBN: #{@isbn}"
+    end
   end
 
 
