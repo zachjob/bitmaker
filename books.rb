@@ -37,7 +37,12 @@ class Book
     #code
   end
 
-  def lent_out?
+  # Class Methods
+  def self.create (title, author, isbn)
+    @@on_shelf << Book.new(title, author, isbn)
+  end
+
+  def self.lent_out?
     @@on_loan.each do |book|
       if self == book
         "This book has been lent out."
@@ -45,12 +50,6 @@ class Book
         "This book is available."
       end
     end
-  end
-
-  # Class Methods
-  def self.create (title, author, isbn)
-    @@on_shelf << Book.new(title, author, isbn)
-    Book
   end
 
   def self.current_due_date
