@@ -10,9 +10,9 @@ class Ingredient
       Episode::EPISODE_NUMBERS.map do |number|
         Episode.new.recipe.ingredients
       end
-    other_ingredients = ['banana', 'apple', 'orange']
+      other_ingredients = ['banana', 'apple', 'orange']
 
-    [episode_recipe_ingredients + other_ingredients].flatten.uniq
+      [episode_recipe_ingredients + other_ingredients].flatten.uniq
   end
 
   def initialize(name)
