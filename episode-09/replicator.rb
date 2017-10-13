@@ -1,3 +1,5 @@
+require 'pry'
+
 class Replicator
 
   # When the Enterprise calls Replicator.new, this method executes.
@@ -169,7 +171,7 @@ class Replicator
     # Transport glass from reactor back to inside the replicator.
     # If successful, @enterprise.reactor.core will now be empty
     # and @inside_replicator will once again contain the glass.
-    # transport_glass_from_reactor
+    transport_glass_from_reactor
 
   end
 
