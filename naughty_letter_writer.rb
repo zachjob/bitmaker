@@ -10,6 +10,7 @@ kids_data.each_line do |kid|
   name     = kid_data_array[0]
   behavior = kid_data_array[1]
   toys     = kid_data_array[2..7]
+  single_toy = kid_data_array[rand(2..7)]
 
   next unless behavior == 'naughty'
 
