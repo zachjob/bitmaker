@@ -8,7 +8,7 @@ class Book
     @title = title
     @author = author
     @isbn = isbn
-    @due_date = ""
+    @due_date = nil
 
   end
 
@@ -29,17 +29,30 @@ class Book
     @isbn
   end
 
-  def borrow
-    #code
+  def self.borrow
+    if self.lent_out? == "This book is available."
+      self.current_due_date = Time.now
+      @@on_loan << self
+      @@on_shelf -= self
+    else
+      puts "This book has been lent out."
+    end
   end
 
   def return_to_library
-    #code
+    if self.lent_out? == "This book is available."
+      puts "This book has not been lent out."
+    else
+      self.current_due_date = nil
+      @@on_shelf << self
+      @@on_loan -= self
+    end
   end
 
   # Class Methods
   def self.create (title, author, isbn)
     @@on_shelf << Book.new(title, author, isbn)
+    return self
   end
 
   def self.lent_out?
@@ -53,11 +66,16 @@ class Book
   end
 
   def self.current_due_date
-    #code
+
   end
 
   def self.overdue_books
-    #code
+    puts "Overdue Books:"
+    @@on_loan.each do |book|
+      if Time.now >= @due_date
+        puts "-#{@title} by #{@author}; ISBN: #{@isbn}"
+      end
+    end
   end
 
   def self.browse
