@@ -1,1 +1,6 @@
 <h1>Product#index</h1>
+
+
+<% @products.each do |new_product| %>
+<%= render 'display_products', product: new_product %>
+<% end %>
