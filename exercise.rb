@@ -4,6 +4,9 @@ tracks = playlist["tracks"]
 
 puts "There are #{tracks.length} tracks in this playlist."
 
+duration = 0
 tracks.each { |track |
-  puts track["duration_in_milliseconds"]
+  duration += track["duration_in_milliseconds"]
 }
+
+puts "This playlist is #{duration} milliseconds long."
