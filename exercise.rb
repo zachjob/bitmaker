@@ -6,14 +6,15 @@ seats = [
 ]
 
 seating_plan = {}
-seats.each_with_index { |row, index|
+
+seats.each_with_index {|row, index|
   seating_plan[row] = index
 }
 
-seating_plan.each do |places, row|
-  places.each do |seat|
+seating_plan.each { |row, index|
+  row.each_with_index { |seat, place|
     if seat == nil
-      puts "Row #{row + 1} seat #{places.index} is free."
+      puts "Row #{index + 1} seat #{place + 1} is free."
     end
-  end
-end
+  }
+}
