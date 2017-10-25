@@ -9,6 +9,6 @@ cities.each do |city|
   puts city[:city]
   puts "======================"
   city[:events].each do |event|
-    puts event[:date]
+    puts "Date: #{event[:date]}, #{event[:attendees]} people"
   end
 end
