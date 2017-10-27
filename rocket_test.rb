@@ -16,4 +16,10 @@ class RocketTest < Minitest::Test
     expected = true
     assert_equal(expected, result)
   end
+  def test_lift_off_returns_false
+    @rocket.lift_off
+    result = @rocket.lift_off
+    expected = false
+    assert_equal(expected, result)
+  end
 end
