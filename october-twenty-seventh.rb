@@ -4,3 +4,11 @@ ballots = [{1 => 'Smudge', 2 => 'Tigger', 3 => 'Simba'},
            {1 =>'Boots', 2 => 'Felix', 3 => 'Bella'},
            {1 => 'Lucky', 2 => 'Felix', 3 => 'Bella'},
            {1 => 'Smudge', 2 => 'Simba', 3 => 'Felix'}]
+
+ballots.each do |b|
+  b.each do |key, value|
+    puts "#{key}: #{value}"
+    puts "----------"
+  end
+
+end
