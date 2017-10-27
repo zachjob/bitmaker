@@ -17,7 +17,11 @@ ballots.each do |b|
       score[value] += 1
     end
   end
-
 end
 
-puts score
+score = score.sort_by {|person, score| score}
+score = score.reverse
+
+3.times do |place|
+  puts "#{place + 1}. #{score[place]}"
+end
