@@ -9,7 +9,13 @@ score = {'Smudge' => 0, 'Tigger' => 0, 'Simba' => 0, 'Bella' => 0, 'Lucky' => 0,
 
 ballots.each do |b|
   b.each do |key, value|
-    score[value] += key
+    if key == 1
+      score[value] += 3
+    elsif key == 2
+      score[value] += 2
+    elsif key == 3
+      score[value] += 1
+    end
   end
 
 end
