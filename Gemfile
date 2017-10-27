@@ -20,6 +20,9 @@ gem 'pg'
 gem 'bcrypt', '~> 3.1.7'
 gem 'sorcery'
 
+# Easier to read array and hash
+gem 'pry-rails'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
