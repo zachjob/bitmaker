@@ -21,4 +21,14 @@ class UserTest < ActiveSupport::TestCase
     user = User.new(email: "bettymaker@gmail.com", password: "1234", password_confirmation: "1234")
     refute user.valid?
   end
+
+  test 'name' do
+    # arrange
+    user = User.new(first_name: "Lan", last_name: "Phan")
+
+    # assert
+    assert user.name == "Lan Phan", "User name doesn't contain first and last name"
+  end
+
+
 end
