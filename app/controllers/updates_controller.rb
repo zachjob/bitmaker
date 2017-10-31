@@ -14,7 +14,8 @@ class UpdatesController < ApplicationController
     @update = Update.new
     @update.title = params[:update][:title] #we are not finding anything but creating something
     @update.description = params[:update][:description]#therefore dont use the find query
-    @update.project = @project
+    @update.project = @project #takes the whole project object and saves it in project method
+    
     if @update.save
       redirect_to project_updates_path(@project)
     else
