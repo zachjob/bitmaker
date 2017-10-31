@@ -23,6 +23,9 @@ gem 'sorcery'
 # Easier to read array and hash
 gem 'pry-rails'
 
+# Install Bootstrap 4
+gem 'bootstrap', '~> 4.0.0.beta2'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
