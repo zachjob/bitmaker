@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  has_many :pledges
   has_secure_password
 
   validates :password, length: { minimum: 8 }, on: :create

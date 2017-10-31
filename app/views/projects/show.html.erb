@@ -13,7 +13,7 @@
   <%= icon('clock-o') %>
   <%= "#{time_ago_in_words(@project.end_date)} #{( @project.end_date > Time.now.utc ) ? 'remaining' : 'past deadline'}" %>
 </time>
-
+<p> <%= @project.check_if_user_already_pledged(current_user) %></p>
 <%= form_for [@project, Pledge.new] do |f| %>
   <%= f.number_field :dollar_amount, value: @project.rewards.minimum(:dollar_amount), step: 0.01 %>
   <%= f.submit "Pledge" %>
