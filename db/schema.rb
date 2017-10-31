@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(version: 20171031180730) do
     t.datetime "updated_at"
     t.string "image"
     t.integer "user_id"
-    t.integer "raised"
+    t.integer "raised", default: 0
   end
 
   create_table "rewards", id: :serial, force: :cascade do |t|
