@@ -12,12 +12,13 @@ class UpdatesController < ApplicationController
   def create
     @project = Project.find(params[:project_id])
     @update = Update.new
-    @update.title = params[:title] #we are not finding anything but creating something
-    @update.description = params[:description]#therefore dont use the find query
+    @update.title = params[:update][:title] #we are not finding anything but creating something
+    @update.description = params[:update][:description]#therefore dont use the find query
+    @update.project = @project
     if @update.save
       redirect_to project_updates_path(@project)
     else
-      render :projects
+      render 'projects/show'
       #render views, redirect to routes
     end
 
