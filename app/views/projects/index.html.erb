@@ -1,19 +1,34 @@
 <%= link_to "New Project", new_project_path %>
 
-<% @projects.each do |project| %>
-  <article class="project">
-    <%= link_to project, class: 'project-link' do %>
-      <figure class="project-image">
-        <% if project.image %>
-          <%= image_tag project.image %>
-        <% else %>
-          <%= image_tag ActionController::Base.helpers.asset_path("default.jpg") %>
+<div class="card-deck">
+  <div class="card">
+    <% @projects.each do |project| %>
+
+      <img class="card-img-top" src="..." alt="Card image cap">
+
+      <!-- section 01 -->
+      <div class="card-body">
+        <%= link_to project, class: 'project-link' do %>
+          <h4 class="card-title"><%=project.title%></h4>
+          <p class="card-text"><%=project.description %></p>
+      </div>
+
+      <!-- Section 02 -->
+      <div class="current_pledged-amount-and-goal">
+        <p class="amount_pledged">Amount Pledged:<%= project.total_pledged_in_project %></p>
+        <p class="goal">Goal:                    <%=number_to_currency(project.goal) %></p>
+      </div>
+
+      <!-- Section 03 -->
+      <div class="card-footer">
+        <small class="text-muted">Meera's Update section</small>
+      </div>
+
+        <time class="project-days-left">
+          <%= icon('clock-o') %>
+          <%= "#{time_ago_in_words(project.end_date)} #{( project.end_date > Time.now.utc ) ? 'remaining' : 'past deadline'}" %></time>
         <% end %>
-      </figure>
-      <h1 class="project-title"><%= project.title %></h1>
-      <time class="project-days-left">
-        <%= icon('clock-o') %>
-        <%= "#{time_ago_in_words(project.end_date)} #{( project.end_date > Time.now.utc ) ? 'remaining' : 'past deadline'}" %></time>
     <% end %>
-  </article>
-<% end %>
+  </div>
+
+</div>

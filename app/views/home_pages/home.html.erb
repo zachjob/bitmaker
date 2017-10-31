@@ -1,0 +1,25 @@
+<div class="container col-12">
+  <div class="project-list">
+    <% @projects.each do |project| %>
+
+      <div class="card" style="width: 20rem;">
+      <img class="card-img-top" src="..." alt="Card image cap">
+      <div class="card-block">
+
+        <h4 class="card-title">     <%=project.title%></h4>
+        <p class="card-text">       <%=project.description %></p>
+        <p class="goal">            <%=project.goal%></p>
+        <p class="start_date">      <%=project.start_date%></p>
+        <p class="end_date">      <%=project.end_date%></p>
+
+        <a href="<%=project_path(project.id) %>" class="btn btn-primary">More Details</a>
+
+      </div>
+
+    </div>
+
+<% end %>
+
+  </div>
+
+</div>
