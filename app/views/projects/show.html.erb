@@ -1,3 +1,4 @@
+
 <h1><%= @project.title %></h1>
 
 
@@ -47,7 +48,7 @@
   <h2>Updates</h2>
 
   <% @project.updates.each do |update| %>
-  
+
     <p>
       <%= update.title %>
     </p>
@@ -57,5 +58,8 @@
     </p>
 
     <br>
+
+    <%= link_to("Edit", edit_project_update_path(@project.id, update.id)) %> | <%= link_to("Delete", "/projects/#{@project.id}/updates/#{update.id}", method: :delete, data: {confirm: "You sure you wanna delete this?"}) %>
+
 
     <% end %>
