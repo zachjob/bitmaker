@@ -12,11 +12,13 @@ class Project < ActiveRecord::Base
     pledges.sum(&:dollar_amount)
   end
 
-    def check_if_user_already_pledged(user)
+  def check_if_user_already_pledged(user)
     if pledges.map(&:user).include?(user)
       "You have already backed this project."
-     end
-     def start_date_cannot_be_in_the_past
+    end
+  end
+
+  def start_date_cannot_be_in_the_past
     if start_date <= Date.today
       errors.add(:start_date, 'Start date cannot be in the future')
     end
@@ -28,7 +30,7 @@ class Project < ActiveRecord::Base
     end
   end
 
-    def total_pledged_in_project
+  def total_pledged_in_project
     self.pledges.sum(:dollar_amount)
   end
 
