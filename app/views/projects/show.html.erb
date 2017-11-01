@@ -30,6 +30,12 @@
   <%= f.submit "Pledge" %>
 <% end %>
 
+<% if @current_user == @project.user %>
+  <% @project.pledges.each do |pledge| %>
+    <p><%= pledge.user.name %> has pledged <%= number_to_currency(pledge.dollar_amount) %></p>
+  <% end %>
+<% end %>
+
 <h2>Rewards</h2>
 <% @project.rewards.each do |reward| %>
   <p><%= number_to_currency(reward.dollar_amount) %></p>

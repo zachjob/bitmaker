@@ -7,6 +7,7 @@ class Project < ActiveRecord::Base
 
 
   validates :title, :description, :goal, :start_date, :end_date, :user_id, presence: true
+  validate :goal_must_be_positive_number
 
   def earned
     pledges.sum(&:dollar_amount)
@@ -36,5 +37,11 @@ class Project < ActiveRecord::Base
 
   def backed_up?(current_user)
     return self.users.include?(current_user)
+  end
+
+  def goal_must_be_positive_number
+    if goal <= 0
+      errors.add(:goal,"must be greater than 0.")
+    end
   end
 end
