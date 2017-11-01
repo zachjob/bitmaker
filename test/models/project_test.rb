@@ -40,4 +40,51 @@ class ProjectTest < ActiveSupport::TestCase
     )
   end
 
+  test 'project start date cannot be in the past' do
+      # arrange
+      new_project.start_date= Date.yesterday
+
+      # act
+      new_project.save
+
+      # assert
+      assert new_project.invalid?, 'Start date cannot be in the past'
+    end
+
+    test 'project end date later than start date' do
+      # arrange
+      new_project.end_date = Date.yesterday
+
+      # act
+      new_project.save
+
+      # assert
+      assert new_project.invalid?, 'End date must be later'
+    end
+
+    test 'total pledged in project' do
+        userA = User.create!(first_name: "Lan", last_name: "Phan", email: "pablo@email.com", password: "password", password_confirmation: "password")
+
+        userB = User.create!(first_name: "Patrick", last_name: "Stewart", email: "patrick@email.com", password: "password", password_confirmation: "password")
+
+        project1 = Project.create!(
+          title:       'Anti-theft backpack',
+          description: 'anti-cut backpack and waterproof',
+          start_date:  Date.tomorrow,
+          end_date:    Date.tomorrow + 1.month,
+          goal:        50000,
+          user:        userA
+        )
+
+        assert_equal project1.total_pledged_in_project, 0
+
+        pledge = Pledge.create!(
+          dollar_amount:  50.00,
+          project:        project1,
+          user:           userB
+        )
+
+        assert_equal( project1.total_pledged_in_project, 50.00)
+      end
+
 end
