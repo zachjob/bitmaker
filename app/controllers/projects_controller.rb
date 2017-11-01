@@ -4,11 +4,15 @@ class ProjectsController < ApplicationController
   def index
     @projects = Project.all
     @projects = @projects.order(:end_date)
+
+    @total_projects = Project.count
+    @total_pledged = Pledge.sum(:dollar_amount)
+    @total_num_projects_funded = Project.joins(:pledges).group(:id).having('sum(pledges.dollar_amount) >= projects.goal').length
   end
 
   def show
     @project = Project.find(params[:id])
-    
+
   end
 
   def new
