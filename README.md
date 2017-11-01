@@ -18,7 +18,7 @@ Reward dollar_amount must be positive number</del>
 * <del>As a user, when I go to a project’s page, it should tell me how much time is left until the funding deadline (like it does on the project index currently)</del>
 
 ## Project Owners [Need to Have]
-* As a project owner, when I go to my project’s page, I should see a list of who has backed my project
+* <del>As a project owner, when I go to my project’s page, I should see a list of who has backed my project</del>
 * As a project owner, when I go to my project’s page, I should see a summary of how many rewards have been claimed [Nice to Have]
 * As a project owner, when I create a new project, I should have the option of setting a limit for how many times a specific reward can be claimed
 * <del>As a project owner I should be able to post updates on the progress of my project.</del>
