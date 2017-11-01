@@ -1,7 +1,7 @@
 <h3> Projects under this category </h3>
 
-  <% Project.where(category_id: @category.id).each do |product| %>
-    <li> <%= project.name %> </li>
+  <% Project.where(category_id: @category.id).each do |project| %>
+    <li> <%= project.title %> </li>
   <% end %>
 
 <p><%= link_to 'Back', root_path %></p>

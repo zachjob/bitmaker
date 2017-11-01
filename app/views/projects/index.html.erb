@@ -23,6 +23,13 @@
   </section>
 </section>
 
+<div class="category">
+  <h4>Category</h4>
+  <% @categories.each do |category| %>
+    <%= link_to category.name, category_path(category) %>
+  <%end %>
+</div>
+
 <div class="row">
 
     <% @projects.each do |project| %>

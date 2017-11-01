@@ -8,6 +8,7 @@ class ProjectsController < ApplicationController
     @total_projects = Project.count
     @total_pledged = Pledge.sum(:dollar_amount)
     @total_num_projects_funded = Project.joins(:pledges).group(:id).having('sum(pledges.dollar_amount) >= projects.goal').length
+    @categories = Category.all
   end
 
   def show
