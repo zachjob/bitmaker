@@ -1,24 +1,26 @@
 <%= link_to "New Project", new_project_path %>
 
-<section class="projects-stats started">
-  <h4>PROJECTS STARTED</h4>
-  <div class="stats-result">
-    <%= @total_projects %>
-  </div>
-</section>
+<section class="status">
+  <section class="projects-stats started">
+    <h4>PROJECTS STARTED</h4>
+    <div class="stats-result">
+      <%= @total_projects %>
+    </div>
+  </section>
 
-<section class="projects-stats started">
-  <h4>PROJECTS FUNDED</h4>
-  <div class="stats-result">
-    <%= @total_num_projects_funded %>
-  </div>
-</section>
+  <section class="projects-stats started">
+    <h4>PROJECTS FUNDED</h4>
+    <div class="stats-result">
+      <%= @total_num_projects_funded %>
+    </div>
+  </section>
 
-<section class="projects-stats started">
-  <h4>PROJECTS PLEDGED</h4>
-  <div class="stats-result">
-    <%= @total_pledged %>
-  </div>
+  <section class="projects-stats started">
+    <h4>PROJECTS PLEDGED</h4>
+    <div class="stats-result">
+      <%= @total_pledged %>
+    </div>
+  </section>
 </section>
 
 <div class="row">
