@@ -1,9 +1,6 @@
-<<<<<<< HEAD
 class User < ActiveRecord::Base
   has_many :pledges
-=======
-class User < ActiveRecord::Base  
->>>>>>> updates
+
   has_secure_password
 
   validates :password, length: { minimum: 8 }, on: :create
