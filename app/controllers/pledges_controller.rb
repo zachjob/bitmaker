@@ -1,6 +1,5 @@
 class PledgesController < ApplicationController
   before_action :require_login
-  before_action :test_if_pledger_is_the_owner
 
   def create
     @project = Project.find(params[:project_id])
@@ -8,6 +7,8 @@ class PledgesController < ApplicationController
     @pledge = @project.pledges.build
     @pledge.dollar_amount = params[:pledge][:dollar_amount]
     @pledge.user = current_user
+
+    
 
     if @pledge.save
       redirect_to project_url(@project), notice: "You have successfully backed #{@project.title}!"

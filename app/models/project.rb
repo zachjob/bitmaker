@@ -5,4 +5,14 @@ class Project < ActiveRecord::Base
   belongs_to :user # project owner
 
   validates :title, :description, :goal, :start_date, :end_date, :user_id, presence: true
+
+  def earned
+    pledges.sum(&:dollar_amount)
+  end
+
+    def check_if_user_already_pledged(user)
+    if pledges.map(&:user).include?(user)
+      "You have already backed this project."
+     end
+  end
 end

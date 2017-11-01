@@ -26,7 +26,7 @@ Reward dollar_amount must be positive number
 * As a user, when I go to the page of a fully funded project that is past its deadline that I have not backed, I should only see updates about that project from before the funding deadline. Updates for funded projects that were made after funding ended are for backers’ (and the owner’s) eyes only.
 * As a backer I should be able to leave a comment on a project I have backed
 
-## Categories [Nice to Have]
+## Categories [Happy to Have]
 * Add a category model (eg. technology, art) and the ability to create a project under a specific category
 * Users should be able to browse projects by category
 
