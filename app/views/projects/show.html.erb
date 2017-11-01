@@ -6,6 +6,10 @@
   <%= image_tag @project.image %>
 <% end %>
 
+<h3>Category</h3>
+<%= @project.category.name%>
+
+
 <h3>Project Owner
 
 </h3>
@@ -47,7 +51,7 @@
   <h2>Updates</h2>
 
   <% @project.updates.each do |update| %>
-  
+
     <p>
       <%= update.title %>
     </p>
