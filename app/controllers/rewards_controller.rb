@@ -1,7 +1,6 @@
 class RewardsController < ApplicationController
   before_action :load_project
   before_action :require_login
-  before_action :test_if_pledger_is_the_owner
 
   def new
     @reward = Reward.new

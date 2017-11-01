@@ -1,12 +1,12 @@
 # Crowdfunder
 
 ## Validations [Need to Have]
-* dollar_amount should be a required field for pledges
-* Project start date must be in future
-* Project end date must be later than start date
-* A project's goal must be positive number
-Reward dollar_amount must be positive number
-* Add error messages to the project, pledge, sign up, and login forms so that if any validations fail the user can see what went wrong
+* <del>dollar_amount should be a required field for pledges</del>
+* <del>Project start date must be in future</del>
+* <del>Project end date must be later than start date</del>
+* <del>A project's goal must be positive number
+Reward dollar_amount must be positive number</del>
+* <del>Add error messages to the project, pledge, sign up, and login forms so that if any validations fail the user can see what went wrong</del>
 
 ## Accounts [Nice to Have]
 * As a user I should be able to visit my profile page and see a list of all the projects I have backed, the total amount I have pledged on the site, and a list of all the projects I own
