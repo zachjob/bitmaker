@@ -14,7 +14,13 @@
         <%= @project.title %>
       </h1>
     </div>
+    <div class="col-sm">
+      <% if @project.category %>
+        <%= @project.category.name%>
+      <% end %>
+    </div>
   </div>
+
   <div class="row">
     <div class="col-sm">
       <time class="project-days-left">

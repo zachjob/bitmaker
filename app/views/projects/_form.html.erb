@@ -1,17 +1,5 @@
 <%= form_for(@project, html: {multipart: true}) do |f| %>
 
-<% if @project.errors.any? %>
-    <ul>
-      <% @project.errors.full_messages.each do |m| %>
-        <div class="alert alert-danger" role="alert">
-          <li>
-            <%= m %>
-          </li>
-        </div>
-      <% end %>
-    </ul>
-  <% end %>
-  
   <div>
     <%= f.label :title %>
     <%= f.text_field :title %>
@@ -20,6 +8,11 @@
   <div>
     <%= f.label :description %>
     <%= f.text_field :description %>
+  </div>
+
+  <div>
+    <%= f.label :category %>
+    <%= f.collection_select(:category_id, Category.all, :id, :name, :prompt => "Select one")%>
   </div>
 
   <div>
