@@ -47,7 +47,7 @@
     </div>
   </div>
 
-  <% if @current_user == @project.user %>
+  <% if @project.user && @current_user == @project.user %>
     <div class="row">
       <div class="col-sm">
         <h2>Backers</h2>
