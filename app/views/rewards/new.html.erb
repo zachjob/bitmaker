@@ -3,7 +3,11 @@
 <% if @reward.errors.any? %>
     <ul>
       <% @reward.errors.full_messages.each do |m| %>
-      <li><%= m %></li>
+      <div class="alert alert-danger" role="alert">
+          <li>
+            <%= m %>
+          </li>
+        </div>
       <% end %>
     </ul>
   <% end %>

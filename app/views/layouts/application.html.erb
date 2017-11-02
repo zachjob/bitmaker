@@ -30,7 +30,11 @@
 
       <main class="col-12">
         <% flash.each do |key, message| %>
-          <div class="flash-<%= key %>"><%= message %></div>
+          <div class="flash-<%= key %>">
+            <div class="alert alert-primary" role="alert">
+              <%= message %>
+            </div>
+          </div>
         <% end %>
         <%= yield %>
       </main>
