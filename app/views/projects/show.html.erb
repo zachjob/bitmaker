@@ -86,8 +86,32 @@
     </div>
   </div>
 
+  <div class="row">
+    <div class="col-sm">
+      <h2>Updates</h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="card-group">
+    <% @project.updates.each do |update| %>
+      <div class="col-12">
+        <div class="card">
+          <div class="card-header">
+            <%= update.title %>
+          </div>
+          <div class="card-body">
+            <p class="card-text"><%= update.description %>
+          </div>
+          <div class="card-footer text-muted">
+            <%= link_to("Edit", edit_project_update_path(@project.id, update.id)) %> | <%= link_to("Delete", "/projects/#{@project.id}/updates/#{update.id}", method: :delete, data: {confirm: "You sure you wanna delete this?"}) %>
+          </div>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
 
-  <section class="project-comments">
+        <section class="project-comments">
     <h2>Comments</h2>
     <%= render 'comments/comment_form' %>
 
@@ -99,23 +123,4 @@
       <p><%= link_to "Log in", :login %> to leave a comment </p>
     <% end %>
   </section>
-
-    <h2>Updates</h2>
-
-    <% @project.updates.each do |update| %>
-
-      <p>
-        <%= update.title %>
-      </p>
-
-      <p>
-        <%= update.description %>
-      </p>
-
-      <br>
-
-      <%= link_to("Edit", edit_project_update_path(@project.id, update.id)) %> | <%= link_to("Delete", "/projects/#{@project.id}/updates/#{update.id}", method: :delete, data: {confirm: "You sure you wanna delete this?"}) %>
-
-
-      <% end %>
 </div>
