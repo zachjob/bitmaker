@@ -13,10 +13,8 @@
       <h1>
         <%= @project.title %>
       </h1>
-    </div>
-    <div class="col-sm">
       <% if @project.category %>
-        <%= @project.category.name%>
+        <button type="button" class="btn btn-dark"><%= @project.category.name%></button>
       <% end %>
     </div>
   </div>
@@ -37,38 +35,56 @@
     <div class="col-sm">
       <p>Goal: <%= number_to_currency(@project.goal) %></p>
       <p>Raised: <%= number_to_currency(@project.earned) %></p>
-    </div>
-    <div class="col-sm">
       <p>Fundraising starts: <%= @project.start_date.strftime("%A %b %d %Y") %></p>
       <p>Deadline: <%= @project.end_date.strftime("%A %b %d %Y") %></p>
     </div>
+    <div class="col-sm">
+      <% @project.check_if_user_already_pledged(current_user) %>
+      <%= form_for [@project, Pledge.new] do |f| %>
+        <%= f.number_field :dollar_amount, value: @project.rewards.minimum(:dollar_amount), step: 0.01 %>
+        <%= f.submit "Pledge" %>
+      <% end %>
+    </div>
   </div>
 
-  <p> <%= @project.check_if_user_already_pledged(current_user) %></p>
-  <%= form_for [@project, Pledge.new] do |f| %>
-    <%= f.number_field :dollar_amount, value: @project.rewards.minimum(:dollar_amount), step: 0.01 %>
-    <%= f.submit "Pledge" %>
-  <% end %>
-
   <% if @current_user == @project.user %>
-    <% @project.pledges.each do |pledge| %>
-      <p><%= pledge.user.name %> has pledged <%= number_to_currency(pledge.dollar_amount) %></p>
+    <div class="row">
+      <div class="col-sm">
+        <h2>Backers</h2>
+      </div>
+    </div>
+    <div class="row">
+      <% @project.pledges.each do |pledge| %>
+        <div class="col-4">
+          <p><%= pledge.user.name %> has pledged <%= number_to_currency(pledge.dollar_amount) %></p>
+        </div>
+      <% end %>
+  </div>
+  <% end %>
+
+  <div class="row">
+    <div class="col-sm">
+      <h2>Rewards</h2>
+      <%= link_to "Add new reward", new_project_reward_path(@project) %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="card-group">
+    <% @project.rewards.each do |reward| %>
+      <div class="col-4">
+        <div class="card">
+          <div class="card-body">
+            <p class="card-title"><%= number_to_currency(reward.dollar_amount) %></p>
+            <p class="card-text"><%= reward.description %></p>
+          </div>
+          <div class="card-footer text-muted">
+            <%= link_to "Remove reward", project_reward_path(@project, reward), method: 'delete' %>
+          </div>
+        </div>
+      </div>
     <% end %>
-  <% end %>
-
-  <h2>Rewards</h2>
-  <% @project.rewards.each do |reward| %>
-    <p><%= number_to_currency(reward.dollar_amount) %></p>
-    <p><%= reward.description %></p>
-
-    <p>
-      <small>
-        <%= link_to "Remove reward", project_reward_path(@project, reward), method: 'delete' %>
-      </small>
-    </p>
-  <% end %>
-
-  <%= link_to "Add new reward", new_project_reward_path(@project) %>
+    </div>
+  </div>
 
 
     <h2>Updates</h2>

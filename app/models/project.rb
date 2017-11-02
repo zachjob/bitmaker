@@ -17,7 +17,7 @@ class Project < ActiveRecord::Base
 
   def check_if_user_already_pledged(user)
     if pledges.map(&:user).include?(user)
-      "You have already backed this project."
+      errors.add(:dollar_amount, 'You have already backed this project.')
     end
   end
 
