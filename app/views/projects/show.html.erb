@@ -13,8 +13,10 @@
       <h1>
         <%= @project.title %>
       </h1>
+    </div>
+    <div class="col-sm">
       <% if @project.category %>
-        <button type="button" class="btn btn-dark"><%= @project.category.name%></button>
+        <%= @project.category.name%>
       <% end %>
     </div>
   </div>
@@ -35,100 +37,69 @@
     <div class="col-sm">
       <p>Goal: <%= number_to_currency(@project.goal) %></p>
       <p>Raised: <%= number_to_currency(@project.earned) %></p>
+    </div>
+    <div class="col-sm">
       <p>Fundraising starts: <%= @project.start_date.strftime("%A %b %d %Y") %></p>
       <p>Deadline: <%= @project.end_date.strftime("%A %b %d %Y") %></p>
     </div>
-    <div class="col-sm">
-      <% @project.check_if_user_already_pledged(current_user) %>
-      <%= form_for [@project, Pledge.new] do |f| %>
-        <%= f.number_field :dollar_amount, value: @project.rewards.minimum(:dollar_amount), step: 0.01 %>
-        <%= f.submit "Pledge" %>
-      <% end %>
-    </div>
   </div>
 
-  <% if @project.user && @current_user == @project.user %>
-    <div class="row">
-      <div class="col-sm">
-        <h2>Backers</h2>
-      </div>
-    </div>
-    <div class="row">
-      <% @project.pledges.each do |pledge| %>
-        <div class="col-4">
-          <p><%= pledge.user.name %> has pledged <%= number_to_currency(pledge.dollar_amount) %></p>
-        </div>
-      <% end %>
-  </div>
+  <p> <%= @project.check_if_user_already_pledged(current_user) %></p>
+  <%= form_for [@project, Pledge.new] do |f| %>
+    <%= f.number_field :dollar_amount, value: @project.rewards.minimum(:dollar_amount), step: 0.01 %>
+    <%= f.submit "Pledge" %>
   <% end %>
 
-  <div class="row">
-    <div class="col-sm">
-      <h2>Rewards</h2>
-      <%= link_to "Add new reward", new_project_reward_path(@project) %>
-    </div>
-  </div>
-  <div class="row">
-    <div class="card-group">
-    <% @project.rewards.each do |reward| %>
-      <div class="col-4">
-        <div class="card">
-          <div class="card-body">
-            <p class="card-title"><%= number_to_currency(reward.dollar_amount) %></p>
-            <p class="card-text"><%= reward.description %></p>
-          </div>
-          <div class="card-footer text-muted">
-            <%= link_to "Remove reward", project_reward_path(@project, reward), method: 'delete' %>
-          </div>
-        </div>
-      </div>
+  <% if @current_user == @project.user %>
+    <% @project.pledges.each do |pledge| %>
+      <p><%= pledge.user.name %> has pledged <%= number_to_currency(pledge.dollar_amount) %></p>
     <% end %>
-    </div>
-  </div>
+  <% end %>
 
-  <div class="row">
-    <div class="col-sm">
-      <h2>Updates</h2>
-    </div>
-  </div>
-  <div class="row">
-    <div class="card-group">
-    <% @project.updates.each do |update| %>
-      <div class="col-12">
-        <div class="card">
-          <div class="card-header">
-            <%= update.title %>
-          </div>
-          <div class="card-body">
-            <p class="card-text"><%= update.description %>
-          </div>
-          <div class="card-footer text-muted">
-            <%= link_to("Edit", edit_project_update_path(@project.id, update.id)) %> | <%= link_to("Delete", "/projects/#{@project.id}/updates/#{update.id}", method: :delete, data: {confirm: "You sure you wanna delete this?"}) %>
-          </div>
-        </div>
-      </div>
-      <% end %>
-    </div>
-  </div>
+  <h2>Rewards</h2>
+  <% @project.rewards.each do |reward| %>
+    <p><%= number_to_currency(reward.dollar_amount) %></p>
+    <p><%= reward.description %></p>
+
+    <p>
+      <small>
+        <%= link_to "Remove reward", project_reward_path(@project, reward), method: 'delete' %>
+      </small>
+    </p>
+  <% end %>
+
+  <%= link_to "Add new reward", new_project_reward_path(@project) %>
+
 
   <section class="project-comments">
-    <div class="row">
-      <div class="col-sm">
-        <h2>Comments</h2>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-sm">
-        <%= render 'comments/comment_form' %>
+    <h2>Comments</h2>
+    <%= render 'comments/comment_form' %>
 
-        <% if current_user && current_user.pledges.include?(@project) || @project.user == current_user %>
-          <%= render 'comments/comment_form', project: @project, comment: @comment%>
-        <% elsif current_user %>
-          <p>Please back this project if you'd like to leave a comment.</p>
-        <% else %>
-          <p><%= link_to "Log in", :login %> to leave a comment </p>
-        <% end %>
-      </div>
-    </div>
+    <% if current_user && current_user.pledges.include?(@project) || @project.user == current_user %>
+      <%= render 'comments/comment_form', project: @project, comment: @comment%>
+    <% elsif current_user %>
+      <p>Please back this project if you'd like to leave a comment.</p>
+    <% else %>
+      <p><%= link_to "Log in", :login %> to leave a comment </p>
+    <% end %>
   </section>
+
+    <h2>Updates</h2>
+
+    <% @project.updates.each do |update| %>
+
+      <p>
+        <%= update.title %>
+      </p>
+
+      <p>
+        <%= update.description %>
+      </p>
+
+      <br>
+
+      <%= link_to("Edit", edit_project_update_path(@project.id, update.id)) %> | <%= link_to("Delete", "/projects/#{@project.id}/updates/#{update.id}", method: :delete, data: {confirm: "You sure you wanna delete this?"}) %>
+
+
+      <% end %>
 </div>
