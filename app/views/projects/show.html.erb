@@ -71,6 +71,19 @@
   <%= link_to "Add new reward", new_project_reward_path(@project) %>
 
 
+  <section class="project-comments">
+    <h2>Comments</h2>
+    <%= render 'comments/comment_form' %>
+
+    <% if current_user && current_user.pledges.include?(@project) || @project.user == current_user %>
+      <%= render 'comments/comment_form', project: @project, comment: @comment%>
+    <% elsif current_user %>
+      <p>Please back this project if you'd like to leave a comment.</p>
+    <% else %>
+      <p><%= link_to "Log in", :login %> to leave a comment </p>
+    <% end %>
+  </section>
+
     <h2>Updates</h2>
 
     <% @project.updates.each do |update| %>
