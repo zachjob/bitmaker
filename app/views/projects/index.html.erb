@@ -1,7 +1,7 @@
 <%= link_to "New Project", new_project_path %>
 
 <div class="row">
-
+  <div class="card-group">
     <% @projects.each do |project| %>
       <div class="col-4">
 
@@ -12,25 +12,19 @@
         <% end %>
               <p class="card-text"><%=project.description %></p>
 
-              <div class="current_pledged-amount-and-goal">
-                <p class="amount_pledged">Amount Pledged: <%=number_to_currency(project.total_pledged_in_project) %></p>
-                <p class="goal">Goal: <%=number_to_currency(project.goal) %></p>
-              </div>
-
-              <div class="card-footer">
-                <small class="text-muted">Meera's Update section</small>
-              </div>
-
-              <time class="project-days-left">
-                <%= icon('clock-o') %>
-                <%= "#{time_ago_in_words(project.end_date)} #{( project.end_date > Time.now.utc ) ? 'remaining' : 'past deadline'}"%>
-              </time>
+              <ul class="list-group list-group-flush current_pledged-amount-and-goal">
+                <li class="list-group-item amount_pledged">Amount Pledged: <%=number_to_currency(project.total_pledged_in_project) %></li>
+                <li class="list-group-item goal">Goal: <%=number_to_currency(project.goal) %></li>
+                <li class="list-group-item">
+                  <time class="project-days-left">
+                    <%= icon('clock-o') %>
+                    <%= "#{time_ago_in_words(project.end_date)} #{( project.end_date > Time.now.utc ) ? 'remaining' : 'past deadline'}"%>
+                  </time>
+                </li>
+              </ul>
             </div>
           </div>
-
-
-
       </div> <!-- col-4 -->
     <% end %>
-
+  </div>
 </div><!--row-->
