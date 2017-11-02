@@ -5,6 +5,7 @@ class Project < ActiveRecord::Base
   belongs_to :user # project owner
   has_many :updates
   belongs_to :category
+  has_many :comments
 
 
   validates :title, :description, :goal, :start_date, :end_date, :user_id, presence: true
