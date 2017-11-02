@@ -1,7 +1,36 @@
 <h3> Projects under this category </h3>
 
-  <% Project.where(category_id: @category.id).each do |project| %>
-    <li> <%= project.title %> </li>
-  <% end %>
-
 <p><%= link_to 'Back', root_path %></p>
+
+<div class="row">
+
+    <% Project.where(category_id: @category.id).each do |project| %>
+      <div class="col-4">
+
+        <%= link_to project, class: 'project-link' do %>
+          <div class="card">
+            <div class="card-body">
+              <h4 class="card-title"><%=project.title%></h4>
+        <% end %>
+              <p class="card-text"><%=project.description %></p>
+
+              <div class="current_pledged-amount-and-goal">
+                <p class="amount_pledged">Amount Pledged: <%=number_to_currency(project.total_pledged_in_project) %></p>
+                <p class="goal">Goal: <%=number_to_currency(project.goal) %></p>
+              </div>
+
+              <div class="card-footer">
+                <small class="text-muted">Meera's Update section</small>
+              </div>
+
+              <time class="project-days-left">
+                <%= icon('clock-o') %>
+                <%= "#{time_ago_in_words(project.end_date)} #{( project.end_date > Time.now.utc ) ? 'remaining' : 'past deadline'}"%>
+              </time>
+            </div>
+          </div>
+          
+      </div> <!-- col-4 -->
+    <% end %>
+
+</div><!--row-->
