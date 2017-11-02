@@ -1,3 +1,15 @@
+<% if @user && @user.errors.any? %>
+<ul>
+  <% @user.errors.full_messages.each do |m| %>
+    <div class="alert alert-danger" role="alert">
+      <li>
+        <%= m %>
+      </li>
+    </div>
+  <% end %>
+</ul>
+<% end %>
+
 <%= form_tag user_sessions_path, :method => :post do %>
 
   <div class="field">

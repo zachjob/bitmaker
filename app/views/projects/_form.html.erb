@@ -1,5 +1,17 @@
 <%= form_for(@project, html: {multipart: true}) do |f| %>
 
+<% if @project.errors.any? %>
+    <ul>
+      <% @project.errors.full_messages.each do |m| %>
+        <div class="alert alert-danger" role="alert">
+          <li>
+            <%= m %>
+          </li>
+        </div>
+      <% end %>
+    </ul>
+  <% end %>
+
   <div>
     <%= f.label :title %>
     <%= f.text_field :title %>
