@@ -1,0 +1,11 @@
+<h1>Comments#create</h1>
+
+<%= form_for [project, comment] do |f| %>
+
+<p class="comment-box">
+  <%= f.text_area :comment, placeholder: "Write your comment here!" %>
+</p>
+
+<%= f.submit %>
+
+<% end %>
