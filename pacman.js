@@ -12,9 +12,15 @@
 // inky.personality = "Shadow";
 // console.log(inky);
 
-var ghosts = { inky: "Cyan", blinky: "Red", pinky: "Pink", clyde: "Orange" };
-console.log(ghosts);
-console.log(ghosts.inky); // => 'Cyan'
-console.log(ghosts.blinky); // => 'Red'
-console.log(ghosts['inky']); // => 'Cyan'
-console.log(ghosts['blinky']); // => 'Red'
+// var ghosts = { inky: "Cyan", blinky: "Red", pinky: "Pink", clyde: "Orange" };
+// console.log(ghosts);
+// console.log(ghosts.inky); // => 'Cyan'
+// console.log(ghosts.blinky); // => 'Red'
+// console.log(ghosts['inky']); // => 'Cyan'
+// console.log(ghosts['blinky']); // => 'Red'
+
+var ghosts = ["Inky", "Blinky", "Pinky", "Clyde"];
+
+for (var index = 0; index < ghosts.length; index++) {
+  console.log("Pac-Man eats " + ghosts[index]);
+}
