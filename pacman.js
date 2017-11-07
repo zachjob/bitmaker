@@ -19,8 +19,27 @@
 // console.log(ghosts['inky']); // => 'Cyan'
 // console.log(ghosts['blinky']); // => 'Red'
 
-var ghosts = ["Inky", "Blinky", "Pinky", "Clyde"];
+// var ghosts = ["Inky", "Blinky", "Pinky", "Clyde"];
 
-for (var index = 0; index < ghosts.length; index++) {
-  console.log("Pac-Man eats " + ghosts[index]);
+// for (var index = 0; index < ghosts.length; index++) {
+//   console.log("Pac-Man eats " + ghosts[index]);
+// }
+
+var powerPelletEaten = false;
+var ghosts = 4;
+
+while (true) {
+  console.log("Ghosts remaining: " + ghosts);
+
+  if (powerPelletEaten == false) {
+    console.log("Pac-Man eats the power pellet.");
+    powerPelletEaten = true;
+  } else if (ghosts > 0) {
+    console.log("Pac-Man eats a ghost.");
+    ghosts--;
+  } else {
+    break;
+  }
 }
+
+console.log("Pac-Man returns home after a long day in the maze.");
