@@ -193,7 +193,11 @@ console.log( 'The total number of cash sales is:', numCashSales );
   HINT(S):
   - Make sure to exclude any 'sales' made by 'credit'!
 */
-var numCreditPurchases;
+var numCreditPurchases = transactions.filter(function(transaction) {
+  return (
+    transaction["type"] === "purchase" && transaction["paymentMethod"] === "credit"
+  );
+}).length;
 
 console.log( 'The total number of credit purchases is:', numCreditPurchases );
 
