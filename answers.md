@@ -6,3 +6,10 @@ profile
 profile.src = "https://placebear.com/400/400"
 "https://placebear.com/400/400"
 ~
+2. ~
+var sky = document.querySelector("#left-image")
+sky
+<div id="left-image" class="portfolio-image">
+sky.innerHTML = '<img src="https://placebear.com/325/225">';
+"<img src=\"https://placebear.com/325/225\">"
+~
