@@ -39,7 +39,9 @@ for (var i = 0; i <= highlights.length; i++) { highlights[i].style = "background
 title.style="font-family: 'monospace';";
 ~
 8. ~
-
+icon = document.querySelector(".action-icon-bg");
+<a class="action-icon-bg" href="#">
+icon.style="background: #000;";
 ~
 9. ~
 
