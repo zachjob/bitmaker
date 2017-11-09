@@ -28,12 +28,12 @@ employment.innerHTML = "Test?";
 "Test?"
 ~
 5. ~
+document.body.style = "background: #098766;";
+~
+6. ~
 highlights = document.querySelectorAll(".highlight")
 NodeList [ aside.highlight, h1.highlight, div#sleep.bar-filled.highlight, div#eat.bar-filled.highlight, div#time-travel.bar-filled.highlight, div#cry.bar-filled.highlight, h2.highlight, h2.highlight ]
 for (var i = 0; i <= highlights.length; i++) { highlights[i].style = "background: #fff;"; };
-~
-6. ~
-
 ~
 7. ~
 
