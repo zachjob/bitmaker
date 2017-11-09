@@ -44,10 +44,20 @@ icon = document.querySelector(".action-icon-bg");
 icon.style="background: #000;";
 ~
 9. ~
-
+var name = document.querySelector("#name");
+undefined
+name
+"[object HTMLInputElement]"
+name.placeholder = "Identify yourself!";
+"Identify yourself!"
 ~
 10. ~
-
+var business = document.querySelector("#message")
+undefined
+business
+<textarea id="message" name="message" placeholder="Message">
+business.placeholder = "State your business!";
+"State your business!"
 ~
 11. ~
 
