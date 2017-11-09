@@ -13,3 +13,15 @@ sky
 sky.innerHTML = '<img src="https://placebear.com/325/225">';
 "<img src=\"https://placebear.com/325/225\">"
 ~
+3. ~
+title = document.querySelector("h1")
+<h1 class="highlight">
+title.innerHTML = "Zach Job";
+"Zach Job"
+~
+4. ~
+
+~
+5. ~
+
+~
