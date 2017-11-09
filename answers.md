@@ -60,10 +60,18 @@ business.placeholder = "State your business!";
 "State your business!"
 ~
 11. ~
-
+name
+"[object HTMLInputElement]"
+name.value = "Your Nemesis";
+"Your Nemesis"
 ~
 12. ~
-
+var email = document.querySelector("#email");
+undefined
+email
+<input id="email" class="contact-info" name="email" placeholder="Email" type="email">
+email.value = "koalathebear@gmail.com";
+"koalathebear@gmail.com"
 ~
 13. ~
 
