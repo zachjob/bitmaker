@@ -74,11 +74,20 @@ email.value = "koalathebear@gmail.com";
 "koalathebear@gmail.com"
 ~
 13. ~
-
+var btn = document.querySelector("#submit")
+undefined
+btn
+<input id="submit" name="submit" value="Submit" type="submit">
+btn.value = "En Garde!";
 ~
 14. ~
-
+btn.disabled = true;
+true
 ~
 15. ~
-
+var privInfo = document.querySelector(".bio-info");
+undefined
+privInfo
+<ul class="bio-info">
+privInfo.remove()
 ~
