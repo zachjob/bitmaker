@@ -20,7 +20,12 @@ title.innerHTML = "Zach Job";
 "Zach Job"
 ~
 4. ~
-
+var employment = document.querySelector("div#employment > h3")
+undefined
+employment
+<h3 class="info-title">
+employment.innerHTML = "Test?";
+"Test?"
 ~
 5. ~
 
