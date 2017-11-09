@@ -36,7 +36,7 @@ NodeList [ aside.highlight, h1.highlight, div#sleep.bar-filled.highlight, div#ea
 for (var i = 0; i <= highlights.length; i++) { highlights[i].style = "background: #fff;"; };
 ~
 7. ~
-
+title.style="font-family: 'monospace';";
 ~
 8. ~
 
