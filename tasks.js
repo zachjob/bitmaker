@@ -80,8 +80,12 @@ project = {
 // If I loop the committee outside of the steps loop, it will add each person to each step before iterating
 // to the next step. 
 for (var i = 0; i < project.steps.length; i++) {
-    for (var c = 0; c < 3; c++) {
-        project.steps[i].person = project.committee[c];
+    if (i >= 3 && i < 6) {
+        project.steps[i].person = project.committee[0];
+    } else if (i < 3) {
+        project.steps[i].person = project.committee[1];
+    } else {
+        project.steps[i].person = project.committee[2];
     }
     console.log(project.steps[i]);
 }
