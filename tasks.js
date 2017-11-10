@@ -79,5 +79,6 @@ project = {
 }
 
 for (var i = 0; i < project.steps.length; i++) {
-  console.log(project.steps[i]);
+    project.steps[i].assigned = project.committee
+    console.log(project.steps[i]);
 }
