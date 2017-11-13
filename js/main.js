@@ -10,10 +10,12 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
     signin.addEventListener("click", function(e) {
         modal.style.display = 'block';
+        signin.style.display = 'none';
     });
 
     close.addEventListener("click", function(e) {
       modal.style.display = "none";
+      signin.style.display = "block";
     });
 
     submit.addEventListener("click", function(e) {
@@ -27,5 +29,10 @@ document.addEventListener("DOMContentLoaded", function(event) {
     
     password.addEventListener("mouseover", function(e) {
       password.classList.remove("error");
+    });
+
+    modal.addEventListener("click", function(e) {
+        modal.style.display = "none";
+        signin.style.display = "block";
     });
 });
