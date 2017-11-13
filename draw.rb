@@ -12,6 +12,7 @@ def draw_shape(options)
 
 end
 
-answer = {rows: 4, cols: 4, char: '*'}
+# answer = {rows: 4, cols: 4, char: '*'}
+answer = {rows: 3, cols: 9, char: '0'}
 
 puts draw_shape(answer)
