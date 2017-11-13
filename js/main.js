@@ -20,4 +20,12 @@ document.addEventListener("DOMContentLoaded", function(event) {
       username.classList.add('error');
       password.classList.add('error')
     });
+
+    username.addEventListener("mouseover", function(e) {
+      username.classList.remove("error");
+    });
+    
+    password.addEventListener("mouseover", function(e) {
+      password.classList.remove("error");
+    });
 });
