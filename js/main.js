@@ -1,10 +1,11 @@
 document.addEventListener("DOMContentLoaded", function(event) {
     console.log('Your DOM is ready!')
-//   var body = document.querySelector(".light");
-//   var control = document.querySelector(".switch");
-//   var status = document.querySelector(".status");
+    var modal = document.querySelector(".modal");
+    var signin = document.querySelector(".signin");
+    var close = document.querySelector(".close");
 
-//   control.addEventListener("click", function(e) {
+    signin.addEventListener("click", function(e) {
+        modal.style.display = 'block';
 //     if (control.classList.contains("on")) {
 //       control.classList.remove("on");
 //       control.classList.add("off");
@@ -22,5 +23,5 @@ document.addEventListener("DOMContentLoaded", function(event) {
 //       body.classList.remove("dark");
 //       body.classList.add("light");
 //     }
-//   });
+    });
 });
