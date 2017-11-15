@@ -6,8 +6,10 @@ document.addEventListener("DOMContentLoaded", function() {
     method: "GET",
     dataType: "json",
   }).done(function(data) {
-    for (var i = data.length; i >= 0; i--) {
-      
+    for (var i = 0; i < data.candidates.length; i++) {
+      list = document.querySelector("ul");
+      // console.log(data.candidates[i].name);
+      $(list).append("<li>Name: " + data.candidates[i].name + " | Votes: " + data.candidates[i].votes + "</li>");
     };
   });
 });
