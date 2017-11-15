@@ -8,6 +8,7 @@ $(function() {
         dataType: "JSON",
     }).done(function(data) {
       console.log(data);
+      $("#cat1").append("<img src=\"" + data.cats[0].photo + "\"/>");
     });
   });
 });
