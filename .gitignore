@@ -5,6 +5,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 .editorconfig
 =======
 >>>>>>> crm/master
@@ -70,3 +71,9 @@
 >>>>>>> ice-fire/master
 =======
 >>>>>>> north-pole/master
+=======
+*~
+*.swp
+*.swo
+*.swn
+>>>>>>> panda/master
