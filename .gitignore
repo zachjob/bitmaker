@@ -4,6 +4,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 .editorconfig
 =======
 >>>>>>> crm/master
@@ -43,10 +44,14 @@
 =======
 =======
 >>>>>>> fed-css/master
+=======
+.DS_Store
+>>>>>>> north-pole/master
 *~
 *.swp
 *.swn
 *.swo
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> css-site-replication/master
 =======
@@ -63,3 +68,5 @@
 
 .byebug_history
 >>>>>>> ice-fire/master
+=======
+>>>>>>> north-pole/master
