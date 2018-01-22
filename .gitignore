@@ -8,6 +8,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 .editorconfig
 =======
 >>>>>>> crm/master
@@ -86,13 +87,18 @@
 !/log/.keep
 /tmp
 >>>>>>> photogur/master
+=======
+>>>>>>> switch/master
 *~
 *.swp
 *.swo
 *.swn
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> panda/master
 =======
 >>>>>>> photogur/master
 =======
 >>>>>>> js-fundamentals/master
+=======
+>>>>>>> switch/master

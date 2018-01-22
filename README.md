@@ -1,6 +1,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 # ERB Templates: North Pole Writing Machine
 
 [See assignment in Alexa.](https://alexa.bitmaker.co/assignments/2620/latest)
@@ -19,3 +20,6 @@ https://alexa.bitmaker.co/cohorts/67/assignments/2049/latest
 
 [See assignment in Alexa.](https://alexa.bitmaker.co/cohorts/67/assignments/2048/latest)
 >>>>>>> js-fundamentals/master
+=======
+[See assignment in Alexa.](https://alexa.bitmaker.co/wdi/june-2017/assignments/2526/latest)
+>>>>>>> switch/master
