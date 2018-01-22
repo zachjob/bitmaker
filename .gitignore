@@ -12,6 +12,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 .editorconfig
 =======
 >>>>>>> crm/master
@@ -64,10 +65,13 @@
 >>>>>>> js-fundamentals/master
 =======
 >>>>>>> robot-test/master
+=======
+>>>>>>> rubocop/master
 *~
 *.swp
 *.swn
 *.swo
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -123,3 +127,5 @@
 >>>>>>> rainforest/master
 =======
 >>>>>>> robot-test/master
+=======
+>>>>>>> rubocop/master
