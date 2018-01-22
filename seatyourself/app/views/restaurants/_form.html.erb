@@ -1,0 +1,72 @@
+<% if @restaurant.errors.any? %>
+  <div id="error_explanation">
+    <ul>
+    <% @restaurant.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<%= form_for restaurant do |f| %>
+
+<p>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+</p>
+
+<p>
+  <%= f.label :address %>
+  <%= f.text_field :address %>
+</p>
+
+<p>
+  <%= f.label :open_time %>
+  <%= f.time_field :open_time %>
+</p>
+
+<p>
+  <%= f.label :close_time %>
+  <%= f.time_field :close_time %>
+</p>
+
+<p>
+  <%= f.label :seats %>
+  <%= f.text_field :seats %>
+</p>
+
+<p>
+  <%= f.label :price_range %>
+  <%= f.select(:price_range, (1..5).to_a) %>
+</p>
+
+<p>
+  <%= f.label :neighbourhood %>
+  <%= f.text_field :neighbourhood %>
+</p>
+
+<p>
+  <%= f.label :summary %>
+  <%= f.text_area :summary %>
+</p>
+
+<p>
+  <%= f.label :menu %>
+  <%= f.text_field :menu %>
+</p>
+
+<p>
+  <%= f.label :min_seating %>
+  <%= f.number_field :min_seating %>
+</p>
+
+<p>
+  <%= f.label :max_seating %>
+  <%= f.number_field :max_seating %>
+</p>
+
+<p>
+  <%= f.submit %>
+</p>
+
+<% end %>

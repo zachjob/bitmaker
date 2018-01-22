@@ -1,0 +1,14 @@
+<section class="hero">
+  <%= image_tag 'home-image.jpg' %>
+</section>
+
+<section class="all_restaurants">
+  <h1>Restaurants</h1>
+  <% @restaurants.each do |restaurant| %>
+    <div class="restaurants">
+      <%= link_to "#{restaurant.name}", restaurant_path(restaurant) %>
+      <p><%= restaurant.address %></p>
+      <p>Open: <%= restaurant.open_time.strftime("%I:%M%p")   %> - <%= restaurant.close_time.strftime("%I:%M%p") %></p>
+    </div>
+  <% end %>
+</section>

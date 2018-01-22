@@ -1,0 +1,38 @@
+<section class="show-header">
+  <div class="show-details">
+    <h1><%= @restaurant.name %></h1>
+    <p><%= @restaurant.neighbourhood %></p>
+    <span>|</span>
+    <p><% @restaurant.price_range.to_i.times do %>$<% end %></p>
+    <% if session[:user_id] == @restaurant.user_id %>
+    <span>|</span>
+    <%= link_to "Edit Restaurant", edit_restaurant_path(@restaurant) %>
+    <% end %>
+
+  </div>
+</section>
+
+<section class="restaurant-details">
+  <div class="description">
+    <h2>About <%= @restaurant.name %></h2>
+    <p><%= @restaurant.summary %></p>
+
+    <p><%= link_to "View Our Menu", @restaurant.menu, :target => "_blank" %></p>
+    <p><%= @restaurant.address %></p>
+    <p>Open: <%= @restaurant.open_time.strftime("%I:%M%p")   %> - <%= @restaurant.close_time.strftime("%I:%M%p") %></p>
+
+    <%= link_to "Find Us On Google Maps", "https://maps.google.com/?q=#{ @restaurant.address }", :target => "_blank" %>
+  </div>
+
+  <div class="book">
+    <% if current_user %>
+    <%= render "reservations/form", restaurant: @restaurant, reservation: @reservation  %>
+    <% else %>
+    <h2>Book a Reservation</h2>
+    <p>You must have an account to book a reservation.</p>
+    <%= link_to "Sign In", new_session_path %>
+    <%= link_to "Sign Up", new_users_path %>
+    <% end %>
+  </div>
+
+</section>

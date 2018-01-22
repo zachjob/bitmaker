@@ -1,0 +1,112 @@
+// Place all the styles related to the restaurants_controller controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+@import "variables";
+
+.hero {
+  height: 550px;
+  overflow: hidden;
+  img {
+    width: 100%;
+    height: auto;}
+}
+
+.all_restaurants {
+  background-color: #F7F7F7;
+  h1 {
+    background-color: white;
+    color: $seatyourself;
+    padding-left: 1rem;
+    margin-top: 0;
+    line-height: 2;
+    box-shadow: 2px 4px 4px 2px rgba(0, 0, 0, 0.2);
+  }
+}
+
+.restaurants {
+  background-color: white;
+  display: inline-block;
+  width: 20%;
+  margin: 1rem;
+  box-shadow: 2px 4px 4px 2px rgba(0, 0, 0, 0.2);
+  p {
+    padding: 0 5px;
+  }
+  a {
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    background-color: $seatyourself;
+    color: white;
+    text-decoration: none;
+    font-size: 1.17em;
+    line-height: 2;
+    text-indent: 5px;
+  }
+  a:hover {
+    background-color: white;
+    color: $seatyourself;
+  }
+}
+
+.show-header{
+    height: 200px;
+    display: flex;
+    align-items: flex-end;
+    background: #222; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(left top, #7C7773, #222); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(bottom right, #7C7773, #222); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(bottom right, #7C7773, #222); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to bottom right, #7C7773, #222); /* Standard syntax (must be last) */
+    .show-details{
+      font-size: 1.2em;
+      padding-left: 20px;
+      h1 {
+        color: #ffffff; }
+        h1 {
+          margin: 0; }
+        p {
+          color: rgba(255,255,255,.6);
+          display: inline-block;}
+        span {
+          color: rgba(255,255,255,.6);
+          padding: 0 15px;}
+        a {
+          color: $seatyourself;
+          text-decoration: none;
+        }
+    }
+}
+
+.restaurant-details {
+  padding: 5% 0;
+  background-color: #F7F7F7;
+  a{
+    color: $seatyourself;
+    text-decoration: none;
+  }
+  .description, .book {
+    background: #fff;
+    border-radius: 5px;
+    padding: 1% 2% 2% 2%;
+    box-shadow: 0 1px 0 rgba(0,0,0,.1);
+    display: inline-block;}
+  .description h2 {
+    border-bottom: 1px solid rgba(0,0,0,.08); }
+  .book{
+    width: 300px;
+    text-align: center;
+  }
+}
+
+section.restaurant-details {
+    display: grid;
+    grid-template-columns: 10px 2fr 2fr 2fr 1fr 10px;
+    grid-gap: 20px;
+}
+.description {
+    grid-column: 2 / 4;
+}
+.book {
+    grid-column: 5;
+  }
