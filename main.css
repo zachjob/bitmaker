@@ -1,0 +1,82 @@
+body {
+  font-family: Helvetica;
+}
+
+header,
+footer {
+  display: block;
+  text-align: center;
+  background-color: #222222;
+  color: white;
+}
+
+header > h1,
+footer > h6 {
+  display: inline-block;
+  margin: 20px auto;
+  background-color: #222222;
+}
+
+nav {
+  text-align: center;
+}
+
+nav ul {
+  margin: 5px auto 10px auto;
+}
+
+nav ul li {
+  display: inline-block;
+  background-color: lightgrey;
+  padding: 10px;
+  text-align: center;
+}
+
+nav a {
+  text-decoration: none;
+  font-weight: bold;
+  color: white;
+}
+
+main {
+  width: 960px;
+  margin: 0px auto;
+}
+
+h2 {
+  display: block;
+  padding: 10px;
+  background-color: lightgrey;
+  font-weight: normal;
+}
+
+#photoCount {
+  color: blue;
+  font-weight: bold;
+  border-bottom: yellow 3px solid;
+  margin: 5px auto;
+}
+
+main ul {
+  text-align: center;
+  margin: 0px auto;
+}
+
+main ul li {
+  display: inline-block;
+  width: 33%;
+}
+
+li > p {
+  display: block;
+  text-align: center;
+  background-color: lightgrey;
+  padding: 10px;
+  margin: 10px auto;
+  width: 180px;
+}
+
+img {
+  margin: 0px auto;
+  display: inline-block;
+}
