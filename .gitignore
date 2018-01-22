@@ -2,6 +2,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 .editorconfig
 =======
 >>>>>>> crm/master
@@ -36,8 +37,13 @@
 *~
 >>>>>>> css-positioning/master
 =======
+=======
+>>>>>>> fed-css/master
 *~
 *.swp
 *.swn
 *.swo
+<<<<<<< HEAD
 >>>>>>> css-site-replication/master
+=======
+>>>>>>> fed-css/master
