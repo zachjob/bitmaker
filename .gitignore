@@ -9,6 +9,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 .editorconfig
 =======
 >>>>>>> crm/master
@@ -89,10 +90,13 @@
 >>>>>>> photogur/master
 =======
 >>>>>>> switch/master
+=======
+>>>>>>> pacman/master
 *~
 *.swp
 *.swo
 *.swn
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> panda/master
@@ -102,3 +106,5 @@
 >>>>>>> js-fundamentals/master
 =======
 >>>>>>> switch/master
+=======
+>>>>>>> pacman/master
