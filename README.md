@@ -5,6 +5,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 # ERB Templates: North Pole Writing Machine
 
 [See assignment in Alexa.](https://alexa.bitmaker.co/assignments/2620/latest)
@@ -60,3 +61,8 @@ Things you may want to cover:
 =======
 [See assignment in Alexa](https://alexa.bitmaker.co/wdi/may-2017/assignments/2591/latest)
 >>>>>>> robot-test/master
+=======
+# Rocket
+
+Let's write some tests. See the instructions in Alexa.
+>>>>>>> rocket/master
