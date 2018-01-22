@@ -2,6 +2,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 # Bikini Bottom Election - Part 1
 [See assignment in Alexa.](https://alexa.bitmaker.co/cohorts/67/assignments/2056/latest)
 =======
@@ -56,3 +57,8 @@ Reward dollar_amount must be positive number</del>
 ## Search [Happy to Have]
 * As a user I want to be able to search for projects by name
 >>>>>>> crowdfunder/master
+=======
+# CSS Positioning
+
+[See assignment in Alexa.](https://alexa.bitmaker.co/cohorts/67/assignments/2047/latest)
+>>>>>>> css-positioning/master
