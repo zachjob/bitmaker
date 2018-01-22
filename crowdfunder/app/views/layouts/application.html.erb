@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Crowdfunder</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <%= stylesheet_link_tag    "https://fonts.googleapis.com/css?family=Josefin+Sans:700|Libre+Baskerville" %>
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+    <%= csrf_meta_tags %>
+  </head>
+
+  <body>
+
+  <header>
+
+    <nav class="navbar navbar-dark bg-dark">
+
+      <a class="navbar-brand" href="#">CROWDFUNDER</a>
+      <nav class="site-nav">
+        <% if current_user %>
+          <%= link_to "Logout", :logout, method: :delete %> |
+          <%= link_to "Start Your Project Today", new_project_path %>
+        <% else %>
+          <%= link_to "Register", new_user_path %> |
+          <%= link_to "Login", :login %>
+        <% end %>
+      </nav>
+
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="text" placeholder="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+
+    </nav>
+  </header>
+
+    <div class="container">
+      <div class="row">
+
+      <main class="col-12">
+        <% flash.each do |key, message| %>
+          <div class="flash-<%= key %>">
+            <div class="alert alert-primary" role="alert">
+              <%= message %>
+            </div>
+          </div>
+        <% end %>
+        <%= yield %>
+      </main>
+
+      <footer class="site-footer col-12">
+        <div class="container">
+          <div class="float-right">
+            <a href="#">Back to top</a>
+          </div>
+          <div class="footer-information">
+            <p>"New to Crowdfunder?" <%=link_to("Visit the homepage",root_path)%> or <%=link_to("sign up to get started.", new_user_path)%></p>
+          </div>
+        </div>
+      </footer>
+
+    </div>
+  </div>
+  </body>
+</html>

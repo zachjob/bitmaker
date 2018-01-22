@@ -1,0 +1,53 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+      <h4>Projects Started</h4>
+      <p><%= @total_projects %></p>
+    </div>
+    <div class="col-sm">
+      <h4>Projects Funded</h4>
+      <p><%= @total_num_projects_funded %></p>
+    </div>
+    <div class="col-sm">
+      <h4>Total Pledged</h4>
+      <p><%= @total_pledged %></p>
+    </div>
+  </div>
+
+  <div class="row">
+    <% @categories.each do |category| %>
+      <div class="col-sm">
+        <%= link_to category.name, category_path(category) %>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="row">
+    <div class="card-group">
+      <% @projects.each do |project| %>
+        <div class="col-4">
+
+          <%= link_to project, class: 'project-link' do %>
+            <div class="card">
+              <div class="card-body">
+                <h4 class="card-title"><%=project.title%></h4>
+          <% end %>
+                <p class="card-text"><%=project.description %></p>
+
+                <ul class="list-group list-group-flush current_pledged-amount-and-goal">
+                  <li class="list-group-item amount_pledged">Amount Pledged: <%=number_to_currency(project.total_pledged_in_project) %></li>
+                  <li class="list-group-item goal">Goal: <%=number_to_currency(project.goal) %></li>
+                  <li class="list-group-item">
+                    <time class="project-days-left">
+                      <%= icon('clock-o') %>
+                      <%= "#{time_ago_in_words(project.end_date)} #{( project.end_date > Time.now.utc ) ? 'remaining' : 'past deadline'}"%>
+                    </time>
+                  </li>
+                </ul>
+              </div>
+            </div>
+        </div> <!-- col-4 -->
+      <% end %>
+    </div>
+  </div><!--row-->
+</div>

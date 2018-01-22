@@ -1,0 +1,27 @@
+<h1>Add a reward for <%= @project.title %></h1>
+
+<% if @reward.errors.any? %>
+    <ul>
+      <% @reward.errors.full_messages.each do |m| %>
+      <div class="alert alert-danger" role="alert">
+          <li>
+            <%= m %>
+          </li>
+        </div>
+      <% end %>
+    </ul>
+  <% end %>
+
+<%= form_for [@project, @reward] do |f| %>
+  <div>
+    <%= f.label :dollar_amount %>
+    <%= f.number_field :dollar_amount, step: 0.01 %>
+  </div>
+
+  <div>
+    <%= f.label :description %>
+    <%= f.text_area :description %>
+  </div>
+
+  <%= f.submit %>
+<% end %>
